@@ -1,13 +1,8 @@
 #ifndef DOMAIN_INTERFACE_H
 #define DOMAIN_INTERFACE_H
 
-#include <stdexcept>
-#include <iostream>
-#include <string>
-#include <cstring>
-#include <cstdlib>
-#include <cctype>
-#include <list>
+#include <bits/stdc++.h>
+using namespace std;
 
 class Domain   {
 protected:
