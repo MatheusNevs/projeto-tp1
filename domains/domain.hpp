@@ -8,6 +8,18 @@ class Domain
 {
 private:
     string value;
+
+    /** @brief Método Validate.
+     *
+     * Método responsável pela validação dos dados de entrada
+     * de determinado domínio, retornando true para dados válidos
+     * e false para dados inválidos
+     *
+     * @param value string que será validada para atribuição.
+     * @return `true` or `false`
+     *
+     * @see validate()
+     */
     virtual bool validate(string value);
 
 public:
@@ -27,7 +39,7 @@ public:
      *
      * Método responsável por retornar o valor
      *
-     * @return valor
+     * @return value
      */
     const string &getValue() const;
 };
