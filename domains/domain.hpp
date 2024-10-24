@@ -20,7 +20,7 @@ private:
      *
      * @see validate()
      */
-    virtual bool validate(string value);
+    virtual bool validate(string value) = 0;
 
 public:
     /** @brief Método Set.
