@@ -32,5 +32,8 @@ class Duration : public Domain {
          */
         int getDuration() const;
 };
+inline int Duration::getDuration() const {
+    return duration;
+}
 
 #endif // DURATION_HPP_INCLUDED
