@@ -13,23 +13,23 @@
  * 
  * @throw invalid_argument Lança uma exceção se a senha não cumprir os requisitos.
  */
-void Password::validar(std::string entrada) {
+bool Password::validar(std::string entrada) {
     // Verifica se a senha tem exatamente 5 dígitos
     if (entrada.length() != 5) {
-        throw std::invalid_argument("A senha deve ter exatamente 5 dígitos.");
+        return false;
     }
 
     // Verifica se todos os caracteres são dígitos
     for (char c : entrada) {
         if (!isdigit(c)) {
-            throw std::invalid_argument("A senha deve conter apenas dígitos (0-9).");
+            return false;
         }
     }
 
     // Verifica se há dígitos duplicados
     std::set<char> digitosUnicos(entrada.begin(), entrada.end());
     if (digitosUnicos.size() != 5) {
-        throw std::invalid_argument("A senha não pode conter dígitos duplicados.");
+        return false;
     }
 
     // Verifica se a senha está em ordem consecutiva crescente
@@ -41,7 +41,7 @@ void Password::validar(std::string entrada) {
         }
     }
     if (isCrescente) {
-        throw std::invalid_argument("A senha não pode estar em ordem consecutiva crescente.");
+        return false;
     }
 
     // Verifica se a senha está em ordem consecutiva decrescente
@@ -53,6 +53,8 @@ void Password::validar(std::string entrada) {
         }
     }
     if (isDecrescente) {
-        throw std::invalid_argument("A senha não pode estar em ordem consecutiva decrescente.");
+        return false;
+    
+    return true;
     }
 }

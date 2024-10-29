@@ -8,7 +8,7 @@ class Domain   {
 protected:
 
     string valor;
-    virtual void validar(string entrada) = 0;
+    virtual bool validar(string entrada) = 0;
 
 public:
     /** @brief Método Set.
