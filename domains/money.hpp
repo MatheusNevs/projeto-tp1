@@ -1,8 +1,4 @@
-#ifndef MONEY_INTERFACE_H
-#define MONEY_INTERFACE_H
-
 #include "domain.hpp"
-using namespace std;
 
 class Money : public Domain
 {
@@ -18,4 +14,3 @@ public:
 };
 
 inline Money::Money(string value) : Domain(value) {}
-#endif // MONEY_INTERFACE_H
