@@ -5,35 +5,49 @@
 
 /**
  * @class Duration
- * @brief Representa uma duração no intervalo de 0 a 360.
+ * @brief Representa um domínio específico para gerenciar valores de duração.
+ *
+ * A classe Duration é derivada da classe base Domain.
+ * Ela é projetada para lidar e validar valores de duração.
  */
 class Duration : public Domain {
     private:
-        int duration; /**< Armazena o valor da duração. */
+        /**
+         * @brief Armazena o valor da duração.
+         */
+        int duration;
 
         /**
-         * @brief Valida o valor da duração.
-         * @param duration O valor a ser validado.
-         * @return true se estiver no intervalo permitido, false caso contrário.
+         * @brief Valida o valor de duração fornecido.
+         *
+         * Este método é uma sobrecarga do método validate na classe base Domain.
+         * Ele verifica se a string fornecida pode ser convertida em um valor de duração válido.
+         *
+         * @param value O valor da duração a ser validado, como uma string.
+         * @return True se o valor for válido, false caso contrário.
          */
-        bool validate(int);
-
+        bool validate(string value) override;
+    
     public:
         /**
-         * @brief Define o valor da duração, se válido.
-         * @param duration O valor a ser atribuído.
-         * @return true se atribuído corretamente, false se inválido.
+         * @brief Construtor da classe Duration.
+         *
+         * Este construtor inicializa a classe Duration com o valor fornecido.
+         * Ele chama o construtor da classe base Domain para definir o valor inicial.
+         *
+         * @param value O valor inicial da duração como uma string.
          */
-        bool setDuration(int);
-
-        /**
-         * @brief Retorna o valor atual da duração.
-         * @return O valor da duração.
-         */
-        int getDuration() const;
+        Duration(string value);
 };
-inline int Duration::getDuration() const {
-    return duration;
-}
+
+/**
+ * @brief Implementação do construtor inline da classe Duration.
+ *
+ * Este construtor chama o construtor da classe base Domain para inicializar
+ * o valor de duração fornecido.
+ *
+ * @param value O valor inicial da duração como uma string.
+ */
+inline Duration::Duration(string value) : Domain(value) {}
 
 #endif // DURATION_HPP_INCLUDED
