@@ -20,9 +20,22 @@ private:
      *
      * @see validate()
      */
-    virtual bool validate(string value);
+    virtual bool validate(string value) = 0;
 
 public:
+    /** @brief Método Construtor.
+     *
+     * Método responsável pela inicialização dos valores
+     * do domínio, ocorrendo a validação dos dados
+     *
+     * @param value string que será inicializada na instância
+     * @throw invalid_argument caso não esteja no formato desejado.
+     *
+     * @see validate()
+     */
+
+    Domain(string value);
+
     /** @brief Método Set.
      *
      * Método responsável pela atribuição do valor, nele é chamado o método validar que verifica se o valor está
@@ -43,6 +56,11 @@ public:
      */
     const string &getValue() const;
 };
+
+inline Domain::Domain(string value)
+{
+    setValue(value);
+}
 
 inline void Domain::setValue(const string &value)
 {
