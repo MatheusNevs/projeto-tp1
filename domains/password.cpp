@@ -1,6 +1,4 @@
 #include "password.hpp"
-#include <set>
-#include <stdexcept> // Para std::invalid_argument
 
 /**
  * @brief Método responsável por validar a senha de acordo com os seguintes requisitos:
@@ -9,52 +7,63 @@
  *        - Não pode estar em ordem consecutiva crescente (ex: 12345).
  *        - Não pode estar em ordem consecutiva decrescente (ex: 54321).
  *
- * @param entrada A string que representa a senha a ser validada.
- * 
+ * @param value A string que representa a senha a ser validada.
+ *
  * @throw invalid_argument Lança uma exceção se a senha não cumprir os requisitos.
  */
-bool Password::validar(std::string entrada) {
+bool Password::validate(std::string value)
+{
     // Verifica se a senha tem exatamente 5 dígitos
-    if (entrada.length() != 5) {
+    if (value.length() != 5)
+    {
         return false;
     }
 
     // Verifica se todos os caracteres são dígitos
-    for (char c : entrada) {
-        if (!isdigit(c)) {
+    for (char c : value)
+    {
+        if (!isdigit(c))
+        {
             return false;
         }
     }
 
     // Verifica se há dígitos duplicados
-    std::set<char> digitosUnicos(entrada.begin(), entrada.end());
-    if (digitosUnicos.size() != 5) {
+    std::set<char> digitosUnicos(value.begin(), value.end());
+    if (digitosUnicos.size() != 5)
+    {
         return false;
     }
 
     // Verifica se a senha está em ordem consecutiva crescente
     bool isCrescente = true;
-    for (size_t i = 1; i < entrada.size(); ++i) {
-        if (entrada[i] != entrada[i - 1] + 1) {
+    for (size_t i = 1; i < value.size(); ++i)
+    {
+        if (value[i] != value[i - 1] + 1)
+        {
             isCrescente = false;
             break;
         }
     }
-    if (isCrescente) {
+    if (isCrescente)
+    {
         return false;
     }
 
     // Verifica se a senha está em ordem consecutiva decrescente
     bool isDecrescente = true;
-    for (size_t i = 1; i < entrada.size(); ++i) {
-        if (entrada[i] != entrada[i - 1] - 1) {
+    for (size_t i = 1; i < value.size(); ++i)
+    {
+        if (value[i] != value[i - 1] - 1)
+        {
             isDecrescente = false;
             break;
         }
     }
-    if (isDecrescente) {
+    if (isDecrescente)
+    {
         return false;
-    
-    return true;
+
+        return true;
     }
 }
