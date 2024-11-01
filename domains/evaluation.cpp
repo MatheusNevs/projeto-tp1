@@ -6,10 +6,7 @@ using namespace std;
 Evaluation::Evaluation() : rating(0) {}
 
 bool Evaluation::Validate( string newRating ) {
-    int intNewRating;
-    unsigned int UnsignedNewRating;
-    int intNewRating = std::stoi( newRating );
-    unsigned int UnsignedNewRating = static_cast<unsigned int>(intNewRating);
+    unsigned int UnsignedNewRating = stoi(newRating);
     if ( UnsignedNewRating >= 0 && UnsignedNewRating <= 5) {
         rating = UnsignedNewRating;
     } else {

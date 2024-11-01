@@ -3,7 +3,6 @@
 #include "domain.hpp"
 
 using namespace std;
-
 class Evaluation {
     private:
         unsigned int rating: 3;

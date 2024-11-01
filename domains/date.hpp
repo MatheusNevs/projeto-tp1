@@ -4,6 +4,7 @@
 
 using namespace std;
 
+bool certify() {};
 class Date {
     private:
         string data;
