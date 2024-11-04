@@ -1,4 +1,5 @@
 #include "domain.hpp"
+
 class Name : public Domain
 {
 private:
@@ -7,4 +8,4 @@ public:
     Name(string value); // metodo construtor
 };
 
-inline Name::Name(string value) : Domain(value) {}; // inline do metodo construtor  
+inline Name::Name(string value) : Domain(value) {}; // inline do metodo construtor
