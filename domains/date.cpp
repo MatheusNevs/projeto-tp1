@@ -4,6 +4,9 @@
 #include "domain.hpp"
 
 using namespace std;
+
+Date::Date() : data("") {}
+
 bool certify (int day,int month,bool isBis) {
     int largeMonth[7] = {1,3,5,7,8,10,12};
     bool validation = true;
@@ -59,8 +62,5 @@ bool Validate(string data) {
     } else {
         validation = false;
     }
-
     return validation;
 }
-
-Date::Date() : data("") {}
