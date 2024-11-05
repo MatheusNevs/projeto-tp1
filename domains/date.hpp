@@ -1,17 +1,16 @@
-#ifndef date.hpp
-#define date.hpp
+#ifndef DATE_HPP
+#define DATE_HPP
+
 #include <string>
 
-using namespace std;
-
-bool certify() {};
 class Date {
-    private:
-        string data;
+private:
+    std::string data;
 
-    public:
-        bool Validate(string);
-
+public:
+    bool Validate(const std::string&);
 };
+
+bool certify(int day, int month, bool isBis);
 
 #endif

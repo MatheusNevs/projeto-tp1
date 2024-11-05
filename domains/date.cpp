@@ -7,19 +7,21 @@ using namespace std;
 
 Date::Date() : data("") {}
 
-bool certify (int day,int month,bool isBis) {
-    int largeMonth[7] = {1,3,5,7,8,10,12};
+bool certify(int day, int month, bool isBis) {
+    int largeMonth[7] = {1, 3, 5, 7, 8, 10, 12};
     bool validation = true;
+
     if (day >= 29) {
         if (month == 2) {
             if (!isBis) {
                 validation = false;
             }
-        } else if (day > 30){
+        } else if (day > 30) {
             bool isLarge = false;
             for (int m : largeMonth) {
                 if (month == m) {
                     isLarge = true;
+                    break;
                 }
             }
             if (!isLarge) {
@@ -30,37 +32,30 @@ bool certify (int day,int month,bool isBis) {
     return validation;
 }
 
-bool Validate(string data) {
-    bool validation = true;
-    while ( validation == true ) {
-        if (data[2] != '-' || data[5] != '-' || data[8] != '-') {
-            validation = false;
-        } else { 
-            data.erase(2,1);
-            data.erase(4,1);
-            data.erase(6,1);
-        }
+bool Date::Validate(const string& data) {
+    if (data.size() != 10 || data[2] != '-' || data[5] != '-' || data[8] != '-') {
+        return false;
     }
-    for (char c : data) {
+
+    std::string cleanData = data;
+    cleanData.erase(2, 1);
+    cleanData.erase(4, 1);
+    cleanData.erase(6, 1);
+
+    for (char c : cleanData) {
         if (!isdigit(c)) {
-            validation = false;
+            return false;
         }
     }
-    int day = stoi(data.substr(0, 2));
-    int month = stoi(data.substr(2, 2));
-    int year = stoi(data.substr(4, 2));
-    if (day >= 1 && day<= 31) {
-        if (month >= 1 && month <= 12) {
-            if (year >= 0 && year <= 99) {
-                bool isBis = false;
-                if (year%4 == 0) {
-                    isBis = true;
-                }
-                validation = certify(day,month,isBis);
-            }
-        }
-    } else {
-        validation = false;
+
+    int day = std::stoi(cleanData.substr(0, 2));
+    int month = std::stoi(cleanData.substr(2, 2));
+    int year = std::stoi(cleanData.substr(4, 2));
+
+    if (day < 1 || day > 31 || month < 1 || month > 12 || year < 0 || year > 99) {
+        return false;
     }
-    return validation;
+
+    bool isBis = (year % 4 == 0);
+    return certify(day, month, isBis);
 }
