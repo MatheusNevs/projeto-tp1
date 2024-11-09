@@ -1,18 +1,18 @@
 #include "domain.hpp"
 
 /**
- * @class Evaluation
+ * @class Rating
  * @brief Guarda e valida uma avaliação, garantindo que esteja dentro de um alcance aceitável.
  */
-class Evaluation : public Domain
+class Rating : public Domain
 {
 private:
-    // Método de validação específico para o domínio Evaluation
+    // Método de validação específico para o domínio Rating
     bool validate(string value) override;
 
 public:
     // Método Construtor
-    Evaluation(string value);
+    Rating(string value);
 };
 
-inline Evaluation::Evaluation(string value) : Domain(value) {}
+inline Rating::Rating(string value) : Domain(value) {}

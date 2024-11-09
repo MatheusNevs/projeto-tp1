@@ -1,4 +1,4 @@
-#include "evaluation.hpp"
+#include "rating.hpp"
 
 /**
  * @brief Valida o valor da avaliação fornecido como string.
@@ -9,7 +9,7 @@
  * @param value O valor da avaliação a ser validado, como uma string.
  * @return True se o valor da avaliação for válido (entre 0 e 5), false caso contrário.
  */
-bool Evaluation::validate(string value)
+bool Rating::validate(string value)
 {
     int unsignedNewRating = stoi(value);
 
