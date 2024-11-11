@@ -14,7 +14,7 @@
 bool Code::validate(string value)
 {
   // Caso tamanho diferente de 6, inválido
-  if (value.length() != codeLenght)
+  if (value.length() != codeLength)
     return false;
 
   for (int i = 0; i < 6; i++)
