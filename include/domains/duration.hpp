@@ -3,8 +3,8 @@
 class Duration : public Domain
 {
 private:
-    int minDuration = 0;
-    int maxDuration = 360;
+    static const int minDuration = 0;
+    static const int maxDuration = 360;
 
     bool validate(string value) override;
 

@@ -4,7 +4,7 @@ class Code : public Domain
 {
 private:
   // Numero maximo para digito das horas
-  int codeLength = 6;
+  static const int codeLength = 6;
 
   // Funcao de validar especifica dos horarios
   bool validate(string value) override;

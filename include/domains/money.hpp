@@ -3,9 +3,9 @@
 class Money : public Domain
 {
 private:
-    float moneyMax = 200000.00;
+    static const float moneyMax = 200000.00;
 
-    float moneyMin = 0.00;
+    static const float moneyMin = 0.00;
 
     bool validate(string) override;
 
