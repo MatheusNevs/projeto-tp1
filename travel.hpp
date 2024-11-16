@@ -23,33 +23,3 @@ public:
     Rating getRating() const;
     void setRating(const Rating &);
 };
-
-inline Code Travel::getCode() const
-{
-    return code;
-}
-
-inline void Code Travel::setCode(const Code &code)
-{
-    this->code = code;
-}
-
-inline Name Travel::getName() const
-{
-    return name;
-}
-
-inline Name Travel::setName(const Name &name)
-{
-    this->name = name;
-}
-
-inline Rating Travel::getRating() const
-{
-    return rating;
-}
-
-inline Rating Travel::setRating(const Rating &rating)
-{
-    this->rating = rating;
-}
