@@ -3,12 +3,11 @@
 class Date : public Domain
 {
 private:
-  const int leapFebruaryDays = 29;
-  const int notLeapFebruaryDays = 28;
-  const vector<int> monthDays = {
-      31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-  const int monthMax = 12;
-  const int yearMax = 99;
+  static const int leapFebruaryDays = 29;
+  static const int notLeapFebruaryDays = 28;
+  static const vector<int> monthDays;
+  static const int monthMax = 12;
+  static const int yearMax = 99;
 
   // Funcao de validar especifica das datas
   bool validate(string value) override;
@@ -19,3 +18,5 @@ public:
 };
 
 inline Date::Date(string value) : Domain(value) {}
+
+const std::vector<int> Date::monthDays = {31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
