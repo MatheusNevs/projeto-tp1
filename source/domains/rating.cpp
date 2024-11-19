@@ -17,4 +17,4 @@ void Rating::validate(string value)
     {
         throw invalid_argument("Argumento invalido.");
     }
-};
+}

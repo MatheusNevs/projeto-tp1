@@ -32,7 +32,9 @@ void Date::validate(string value)
 
   // Verificando limite de intervalos de cada segmento
   if (inputYears < 0 || inputYears > yearMax || inputMonths < 1 || inputMonths > monthMax || inputYears < 1)
+  {
     throw invalid_argument("Argumento invalido.");
+  }
 
   int inputDays = stoi(splitedValue[0]);
   int maxDays = monthDays[inputMonths - 1];

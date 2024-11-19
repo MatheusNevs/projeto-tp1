@@ -2,6 +2,8 @@
 #define DOMAIN_INTERFACE_H
 
 #include <bits/stdc++.h>
+#include <stdexcept>
+
 using namespace std;
 
 class Domain
