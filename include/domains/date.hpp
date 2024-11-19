@@ -10,7 +10,7 @@ private:
   static const int yearMax = 99;
 
   // Funcao de validar especifica das datas
-  bool validate(string value) override;
+  void validate(string value) override;
 
 public:
   // Método Construtor

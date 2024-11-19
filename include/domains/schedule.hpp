@@ -10,7 +10,7 @@ private:
   static const int minutesMax = 59;
 
   // Funcao de validar especifica dos horarios
-  bool validate(string value) override;
+  void validate(string value) override;
 
 public:
   // Método Construtor

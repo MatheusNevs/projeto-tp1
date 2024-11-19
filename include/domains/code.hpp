@@ -7,7 +7,7 @@ private:
   static const int codeLength = 6;
 
   // Funcao de validar especifica dos horarios
-  bool validate(string value) override;
+  void validate(string value) override;
 
 public:
   // Método Construtor

@@ -14,7 +14,7 @@ protected:
      * @param entrada string que será validada.
      * @throw invalid_argument caso a senha não cumpra os requisitos.
      */
-    bool validate(string value) override;
+    void validate(string value) override;
 
 public:
     // O construtor pode ser adicionado se necessário.

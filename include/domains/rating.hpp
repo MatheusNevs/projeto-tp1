@@ -8,7 +8,7 @@ class Rating : public Domain
 {
 private:
     // Método de validação específico para o domínio Rating
-    bool validate(string value) override;
+    void validate(string value) override;
 
 public:
     // Método Construtor

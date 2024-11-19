@@ -9,11 +9,10 @@
  * @param name Nome que será verificado.
  * @return true se o nome é válido (não vazio e com até 30 caracteres), false caso contrário.
  */
-bool Name::validate(string name)
+void Name::validate(string name)
 {
     if (name.length() > 30 || name.empty())
     {
-        return false;
+        throw invalid_argument("Argumento invalido.");
     }
-    return true;
 }

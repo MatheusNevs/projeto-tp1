@@ -11,18 +11,18 @@
  *
  * @see validate()
  */
-bool Code::validate(string value)
+void Code::validate(string value)
 {
   // Caso tamanho diferente de 6, inválido
   if (value.length() != codeLength)
-    return false;
+    throw invalid_argument("Argumento invalido.");
 
   for (int i = 0; i < 6; i++)
   {
     // Caso caracter não for alfanumérico, inválido
     if (!isalnum(value[i]))
-      return false;
+    {
+      throw invalid_argument("Argumento invalido.");
+    }
   }
-
-  return true;
-}
+};
