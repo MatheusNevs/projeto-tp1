@@ -7,12 +7,11 @@
  * @return Retorna `true` se o valor for válido (entre 0 e 200.000), e `false` caso contrário.
  */
 
-bool Money::validate(string value)
+void Money::validate(string value)
 {
     float quantity = stof(value);
     if (quantity < moneyMin || quantity > moneyMax)
     {
-        return false;
+        throw invalid_argument("Argumento invalido.");
     }
-    return true;
-};
+}

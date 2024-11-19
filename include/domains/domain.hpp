@@ -2,6 +2,8 @@
 #define DOMAIN_INTERFACE_H
 
 #include <bits/stdc++.h>
+#include <stdexcept>
+
 using namespace std;
 
 class Domain
@@ -20,7 +22,7 @@ private:
      *
      * @see validate()
      */
-    virtual bool validate(string value) = 0;
+    virtual void validate(string value) = 0;
 
 public:
     /** @brief Método Construtor.
@@ -64,10 +66,7 @@ inline Domain::Domain(string value)
 
 inline void Domain::setValue(const string &value)
 {
-    if (!validate(value))
-    {
-        throw invalid_argument("Argumento Inválido para Domínio");
-    }
+    validate(value);
     this->value = value;
 }
 

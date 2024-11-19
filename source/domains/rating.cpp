@@ -9,13 +9,12 @@
  * @param value O valor da avaliação a ser validado, como uma string.
  * @return True se o valor da avaliação for válido (entre 0 e 5), false caso contrário.
  */
-bool Rating::validate(string value)
+void Rating::validate(string value)
 {
     int unsignedNewRating = stoi(value);
 
     if (unsignedNewRating < 0 || unsignedNewRating > 5)
     {
-        return false;
+        throw invalid_argument("Argumento invalido.");
     }
-    return true;
-};
+}

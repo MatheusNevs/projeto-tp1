@@ -6,7 +6,7 @@ private:
     static const int minDuration = 0;
     static const int maxDuration = 360;
 
-    bool validate(string value) override;
+    void validate(string value) override;
 
 public:
     Duration(string value);

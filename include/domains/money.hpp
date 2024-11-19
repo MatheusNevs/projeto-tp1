@@ -7,7 +7,7 @@ private:
 
     static const float moneyMin = 0.00;
 
-    bool validate(string) override;
+    void validate(string) override;
 
 public:
     Money(string value);

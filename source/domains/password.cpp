@@ -11,12 +11,12 @@
  *
  * @throw invalid_argument Lança uma exceção se a senha não cumprir os requisitos.
  */
-bool Password::validate(std::string value)
+void Password::validate(std::string value)
 {
     // Verifica se a senha tem exatamente 5 dígitos
     if (value.length() != 5)
     {
-        return false;
+        throw invalid_argument("Argumento invalido.");
     }
 
     // Verifica se todos os caracteres são dígitos
@@ -24,7 +24,7 @@ bool Password::validate(std::string value)
     {
         if (!isdigit(c))
         {
-            return false;
+            throw invalid_argument("Argumento invalido.");
         }
     }
 
@@ -32,7 +32,7 @@ bool Password::validate(std::string value)
     std::set<char> digitosUnicos(value.begin(), value.end());
     if (digitosUnicos.size() != 5)
     {
-        return false;
+        throw invalid_argument("Argumento invalido.");
     }
 
     // Verifica se a senha está em ordem consecutiva crescente
@@ -47,7 +47,7 @@ bool Password::validate(std::string value)
     }
     if (isCrescente)
     {
-        return false;
+        throw invalid_argument("Argumento invalido.");
     }
 
     // Verifica se a senha está em ordem consecutiva decrescente
@@ -62,8 +62,6 @@ bool Password::validate(std::string value)
     }
     if (isDecrescente)
     {
-        return false;
-
-        return true;
+        throw invalid_argument("Argumento invalido.");
     }
 }

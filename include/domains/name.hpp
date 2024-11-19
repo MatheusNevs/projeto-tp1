@@ -3,7 +3,7 @@
 class Name : public Domain
 {
 private:
-    bool validate(string value) override; // Valida se a string está correta
+    void validate(string value) override; // Valida se a string está correta
 public:
     Name(string value); // metodo construtor
 };
