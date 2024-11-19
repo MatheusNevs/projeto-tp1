@@ -1,4 +1,4 @@
-#include "activity.hpp"
+#include "../../include/entities/activity.hpp"
 
 /**
  * @brief Define o código da atividade.

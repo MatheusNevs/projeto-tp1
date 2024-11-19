@@ -1,5 +1,4 @@
-#include "domain.hpp"
-
+#include "./domain.hpp"
 /**
  * @class Rating
  * @brief Guarda e valida uma avaliação, garantindo que esteja dentro de um alcance aceitável.
@@ -15,4 +14,7 @@ public:
     Rating(string value);
 };
 
-inline Rating::Rating(string value) : Domain(value) {}
+inline Rating::Rating(string value)
+{
+    this->setValue(value);
+}

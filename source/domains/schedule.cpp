@@ -1,4 +1,4 @@
-#include "schedule.hpp"
+#include "../../include/domains/schedule.hpp"
 
 /** @brief Método Validate.
  *

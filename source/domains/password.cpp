@@ -1,4 +1,4 @@
-#include "password.hpp"
+#include "../../include/domains/password.hpp"
 
 /**
  * @brief Método responsável por validar a senha de acordo com os seguintes requisitos:

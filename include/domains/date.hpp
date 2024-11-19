@@ -1,4 +1,4 @@
-#include "domain.hpp"
+#include "./domain.hpp"
 
 class Date : public Domain
 {
@@ -17,6 +17,9 @@ public:
   Date(string value);
 };
 
-inline Date::Date(string value) : Domain(value) {}
+inline Date::Date(string value)
+{
+  this->setValue(value);
+}
 
 const std::vector<int> Date::monthDays = {31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};

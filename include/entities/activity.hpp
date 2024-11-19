@@ -1,10 +1,9 @@
-#include "code.hpp"
-#include "name.hpp"
-#include "date.hpp"
-#include "duration.hpp"
-#include "duration.hpp"
-#include "money.hpp"
-#include "rating.hpp"
+#include "../domains/code.hpp"
+#include "../domains/name.hpp"
+#include "../domains/date.hpp"
+#include "../domains/duration.hpp"
+#include "../domains/money.hpp"
+#include "../domains/rating.hpp"
 
 class Activity
 {

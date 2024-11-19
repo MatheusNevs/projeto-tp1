@@ -1,4 +1,4 @@
-#include "duration.hpp"
+#include "../../include/domains/duration.hpp"
 
 /**
  * @brief Valida o valor da duração fornecido como string.

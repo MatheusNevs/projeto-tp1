@@ -1,4 +1,4 @@
-#include "destination.hpp"
+#include "../../include/entities/destination.hpp"
 
 /**
  * @brief Define o código do destino.

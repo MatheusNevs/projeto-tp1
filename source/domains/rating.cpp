@@ -1,4 +1,4 @@
-#include "rating.hpp"
+#include "../../include/domains/rating.hpp"
 
 /**
  * @brief Valida o valor da avaliação fornecido como string.

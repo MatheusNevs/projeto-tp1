@@ -1,4 +1,4 @@
-#include "domain.hpp"
+#include "./domain.hpp"
 
 class Duration : public Domain
 {
@@ -12,4 +12,7 @@ public:
     Duration(string value);
 };
 
-inline Duration::Duration(string value) : Domain(value) {}
+inline Duration::Duration(string value)
+{
+    this->setValue(value);
+}

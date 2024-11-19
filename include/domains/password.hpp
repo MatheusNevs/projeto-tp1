@@ -1,5 +1,4 @@
-#include "domain.hpp"
-
+#include "./domain.hpp"
 /** @brief Classe Password
  *
  * Classe responsável pela validação e armazenamento de uma senha. Herda de Domain.
@@ -21,4 +20,7 @@ public:
     Password(string value);
 };
 
-inline Password::Password(string value) : Domain(value) {}
+inline Password::Password(string value)
+{
+    this->setValue(value);
+}

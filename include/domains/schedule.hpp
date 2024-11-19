@@ -1,4 +1,4 @@
-#include "domain.hpp"
+#include "./domain.hpp"
 
 class Schedule : public Domain
 {
@@ -17,4 +17,7 @@ public:
   Schedule(string value);
 };
 
-inline Schedule::Schedule(string value) : Domain(value) {}
+inline Schedule::Schedule(string value)
+{
+  this->setValue(value);
+}

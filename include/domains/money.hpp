@@ -1,4 +1,4 @@
-#include "domain.hpp"
+#include "./domain.hpp"
 
 class Money : public Domain
 {
@@ -13,4 +13,7 @@ public:
     Money(string value);
 };
 
-inline Money::Money(string value) : Domain(value) {}
+inline Money::Money(string value)
+{
+    this->setValue(value);
+}
