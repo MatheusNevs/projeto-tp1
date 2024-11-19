@@ -4,7 +4,7 @@
  * @class Travel
  * @brief Representa uma viagem com código, nome e avaliação.
  */
-Travel::Travel(const Code &code, const Name &name, const Rating &rating) : code(code), name(name), rating(rating) {}
+Travel::Travel(const Code &code, Name &name, Rating &rating) : code(code), name(name), rating(rating) {}
 
 /**
  * @brief Obtém o código da viagem.
