@@ -12,10 +12,10 @@ public:
   Account(Code &, Password &);
 
   // Atualizar/retornar código
-  void setCode(string);
-  string getCode();
+  void setCode(Code &);
+  Code getCode();
 
   // Atualizar/retornar senha
-  void setPassword(string);
-  string getPassword();
+  void setPassword(Password &);
+  Password getPassword();
 };

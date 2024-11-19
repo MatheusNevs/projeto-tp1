@@ -18,18 +18,18 @@ Account::Account(Code &code, Password &password) : code(code), password(password
  *
  * @see validate()
  */
-void Account::setCode(string value)
+void Account::setCode(Code &code)
 {
-  this->code.setValue(value);
+  this->code = code;
 }
 
 /** @brief Método getCode.
  *
  * Método responsável pelo retorno do valor do código
  */
-string Account::getCode()
+Code Account::getCode()
 {
-  return this->code.getValue();
+  return this->code;
 }
 
 /** @brief Método setPassword.
@@ -41,16 +41,16 @@ string Account::getCode()
  *
  * @see validate()
  */
-void Account::setPassword(string value)
+void Account::setPassword(Password &password)
 {
-  this->password.setValue(value);
+  this->password = password;
 }
 
 /** @brief Método getPassword.
  *
  * Método responsável pelo retorno do valor da senha
  */
-string Account::getPassword()
+Password Account::getPassword()
 {
-  return this->password.getValue();
+  return this->password;
 }
