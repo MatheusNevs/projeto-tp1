@@ -1,4 +1,4 @@
-#include "money.hpp"
+#include "../../include/domains/money.hpp"
 
 /**
  * @brief Valida um valor monetário, verificando se está dentro do intervalo aceitável.

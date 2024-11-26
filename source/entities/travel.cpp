@@ -1,4 +1,4 @@
-#include "travel.hpp"
+#include "../../include/entities/travel.hpp"
 
 /**
  * @class Travel

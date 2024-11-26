@@ -1,5 +1,5 @@
-#include "code.hpp"
-#include "password.hpp"
+#include "../domains/code.hpp"
+#include "../domains/password.hpp"
 
 class Account
 {

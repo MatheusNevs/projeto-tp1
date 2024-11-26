@@ -1,4 +1,4 @@
-#include "domain.hpp"
+#include "./domain.hpp"
 
 class Name : public Domain
 {
@@ -8,4 +8,7 @@ public:
     Name(string value); // metodo construtor
 };
 
-inline Name::Name(string value) : Domain(value) {}; // inline do metodo construtor
+inline Name::Name(string value)
+{
+    this->setValue(value);
+}

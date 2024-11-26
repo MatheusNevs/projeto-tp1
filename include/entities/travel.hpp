@@ -1,6 +1,6 @@
-#include "name.hpp"
-#include "rating.hpp"
-#include "code.hpp"
+#include "../domains/code.hpp"
+#include "../domains/name.hpp"
+#include "../domains/rating.hpp"
 
 using namespace std;
 

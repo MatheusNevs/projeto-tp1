@@ -1,4 +1,4 @@
-#include "domain.hpp"
+#include "./domain.hpp"
 
 class Code : public Domain
 {
@@ -14,4 +14,7 @@ public:
   Code(string value);
 };
 
-inline Code::Code(string value) : Domain(value) {}
+inline Code::Code(string value)
+{
+  this->setValue(value);
+}
