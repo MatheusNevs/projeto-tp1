@@ -1,4 +1,5 @@
 #include "./domain.hpp"
+
 /** @brief Classe Password
  *
  * Classe responsável pela validação e armazenamento de uma senha. Herda de Domain.
@@ -16,7 +17,6 @@ protected:
     void validate(string value) override;
 
 public:
-    // O construtor pode ser adicionado se necessário.
     Password(string value);
 };
 

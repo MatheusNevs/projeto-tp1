@@ -1,21 +1,40 @@
 #include "./domain.hpp"
 
+/** 
+ * @class Schedule
+ * @brief Representa um horário validado.
+ * 
+ * A classe `Schedule` herda de `Domain` e implementa validação específica para 
+ * horários no formato de horas e minutos.
+ */
 class Schedule : public Domain
 {
 private:
-  // Numero maximo para digito das horas
-  static const int hourMax = 23;
+    static const int hourMax = 23; 
+    static const int minutesMax = 59; 
 
-  // Numero maximo para digito dos minutos
-  static const int minutesMax = 59;
-
-  // Funcao de validar especifica dos horarios
-  void validate(string value) override;
+    /**
+     * @brief Valida o horário fornecido.
+     * 
+     * Verifica se o horário está no formato correto e dentro dos valores permitidos.
+     * 
+     * @param value Horário a ser validado.
+     * @throw invalid_argument Se o horário for inválido.
+     */
+    void validate(string value) override;
 
 public:
-  // Método Construtor
-  Schedule(string value);
+    /**
+     * @brief Construtor da classe `Schedule`.
+     * 
+     * Inicializa a instância validando e definindo o horário.
+     * 
+     * @param value Horário inicial.
+     * @throw invalid_argument Se o horário for inválido.
+     */
+    Schedule(string value);
 };
+
 
 inline Schedule::Schedule(string value)
 {
