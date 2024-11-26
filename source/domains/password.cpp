@@ -1,16 +1,5 @@
 #include "../../include/domains/password.hpp"
 
-/**
- * @brief Método responsável por validar a senha de acordo com os seguintes requisitos:
- *        - Deve conter exatamente 5 dígitos numéricos (0-9).
- *        - Não pode conter dígitos duplicados.
- *        - Não pode estar em ordem consecutiva crescente (ex: 12345).
- *        - Não pode estar em ordem consecutiva decrescente (ex: 54321).
- *
- * @param value A string que representa a senha a ser validada.
- *
- * @throw invalid_argument Lança uma exceção se a senha não cumprir os requisitos.
- */
 void Password::validate(std::string value)
 {
     // Verifica se a senha tem exatamente 5 dígitos
