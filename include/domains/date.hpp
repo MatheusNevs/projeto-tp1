@@ -10,11 +10,11 @@
 class Date : public Domain
 {
 private:
-    static const int leapFebruaryDays = 29; 
-    static const int notLeapFebruaryDays = 28; 
-    static const vector<int> monthDays; 
-    static const int monthMax = 12; 
-    static const int yearMax = 99; 
+    static const int leapFebruaryDays = 29; ///< Dias de fevereiro em anos bissextos.
+    static const int notLeapFebruaryDays = 28; ///< Dias de fevereiro em anos normais.
+    static const vector<int> monthDays; ///< Dias por mês (exceto fevereiro variável).
+    static const int monthMax = 12; ///< Número máximo de meses.
+    static const int yearMax = 99; ///< Ano máximo permitido. 
 
     /**
      * @brief Valida a data fornecida.

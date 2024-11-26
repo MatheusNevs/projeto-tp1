@@ -10,8 +10,8 @@
 class Money : public Domain
 {
 private:
-    static const float moneyMax = 200000.00; 
-    static const float moneyMin = 0.00; 
+    static const float moneyMax = 200000.00; ///< Valor máximo permitido.
+    static const float moneyMin = 0.00; ///< Valor mínimo permitido.
 
     /**
      * @brief Valida o valor monetário fornecido.

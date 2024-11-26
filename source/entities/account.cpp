@@ -1,6 +1,6 @@
 #include "../../include/entities/account.hpp"
 
-Account::Account(Code &code, Password &password) : code(code), password(password) {}
+Account::Account(const Code &code, const Password &password) : code(code), password(password) {}
 
 void Account::setCode(Code &code)
 {

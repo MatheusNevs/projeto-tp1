@@ -1,5 +1,8 @@
 #include "../../include/entities/activity.hpp"
 
+Activity::Activity(const Code &code, const Name &name, const Date &date, const Duration &time, const Duration &duration, const Money &price, const Rating &rating)
+: code(code), name(name), date(date), time(time), duration(duration), price(price), rating(rating) {}
+
 void Activity::setCode(const Code &code)
 {
   this->code = code;

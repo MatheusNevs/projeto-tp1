@@ -1,5 +1,8 @@
 #include "../../include/entities/destination.hpp"
 
+Destination::Destination(const Code &code, const Name &name, const Date &arrival, const Date &departure, const Rating &rating)
+: code(code), name(name), arrival(arrival), departure(departure), rating(rating) {}
+
 void Destination::setCode(const Code &code)
 {
     this->code = code;

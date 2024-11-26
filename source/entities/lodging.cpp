@@ -1,7 +1,7 @@
 #include "../../include/entities/lodging.hpp"
 
 Lodging::Lodging(const Code &code, const Name &name, const Money &dailyRate, const Rating &rating)
-    : code(code), name(name), dailyRate(dailyRate), rating(rating) {}
+: code(code), name(name), dailyRate(dailyRate), rating(rating) {}
 
 Code Lodging::getCode() const
 {

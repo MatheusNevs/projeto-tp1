@@ -10,8 +10,8 @@
 class Duration : public Domain
 {
 private:
-    static const int minDuration = 0; 
-    static const int maxDuration = 360; 
+    static const int minDuration = 0; ///< Duração mínima permitida.
+    static const int maxDuration = 360; ///< Duração máxima permitida.
 
     /**
      * @brief Valida a duração fornecida.

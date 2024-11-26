@@ -10,7 +10,8 @@
  * @brief Representa uma atividade com atributos específicos.
  * 
  * A classe `Activity` encapsula informações sobre uma atividade, como código,
- * nome, data, duração, preço e avaliação.
+ * nome, data, hora de início, duração, preço e avaliação. Permite a manipulação e recuperação
+ * dessas informações.
  */
 class Activity
 {
@@ -24,6 +25,21 @@ private:
     Rating rating; ///< Avaliação da atividade.
 
 public:
+    /**
+     * @brief Construtor da classe `Activity`.
+     * 
+     * Inicializa uma atividade com os atributos fornecidos.
+     * 
+     * @param code Código da atividade.
+     * @param name Nome da atividade.
+     * @param date Data da atividade.
+     * @param time Hora de início da atividade.
+     * @param duration Duração da atividade.
+     * @param price Preço da atividade.
+     * @param rating Avaliação da atividade.
+     */
+    Activity(const Code &code, const Name &name, const Date &date, const Duration &time, const Duration &duration, const Money &price, const Rating &rating);
+
     // Métodos getter e setter para cada atributo.
 
     void setCode(const Code &code);

@@ -23,7 +23,7 @@ public:
      * @param code Referência ao código da conta.
      * @param password Referência à senha da conta.
      */
-    Account(Code &code, Password &password);
+    Account(const Code &code, const Password &password);
 
     /**
      * @brief Define um novo código para a conta.

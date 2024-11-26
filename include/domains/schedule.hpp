@@ -10,8 +10,8 @@
 class Schedule : public Domain
 {
 private:
-    static const int hourMax = 23; 
-    static const int minutesMax = 59; 
+    static const int hourMax = 23; ///< Valor máximo para horas.
+    static const int minutesMax = 59; ///< Valor máximo para minutos.
 
     /**
      * @brief Valida o horário fornecido.
