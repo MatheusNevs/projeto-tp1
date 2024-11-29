@@ -1,7 +1,9 @@
 #include "../../include/domains/date.hpp"
 
-#include "utils.hpp"
+#include "../../lib/utils/utils.hpp"
 using namespace Utils;
+
+const std::vector<int> Date::monthDays = {31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 void Date::validate(string value)
 {
