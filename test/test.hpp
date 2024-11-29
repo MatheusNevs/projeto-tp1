@@ -1,4 +1,5 @@
-#include "../../include/domains/domain.hpp"
+#include <bits/stdc++.h>
+using namespace std;
 
 // Definições de cores ANSI para saída colorida
 #define RESET "\033[0m"
@@ -11,40 +12,35 @@
 // retorna o valor corretamente quando o valor válido é utilizado.
 class UnitTest
 {
-private:
-  std::string validValue;   ///< Valor válido para testar o domínio.
-  std::string invalidValue; ///< Valor inválido para testar o domínio.
-  Domain *domain;           ///< Ponteiro para o domínio a ser testado.
-  bool success;             ///< Indica se o teste foi bem-sucedido.
+protected:
+  string validValue;   ///< Valor válido para testar o domínio.
+  string invalidValue; ///< Valor inválido para testar o domínio.
+  bool success = true; ///< Indica se o teste foi bem-sucedido.
 
 public:
   /**
-   * Construtor da classe UnitTest.
-   * 
-   * @param validValue Valor válido para testar o domínio.
-   * @param invalidValue Valor inválido para testar o domínio.
-   * @param domain Ponteiro para o domínio a ser testado.
-   */
-  UnitTest(const std::string &validValue, const std::string &invalidValue, Domain *domain);
-
-  /**
    * Executa o teste de unidade, testando o setValue e getValue com os valores válidos e inválidos.
    */
-  void test();
-
-  /**
-   * Retorna o resultado do teste, indicando se foi bem-sucedido.
-   * 
-   * @return true se o teste foi bem-sucedido, false caso contrário.
-   */
-  bool getSuccess() const;
+  virtual void test() = 0;
 
   /**
    * Retorna uma descrição do teste, incluindo o nome do domínio e os valores testados.
-   * 
+   *
    * @return Descrição do teste.
    */
-  std::string getDescription() const;
+  virtual string getDescription() const = 0;
+
+  /**
+   * Retorna o resultado do teste, indicando se foi bem-sucedido.
+   *
+   * @return true se o teste foi bem-sucedido, false caso contrário.
+   */
+  bool getSuccess() const
+  {
+    return this->success;
+  };
+
+  UnitTest(string validValue, string invalidValue);
 };
 
 // Classe que representa um grupo de testes de unidade, contendo vários testes de unidade
@@ -52,17 +48,17 @@ public:
 class GroupTest
 {
 private:
-  std::string name;                ///< Nome do grupo de testes.
-  std::vector<UnitTest> tests;      ///< Lista de testes de unidade a serem executados.
+  string name;            ///< Nome do grupo de testes.
+  vector<UnitTest> tests; ///< Lista de testes de unidade a serem executados.
 
 public:
   /**
    * Construtor da classe GroupTest.
-   * 
+   *
    * @param name Nome do grupo de testes.
    * @param tests Lista de testes de unidade a serem executados no grupo.
    */
-  GroupTest(const std::string &name, const std::vector<UnitTest> &tests);
+  GroupTest(const string &name, const vector<UnitTest> &tests);
 
   /**
    * Executa todos os testes de unidade do grupo e exibe os resultados no terminal.
