@@ -1,33 +1,32 @@
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
-#include "../domains/rating.hpp"
 #include "../domains/date.hpp"
-
-using namespace std;
+#include "../domains/rating.hpp"
+#include "./entity.hpp"
 
 /**
  * @class Destination
  * @brief Representa um destino com informações detalhadas.
- * 
- * A classe `Destination` encapsula atributos como código, nome, datas de chegada 
+ *
+ * A classe `Destination` encapsula atributos como código, nome, datas de chegada
  * e partida, e uma avaliação do destino. Permite a manipulação e recuperação
  * dessas informações.
  */
-class Destination
+class Destination : public Entity
 {
 private:
-    Code code; ///< Código do destino.
-    Name name; ///< Nome do destino.
-    Date arrival; ///< Data de chegada ao destino.
+    Code code;      ///< Código do destino.
+    Name name;      ///< Nome do destino.
+    Date arrival;   ///< Data de chegada ao destino.
     Date departure; ///< Data de partida do destino.
-    Rating rating; ///< Avaliação do destino.
+    Rating rating;  ///< Avaliação do destino.
 
 public:
     /**
      * @brief Construtor da classe `Destination`.
-     * 
+     *
      * Inicializa um destino com os atributos fornecidos.
-     * 
+     *
      * @param code Código do destino.
      * @param name Nome do destino.
      * @param arrival Data de chegada ao destino.
@@ -36,20 +35,25 @@ public:
      */
     Destination(const Code &code, const Name &name, const Date &arrival, const Date &departure, const Rating &rating);
 
-    // Métodos getter e setter para cada atributo.
+    /**
+     * @brief Define um valor para uma propriedade do destino.
+     *
+     * A propriedade pode ser qualquer um dos atributos do destino.
+     *
+     * @param propertyName Nome da propriedade a ser modificada.
+     * @param value Novo valor a ser atribuído à propriedade.
+     * @throw invalid_argument Caso a propriedade não exista.
+     */
+    void set(const Domain &value) override;
 
-    void setCode(const Code &code);
-    Code getCode() const;
-
-    void setName(const Name &name);
-    Name getName() const;
-
-    void setArrival(const Date &arrival);
-    Date getArrival() const;
-
-    void setDeparture(const Date &departure);
-    Date getDeparture() const;
-
-    void setRating(const Rating &rating);
-    Rating getRating() const;
+    /**
+     * @brief Retorna o valor de uma propriedade do destino.
+     *
+     * A propriedade pode ser qualquer um dos atributos do destino.
+     *
+     * @param propertyName Nome da propriedade a ser recuperada.
+     * @return const string& Valor da propriedade.
+     * @throw invalid_argument Caso a propriedade não exista.
+     */
+    const Domain &get(const string propertyName);
 };
