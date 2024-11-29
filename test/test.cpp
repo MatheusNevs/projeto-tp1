@@ -1,17 +1,10 @@
 #include "./test.hpp"
 
-UnitTest::UnitTest(string validValue, string invalidValue)
-{
-  this->validValue = validValue;
-  this->invalidValue = invalidValue;
-}
-
 bool UnitTest::getSuccess() const
 {
   return this->success;
 }
-
-GroupTest::GroupTest(const string &name, const vector<UnitTest> &tests)
+GroupTest::GroupTest(const string &name, const vector<UnitTest *> &tests)
     : name(name), tests(tests) {}
 
 void GroupTest::runTests()
@@ -22,10 +15,10 @@ void GroupTest::runTests()
 
   for (size_t i = 0; i < tests.size(); ++i)
   {
-    cout << "\nTeste " << i + 1 << ": " << tests[i].getDescription() << "\n";
-    tests[i].test();
+    cout << "\nTeste " << i + 1 << ": " << tests[i]->getDescription() << "\n";
+    tests[i]->test();
 
-    if (tests[i].getSuccess())
+    if (tests[i]->getSuccess())
     {
       cout << GREEN << "Teste " << i + 1 << " passou.\n"
            << RESET;

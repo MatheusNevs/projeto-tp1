@@ -1,3 +1,6 @@
+#ifndef UNIT_TEST_INTERFACE_H
+#define UNIT_TEST_INTERFACE_H
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -13,8 +16,6 @@ using namespace std;
 class UnitTest
 {
 protected:
-  string validValue;   ///< Valor válido para testar o domínio.
-  string invalidValue; ///< Valor inválido para testar o domínio.
   bool success = true; ///< Indica se o teste foi bem-sucedido.
 
 public:
@@ -35,12 +36,7 @@ public:
    *
    * @return true se o teste foi bem-sucedido, false caso contrário.
    */
-  bool getSuccess() const
-  {
-    return this->success;
-  };
-
-  UnitTest(string validValue, string invalidValue);
+  bool getSuccess() const;
 };
 
 // Classe que representa um grupo de testes de unidade, contendo vários testes de unidade
@@ -48,8 +44,8 @@ public:
 class GroupTest
 {
 private:
-  string name;            ///< Nome do grupo de testes.
-  vector<UnitTest> tests; ///< Lista de testes de unidade a serem executados.
+  string name;              ///< Nome do grupo de testes.
+  vector<UnitTest *> tests; ///< Lista de testes de unidade a serem executados.
 
 public:
   /**
@@ -58,7 +54,7 @@ public:
    * @param name Nome do grupo de testes.
    * @param tests Lista de testes de unidade a serem executados no grupo.
    */
-  GroupTest(const string &name, const vector<UnitTest> &tests);
+  GroupTest(const string &name, const vector<UnitTest *> &tests);
 
   /**
    * Executa todos os testes de unidade do grupo e exibe os resultados no terminal.
@@ -66,3 +62,5 @@ public:
    */
   void runTests();
 };
+
+#endif // UNIT_TEST_INTERFACE_H

@@ -5,6 +5,8 @@ class DomainUnitTest : public UnitTest
 {
 private:
   Domain *domain; ///< Ponteiro para o domínio a ser testado.
+  string validValue;
+  string invalidValue;
 
 public:
   /**
@@ -14,8 +16,10 @@ public:
    * @param invalidValue Valor inválido para testar o domínio.
    * @param domain Ponteiro para o domínio a ser testado.
    */
-  DomainUnitTest(const string &validValue, const string &invalidValue, Domain *domain) : UnitTest(validValue, invalidValue)
+  DomainUnitTest(const string &validValue, const string &invalidValue, Domain *domain)
   {
+    this->invalidValue = invalidValue;
+    this->validValue = validValue;
     this->domain = domain;
   };
 
