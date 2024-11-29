@@ -1,12 +1,37 @@
 #include "./domain.hpp"
 
+/** 
+ * @class Name
+ * @brief Representa um nome validado.
+ * 
+ * A classe `Name` herda de `Domain` e implementa validação específica para 
+ * strings que representam nomes.
+ */
 class Name : public Domain
 {
 private:
-    void validate(string value) override; // Valida se a string está correta
+    /**
+     * @brief Valida o nome fornecido.
+     * 
+     * Verifica se o nome atende aos requisitos de formato e conteúdo.
+     * 
+     * @param value Nome a ser validado.
+     * @throw invalid_argument Se o nome for inválido.
+     */
+    void validate(string value) override;
+
 public:
-    Name(string value); // metodo construtor
+    /**
+     * @brief Construtor da classe `Name`.
+     * 
+     * Inicializa a instância validando e definindo o nome.
+     * 
+     * @param value Nome inicial.
+     * @throw invalid_argument Se o nome for inválido.
+     */
+    Name(string value);
 };
+
 
 inline Name::Name(string value)
 {

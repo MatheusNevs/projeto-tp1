@@ -1,16 +1,5 @@
 #include "../../include/domains/code.hpp"
 
-/** @brief Método Validate.
- *
- * Método responsável pela validação dos dados de entrada
- * do domínio Code, que deve estar no formato de seis
- * dígitos alfanuméricos
- *
- * @param value string que será validada para atribuição.
- * @return `true` or `false`
- *
- * @see validate()
- */
 void Code::validate(string value)
 {
   // Caso tamanho diferente de 6, inválido

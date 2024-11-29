@@ -1,16 +1,5 @@
 #include "../../include/domains/schedule.hpp"
 
-/** @brief Método Validate.
- *
- * Método responsável pela validação dos dados de entrada
- * do domínio Schedule, verificando o formato "HH:MM",
- * onde HH varia de 00 a 23 e MM de 00 a 59
- *
- * @param value string que será validada para atribuição.
- * @return `true` or `false`
- *
- * @see validate()
- */
 void Schedule::validate(string value)
 {
   // Posicao do ":" para dividir horas de minutos
