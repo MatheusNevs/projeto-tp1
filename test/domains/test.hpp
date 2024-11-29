@@ -1,3 +1,6 @@
+#ifndef TEST_HPP 
+#define TEST_HPP 
+
 #include "../../include/domains/domain.hpp"
 
 // Definições de cores ANSI para saída colorida
@@ -70,3 +73,6 @@ public:
    */
   void runTests();
 };
+
+
+#endif

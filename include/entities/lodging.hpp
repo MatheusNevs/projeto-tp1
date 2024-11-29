@@ -1,3 +1,6 @@
+#ifndef LODGING_HPP 
+#define LODGING_HPP 
+
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/money.hpp"
@@ -46,3 +49,6 @@ public:
     Rating getRating() const;
     void setRating(const Rating &rating);
 };
+
+
+#endif

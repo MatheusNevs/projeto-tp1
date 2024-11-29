@@ -1,3 +1,6 @@
+#ifndef PASSWORD_HPP 
+#define PASSWORD_HPP 
+
 #include "./domain.hpp"
 
 /** @brief Classe Password
@@ -24,3 +27,6 @@ inline Password::Password(string value)
 {
     this->setValue(value);
 }
+
+
+#endif

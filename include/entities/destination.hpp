@@ -1,3 +1,6 @@
+#ifndef DESTINATION_HPP 
+#define DESTINATION_HPP 
+
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/rating.hpp"
@@ -53,3 +56,6 @@ public:
     void setRating(const Rating &rating);
     Rating getRating() const;
 };
+
+
+#endif

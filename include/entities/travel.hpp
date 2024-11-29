@@ -1,3 +1,6 @@
+#ifndef TRAVEL_HPP 
+#define TRAVEL_HPP 
+
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/rating.hpp"
@@ -40,3 +43,6 @@ public:
     Rating getRating() const;
     void setRating(const Rating &rating);
 };
+
+
+#endif

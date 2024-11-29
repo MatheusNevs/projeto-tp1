@@ -1,3 +1,6 @@
+#ifndef MONEY_HPP 
+#define MONEY_HPP 
+
 #include "./domain.hpp"
 
 /** 
@@ -40,3 +43,5 @@ inline Money::Money(string value)
 {
     this->setValue(value);
 }
+
+#endif

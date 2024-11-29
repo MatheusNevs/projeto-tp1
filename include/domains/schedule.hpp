@@ -1,3 +1,6 @@
+#ifndef SCHEDULE_HPP 
+#define SCHEDULE_HPP 
+
 #include "./domain.hpp"
 
 /** 
@@ -40,3 +43,6 @@ inline Schedule::Schedule(string value)
 {
   this->setValue(value);
 }
+
+
+#endif
