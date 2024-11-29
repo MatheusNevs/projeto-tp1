@@ -1,3 +1,6 @@
+#ifndef TRAVEL_ENTITY_INTERFACE_H
+#define TRAVEL_ENTITY_INTERFACE_H
+
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/date.hpp"
@@ -59,3 +62,5 @@ public:
      */
     const Domain &get(const string propertyName) const override;
 };
+
+#endif // TRAVEL_ENTITY_INTERFACE_H

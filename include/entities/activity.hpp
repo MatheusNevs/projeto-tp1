@@ -1,3 +1,5 @@
+#ifndef ACTIVITY_ENTITY_INTERFACE_H
+#define ACTIVITY_ENTITY_INTERFACE_H
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/date.hpp"
@@ -63,3 +65,5 @@ public:
      */
     const Domain &get(const string propertyName) const override;
 };
+
+#endif // ACTIVITY_ENTITY_INTERFACE_H

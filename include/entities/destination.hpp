@@ -1,3 +1,5 @@
+#ifndef DESTIONATION_ENTITY_INTERFACE_H
+#define DESTIONATION_ENTITY_INTERFACE_H
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/date.hpp"
@@ -57,3 +59,5 @@ public:
      */
     const Domain &get(const string propertyName);
 };
+
+#endif // DESTIONATION_ENTITY_INTERFACE_H

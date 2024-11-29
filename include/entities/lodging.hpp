@@ -1,3 +1,5 @@
+#ifndef LODGING_ENTITY_INTERFACE_H
+#define LODGING_ENTITY_INTERFACE_H
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/money.hpp"
@@ -54,3 +56,5 @@ public:
      */
     const Domain &get(const string propertyName) const override;
 };
+
+#endif // LODGING_ENTITY_INTERFACE_H

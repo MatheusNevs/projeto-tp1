@@ -1,3 +1,5 @@
+#ifndef ACCOUNT_ENTITY_INTERFACE_H
+#define ACCOUNT_ENTITY_INTERFACE_H
 #include "../domains/code.hpp"
 #include "../domains/password.hpp"
 #include "./entity.hpp"
@@ -48,3 +50,5 @@ public:
      */
     const Domain &get(const string propertyName) const override;
 };
+
+#endif // ACCOUNT_ENTITY_INTERFACE_H
