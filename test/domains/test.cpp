@@ -57,7 +57,7 @@ GroupTest::GroupTest(const string &name, const vector<UnitTest> &tests)
 
 void GroupTest::runTests()
 {
-  cout << "Executando testes no grupo: " << name << "\n";
+  cout << "\n" << "Executando testes no grupo: " << name << "\n";
 
   size_t passedCount = 0; // Contador de testes aprovados
 
