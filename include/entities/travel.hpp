@@ -43,13 +43,13 @@ public:
     /**
      * @brief Define um valor para uma propriedade da viagem.
      *
-     * A propriedade pode ser qualquer um dos atributos da viagem.
+     * A propriedade pode ser o código, nome, data de início, data de término, custo total ou avaliação.
      *
-     * @param propertyName Nome da propriedade a ser modificada.
-     * @param value Novo valor a ser atribuído à propriedade.
+     * @param propertyName Nome da propriedade a qual dominínio será associado
+     * @param domain Dominio a ser atribuido a sua respectiva propriedade
      * @throw invalid_argument Caso a propriedade não exista.
      */
-    void set(const Domain &value) override;
+    void set(const Domain &domain, string propertyName) override;
 
     /**
      * @brief Retorna o valor de uma propriedade da viagem.

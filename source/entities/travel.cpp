@@ -1,28 +1,27 @@
 #include "../../include/entities/travel.hpp"
-#include <typeinfo> // Necessário para typeid()
 
 Travel::Travel(const Code &code, const Name &name, const Date &startDate, const Date &endDate, const Money &totalCost, const Rating &rating)
     : code(code), name(name), startDate(startDate), endDate(endDate), totalCost(totalCost), rating(rating) {}
 
-void Travel::set(const Domain &domain)
+void Travel::set(const Domain &domain, string propertyName)
 {
-    if (typeid(domain) == typeid(Code))
+    if (propertyName == "code")
     {
         this->code = static_cast<const Code &>(domain);
     }
-    else if (typeid(domain) == typeid(Name))
+    else if (propertyName == "name")
     {
         this->name = static_cast<const Name &>(domain);
     }
-    else if (typeid(domain) == typeid(Date))
+    else if (propertyName == "startDate")
     {
         this->startDate = static_cast<const Date &>(domain);
     }
-    else if (typeid(domain) == typeid(Money))
+    else if (propertyName == "totalCost")
     {
         this->totalCost = static_cast<const Money &>(domain);
     }
-    else if (typeid(domain) == typeid(Rating))
+    else if (propertyName == "rating")
     {
         this->rating = static_cast<const Rating &>(domain);
     }

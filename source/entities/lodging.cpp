@@ -1,24 +1,23 @@
 #include "../../include/entities/lodging.hpp"
-#include <typeinfo> // Necessário para typeid()
 
 Lodging::Lodging(const Code &code, const Name &name, const Money &dailyRate, const Rating &rating)
     : code(code), name(name), dailyRate(dailyRate), rating(rating) {}
 
-void Lodging::set(const Domain &domain)
+void Lodging::set(const Domain &domain, string propertyName)
 {
-    if (typeid(domain) == typeid(Code))
+    if (propertyName == "code")
     {
         this->code = static_cast<const Code &>(domain);
     }
-    else if (typeid(domain) == typeid(Name))
+    else if (propertyName == "name")
     {
         this->name = static_cast<const Name &>(domain);
     }
-    else if (typeid(domain) == typeid(Money))
+    else if (propertyName == "money")
     {
         this->dailyRate = static_cast<const Money &>(domain);
     }
-    else if (typeid(domain) == typeid(Rating))
+    else if (propertyName == "rating")
     {
         this->rating = static_cast<const Rating &>(domain);
     }

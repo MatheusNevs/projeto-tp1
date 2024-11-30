@@ -1,33 +1,35 @@
 #include "../../include/entities/activity.hpp"
-#include <typeinfo> // Necessário para typeid()
 
 Activity::Activity(const Code &code, const Name &name, const Date &date, const Duration &time, const Duration &duration, const Money &price, const Rating &rating)
     : code(code), name(name), date(date), time(time), duration(duration), price(price), rating(rating) {}
 
-void Activity::set(const Domain &domain)
+void Activity::set(const Domain &domain, string propertyName)
 {
-  if (typeid(domain) == typeid(Code))
+  if (propertyName == "code")
   {
     this->code = static_cast<const Code &>(domain);
   }
-  else if (typeid(domain) == typeid(Name))
+  else if (propertyName == "name")
   {
     this->name = static_cast<const Name &>(domain);
   }
-  else if (typeid(domain) == typeid(Date))
+  else if (propertyName == "date")
   {
     this->date = static_cast<const Date &>(domain);
   }
-  else if (typeid(domain) == typeid(Duration))
+  else if (propertyName == "time")
   {
     this->time = static_cast<const Duration &>(domain);
+  }
+  else if (propertyName == "duration")
+  {
     this->duration = static_cast<const Duration &>(domain);
   }
-  else if (typeid(domain) == typeid(Money))
+  else if (propertyName == "price")
   {
     this->price = static_cast<const Money &>(domain);
   }
-  else if (typeid(domain) == typeid(Rating))
+  else if (propertyName == "rating")
   {
     this->rating = static_cast<const Rating &>(domain);
   }

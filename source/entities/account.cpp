@@ -1,16 +1,16 @@
 #include "../../include/entities/account.hpp"
-#include <typeinfo> // Necessário para typeid()
 
 Account::Account(const Code &code, const Password &password)
     : code(code), password(password) {}
 
-void Account::set(const Domain &domain)
+void Account::set(const Domain &domain, string propertyName)
 {
-  if (typeid(domain) == typeid(Code))
+  // Verificação da propriedade para associação do domínio
+  if (propertyName == "code")
   {
     this->code = static_cast<const Code &>(domain);
   }
-  else if (typeid(domain) == typeid(Password))
+  else if (propertyName == "password")
   {
     this->password = static_cast<const Password &>(domain);
   }

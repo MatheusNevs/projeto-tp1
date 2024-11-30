@@ -1,5 +1,6 @@
 #ifndef LODGING_ENTITY_INTERFACE_H
 #define LODGING_ENTITY_INTERFACE_H
+
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/money.hpp"
@@ -34,15 +35,15 @@ public:
     Lodging(const Code &code, const Name &name, const Money &dailyRate, const Rating &rating);
 
     /**
-     * @brief Define um valor para uma propriedade da hospedagem.
+     * @brief Define um valor para uma propriedade da Hospedagem.
      *
-     * A propriedade pode ser o código, nome, diária ou avaliação.
+     * A propriedade pode ser o código, nome, valor da diária ou avaliação.
      *
-     * @param propertyName Nome da propriedade a ser modificada.
-     * @param value Novo valor a ser atribuído à propriedade.
+     * @param propertyName Nome da propriedade a qual dominínio será associado
+     * @param domain Dominio a ser atribuido a sua respectiva propriedade
      * @throw invalid_argument Caso a propriedade não exista.
      */
-    void set(const Domain &value) override;
+    void set(const Domain &domain, string propertyName) override;
 
     /**
      * @brief Retorna o valor de uma propriedade da hospedagem.

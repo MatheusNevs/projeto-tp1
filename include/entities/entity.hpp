@@ -1,27 +1,31 @@
 #ifndef ENTITY_INTERFACE_H
 #define ENTITY_INTERFACE_H
 
-#include <bits/stdc++.h>
-#include <stdexcept>
 #include "../domains/domain.hpp"
 
-using namespace std;
-
+/**
+ * @class Entidade
+ * @brief Representa uma classe abstrata para as entidades se construirem sobre.
+ *
+ * A classe 'Entidade' não possui propriedades próprias, as entidades
+ * respectivas que implementarão as propriedades. Possui métodos abstratos
+ * 'set' e 'get' que irão ser usados pelas entidades, cada uma com sua própria
+ * implementação.
+ */
 class Entity
 {
 private:
 public:
-  /** @brief Método Set.
+  /**
+   * @brief Define um valor para uma propriedade da entidade.
    *
-   * Método responsável pela atribuição do valor a uma determinada
-   * propriedade da entidade
+   * A propriedade pode ser qualquer das propriedades da entidade.
    *
-   * @param propertyName Nome da propriedade que irá sofrer a alteração
-   * @param value string que será validada dentro do domínio da propriedade
-   * e então associada à mesma
-   * @throw invalid_argument caso não esteja no formato desejado.
+   * @param propertyName Nome da propriedade a qual dominínio será associado
+   * @param domain Dominio a ser atribuido a sua respectiva propriedade
+   * @throw invalid_argument Caso a propriedade não exista.
    */
-  virtual void set(const Domain &domain) = 0;
+  virtual void set(const Domain &domain, string propertyName) = 0;
 
   /** @brief Método Get
    *

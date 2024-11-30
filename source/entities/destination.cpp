@@ -1,26 +1,27 @@
 #include "../../include/entities/destination.hpp"
-#include <typeinfo> // Necessário para typeid()
 
 Destination::Destination(const Code &code, const Name &name, const Date &arrival, const Date &departure, const Rating &rating)
     : code(code), name(name), arrival(arrival), departure(departure), rating(rating) {}
 
-void Destination::set(const Domain &domain)
+void Destination::set(const Domain &domain, string propertyName)
 {
-    // Verificando o tipo de 'domain' diretamente pelo nome da classe
-    if (typeid(domain) == typeid(Code))
+    if (propertyName == "code")
     {
-        this->code = static_cast<const Code &>(domain); // Atribui diretamente, sem necessidade de propertyName
+        this->code = static_cast<const Code &>(domain);
     }
-    else if (typeid(domain) == typeid(Name))
+    else if (propertyName == "name")
     {
         this->name = static_cast<const Name &>(domain);
     }
-    else if (typeid(domain) == typeid(Date))
+    else if (propertyName == "arrival")
     {
-        this->arrival = static_cast<const Date &>(domain); // Ou qualquer outra propriedade do destino
+        this->arrival = static_cast<const Date &>(domain);
+    }
+    else if (propertyName == "departure")
+    {
         this->departure = static_cast<const Date &>(domain);
     }
-    else if (typeid(domain) == typeid(Rating))
+    else if (propertyName == "rating")
     {
         this->rating = static_cast<const Rating &>(domain);
     }

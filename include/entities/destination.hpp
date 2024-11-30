@@ -1,5 +1,6 @@
-#ifndef DESTIONATION_ENTITY_INTERFACE_H
-#define DESTIONATION_ENTITY_INTERFACE_H
+#ifndef DESTINATION_ENTITY_INTERFACE_H
+#define DESTINATION_ENTITY_INTERFACE_H
+
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/date.hpp"
@@ -40,13 +41,13 @@ public:
     /**
      * @brief Define um valor para uma propriedade do destino.
      *
-     * A propriedade pode ser qualquer um dos atributos do destino.
+     * A propriedade pode ser o código, nome, data de chegada, data de partida ou avaliação.
      *
-     * @param propertyName Nome da propriedade a ser modificada.
-     * @param value Novo valor a ser atribuído à propriedade.
+     * @param propertyName Nome da propriedade a qual dominínio será associado
+     * @param domain Dominio a ser atribuido a sua respectiva propriedade
      * @throw invalid_argument Caso a propriedade não exista.
      */
-    void set(const Domain &value) override;
+    void set(const Domain &domain, string propertyName) override;
 
     /**
      * @brief Retorna o valor de uma propriedade do destino.
@@ -60,4 +61,4 @@ public:
     const Domain &get(const string propertyName);
 };
 
-#endif // DESTIONATION_ENTITY_INTERFACE_H
+#endif // DESTINATION_ENTITY_INTERFACE_H
