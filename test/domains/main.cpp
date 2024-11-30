@@ -154,7 +154,7 @@ int main()
     UnitTest test4("03:02", "05:60", new Time("00:00"));
 
     // Cria um grupo de testes com os testes vinculados diretamente
-    GroupTest group("Testes do Domínio Horário", {test1, test2, test3});
+    GroupTest group("Testes do Domínio Horário", {test1, test2, test3, test4});
 
     // Executa os testes
     group.runTests();

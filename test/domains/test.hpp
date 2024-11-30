@@ -19,6 +19,7 @@ private:
   std::string invalidValue; ///< Valor inválido para testar o domínio.
   Domain *domain;           ///< Ponteiro para o domínio a ser testado.
   bool success;             ///< Indica se o teste foi bem-sucedido.
+  void destroyUnitTest();   ///< Método para destruir unidade em teste
 
 public:
   /**

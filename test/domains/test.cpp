@@ -3,6 +3,11 @@
 UnitTest::UnitTest(const string &validValue, const string &invalidValue, Domain *domain)
     : validValue(validValue), invalidValue(invalidValue), domain(domain), success(true) {}
 
+void UnitTest::destroyUnitTest()
+{
+  delete domain;
+}
+
 
 void UnitTest::test()
 {
@@ -36,6 +41,9 @@ void UnitTest::test()
   {
     // Comportamento esperado para valor inválido
   }
+
+  //Chama método que destroi teste atual
+  destroyUnitTest();
 }
 
 
