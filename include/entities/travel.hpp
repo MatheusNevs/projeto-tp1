@@ -1,31 +1,29 @@
-#ifndef TRAVEL_HPP 
-#define TRAVEL_HPP 
+#ifndef TRAVEL_HPP
+#define TRAVEL_HPP
 
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/rating.hpp"
 
-using namespace std;
-
 /**
  * @class Travel
  * @brief Representa uma viagem com informações básicas.
- * 
+ *
  * A classe `Travel` encapsula os atributos de uma viagem, incluindo código, nome e avaliação.
  */
 class Travel
 {
 private:
-    Code code; ///< Código da viagem.
-    Name name; ///< Nome da viagem.
+    Code code;     ///< Código da viagem.
+    Name name;     ///< Nome da viagem.
     Rating rating; ///< Avaliação da viagem.
 
 public:
     /**
      * @brief Construtor da classe `Travel`.
-     * 
+     *
      * Inicializa a viagem com os atributos fornecidos.
-     * 
+     *
      * @param code Código da viagem.
      * @param name Nome da viagem.
      * @param rating Avaliação da viagem.
@@ -43,6 +41,5 @@ public:
     Rating getRating() const;
     void setRating(const Rating &rating);
 };
-
 
 #endif

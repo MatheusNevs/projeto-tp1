@@ -1,11 +1,12 @@
 #include "../../include/domains/duration.hpp"
-#include <stdexcept>
 
 void Duration::validate(string value)
 {
     // Verifica se a string contém apenas dígitos
-    for (char c : value) {
-        if (!isdigit(c)) {
+    for (char c : value)
+    {
+        if (!isdigit(c))
+        {
             throw invalid_argument("Valor inválido: Deve ser um número inteiro.");
         }
     }
@@ -14,7 +15,8 @@ void Duration::validate(string value)
     int duration = stoi(value);
 
     // Verifica se está dentro do intervalo permitido
-    if (duration < minDuration || duration > maxDuration) {
+    if (duration < minDuration || duration > maxDuration)
+    {
         throw invalid_argument("Argumento invalido.");
     }
 }
