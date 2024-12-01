@@ -6,6 +6,15 @@
 
 using namespace std;
 
+/**
+ * @class Domain
+ * @brief Representa uma classe domínio abstrata, na qual
+ * od respectivos irão se construir sobre.
+ *
+ * A classe `Domain` possui métodos abstratos que irão ser
+ * implementados pelos domínios e métodos já implementados que
+ * irão ser usados da mesma forma para todos os domínios.
+ */
 class Domain
 {
 private:

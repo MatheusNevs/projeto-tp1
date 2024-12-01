@@ -15,7 +15,7 @@ int main()
     EntityUnitTest *test3 = new EntityUnitTest("code", new Code("121314"), testAccount);
 
     // Cria um grupo de testes com os testes vinculados diretamente
-    GroupTest group("Testes do Domínio ", {test1, test2, test3});
+    GroupTest group("Testes da Entidade Account ", {test1, test2, test3});
 
     // Executa os testes
     group.runTests();

@@ -9,10 +9,13 @@ using namespace std;
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 
-// Classe que representa um teste de unidade para um domínio específico.
-// Esta classe testa o comportamento do método setValue com um valor válido e inválido,
-// esperando que o valor inválido cause um erro. Após isso, verifica se o método getValue
-// retorna o valor corretamente quando o valor válido é utilizado.
+/**
+ * @class UnitTest
+ * @brief Representa uma classe abstrata para criação de testes de unidade.
+ *
+ * A classe `UnitTest` representa uma classe abstrata de testes de unidade tanto para
+ * criação para domínios quanto para entidades.
+ */
 class UnitTest
 {
 protected:
@@ -20,12 +23,12 @@ protected:
 
 public:
   /**
-   * Executa o teste de unidade, testando o setValue e getValue com os valores válidos e inválidos.
+   * Executa o teste de unidade, dependendo da implementação da classe a ser herdada por esta.
    */
   virtual void test() = 0;
 
   /**
-   * Retorna uma descrição do teste, incluindo o nome do domínio e os valores testados.
+   * Retorna uma descrição do teste, dependendo da implementação da classe a ser herdada por esta.
    *
    * @return Descrição do teste.
    */
@@ -39,8 +42,14 @@ public:
   bool getSuccess() const;
 };
 
-// Classe que representa um grupo de testes de unidade, contendo vários testes de unidade
-// e a lógica para executar esses testes, mostrando os resultados e mensagens de falha, se houver.
+/**
+ * @class GroupTest
+ * @brief Representa uma classe de grupo de testes de unidade.
+ *
+ * A classe `UnitTest` representa uma classe de grupo de testes de unidade
+ * que agrupa vários testes de unidade e proporciona um log dos resultados
+ * dos testes após serem executados.
+ */
 class GroupTest
 {
 private:

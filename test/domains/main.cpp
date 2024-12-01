@@ -12,7 +12,7 @@ int main()
     DomainUnitTest *test3 = new DomainUnitTest("123qwe8", "ASDas@", new Code("123456"));
 
     // Cria um grupo de testes com os testes vinculados diretamente
-    GroupTest group("Testes do Domínio ", {test1, test2, test3});
+    GroupTest group("Testes do Domínio Code", {test1, test2, test3});
 
     // Executa os testes
     group.runTests();
