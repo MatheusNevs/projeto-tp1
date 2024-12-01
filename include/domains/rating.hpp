@@ -1,3 +1,6 @@
+#ifndef RATING_HPP 
+#define RATING_HPP 
+
 #include "./domain.hpp"
 
 /** 
@@ -37,3 +40,6 @@ inline Rating::Rating(string value)
 {
     this->setValue(value);
 }
+
+
+#endif

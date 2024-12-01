@@ -1,3 +1,6 @@
+#ifndef ACCOUNT_HPP 
+#define ACCOUNT_HPP 
+
 #include "../domains/code.hpp"
 #include "../domains/password.hpp"
 
@@ -53,3 +56,6 @@ public:
      */
     Password getPassword();
 };
+
+
+#endif

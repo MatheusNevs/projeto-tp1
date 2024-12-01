@@ -1,3 +1,6 @@
+#ifndef CODE_HPP 
+#define CODE_HPP 
+
 #include "./domain.hpp"
 
 /** 
@@ -40,3 +43,5 @@ inline Code::Code(string value)
 {
   this->setValue(value);
 }
+
+#endif

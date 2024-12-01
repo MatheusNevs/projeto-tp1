@@ -3,6 +3,11 @@
 UnitTest::UnitTest(const string &validValue, const string &invalidValue, Domain *domain)
     : validValue(validValue), invalidValue(invalidValue), domain(domain), success(true) {}
 
+void UnitTest::destroyUnitTest()
+{
+  delete domain;
+}
+
 
 void UnitTest::test()
 {
@@ -36,6 +41,9 @@ void UnitTest::test()
   {
     // Comportamento esperado para valor inválido
   }
+
+  //Chama método que destroi teste atual
+  destroyUnitTest();
 }
 
 
@@ -57,7 +65,7 @@ GroupTest::GroupTest(const string &name, const vector<UnitTest> &tests)
 
 void GroupTest::runTests()
 {
-  cout << "Executando testes no grupo: " << name << "\n";
+  cout << "\n" << "Executando testes no grupo: " << name << "\n";
 
   size_t passedCount = 0; // Contador de testes aprovados
 

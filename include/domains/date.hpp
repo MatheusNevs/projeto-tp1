@@ -1,3 +1,6 @@
+#ifndef DATE_HPP 
+#define DATE_HPP 
+
 #include "./domain.hpp"
 
 /** 
@@ -45,4 +48,5 @@ inline Date::Date(string value)
   this->setValue(value);
 }
 
-const std::vector<int> Date::monthDays = {31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+#endif

@@ -1,6 +1,6 @@
-#include "../../include/domains/schedule.hpp"
+#include "../../include/domains/time.hpp"
 
-void Schedule::validate(string value)
+void Time::validate(string value)
 {
   // Posicao do ":" para dividir horas de minutos
   int dividePos = value.find(":");
@@ -18,6 +18,24 @@ void Schedule::validate(string value)
   if (hourString.length() != 2 || minutesString.length() != 2)
   {
     throw invalid_argument("Argumento invalido.");
+  }
+
+  // Caracteres que nao sao numeros na string das horas
+  for (char c : hourString)
+  {
+    if (!isdigit(c))
+    {
+        throw invalid_argument("Argumento invalido.");
+    }
+  }
+
+  // Caracteres que nao sao numeros na string dos minutos
+  for (char c : minutesString)
+  {
+    if (!isdigit(c))
+    {
+        throw invalid_argument("Argumento invalido.");
+    }
   }
 
   int hour = stoi(hourString);

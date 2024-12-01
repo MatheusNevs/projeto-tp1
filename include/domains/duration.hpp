@@ -1,3 +1,6 @@
+#ifndef DURATION_HPP 
+#define DURATION_HPP 
+
 #include "./domain.hpp"
 
 /** 
@@ -40,3 +43,6 @@ inline Duration::Duration(string value)
 {
     this->setValue(value);
 }
+
+
+#endif 

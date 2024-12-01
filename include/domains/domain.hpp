@@ -25,6 +25,13 @@ private:
     virtual void validate(string value) = 0;
 
 public:
+    /** @brief Destrutor virtual
+     *
+     * Destrutor virtual para garantir que a destruição de objetos derivados
+     * seja tratada corretamente.
+     */
+    virtual ~Domain() = default;
+    
     /** @brief Método Set.
      *
      * Método responsável pela atribuição do valor, nele é chamado o método validar que verifica se o valor está

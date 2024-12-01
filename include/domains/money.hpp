@@ -1,3 +1,6 @@
+#ifndef MONEY_HPP 
+#define MONEY_HPP 
+
 #include "./domain.hpp"
 
 /** 
@@ -10,8 +13,8 @@
 class Money : public Domain
 {
 private:
-    static const float moneyMax = 200000.00; ///< Valor máximo permitido.
-    static const float moneyMin = 0.00; ///< Valor mínimo permitido.
+    static constexpr float moneyMax = 200000.00; ///< Valor máximo permitido.
+    static constexpr float moneyMin = 0.00; ///< Valor mínimo permitido.
 
     /**
      * @brief Valida o valor monetário fornecido.
@@ -40,3 +43,5 @@ inline Money::Money(string value)
 {
     this->setValue(value);
 }
+
+#endif

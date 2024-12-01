@@ -1,3 +1,6 @@
+#ifndef ACTIVITY_HPP 
+#define ACTIVITY_HPP 
+
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/date.hpp"
@@ -63,3 +66,6 @@ public:
     void setRating(const Rating &rating);
     Rating getRating() const;
 };
+
+
+#endif

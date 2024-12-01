@@ -1,3 +1,6 @@
+#ifndef NAME_HPP 
+#define NAME_HPP 
+
 #include "./domain.hpp"
 
 /** 
@@ -37,3 +40,6 @@ inline Name::Name(string value)
 {
     this->setValue(value);
 }
+
+
+#endif
