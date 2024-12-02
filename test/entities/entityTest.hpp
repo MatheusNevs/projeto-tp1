@@ -17,11 +17,15 @@ private:
 
 public:
   /**
-   * Construtor da classe EntityUnitTest.
+   * @brief Construtor da classe EntityUnitTest.
    *
-   * @param validValue Valor válido para testar o domínio.
-   * @param invalidValue Valor inválido para testar o domínio.
-   * @param entity Ponteiro para a entidade a ser testada.
+   * Este construtor inicializa a classe com a entidade a ser testada, o domínio
+   * ao qual a entidade está associada, e o nome da propriedade da entidade que
+   * será testada.
+   *
+   * @param propertyName Nome da propriedade associada ao domínio para o teste.
+   * @param domain Ponteiro para o domínio associado à entidade.
+   * @param entity Ponteiro para a entidade que será testada.
    */
   EntityUnitTest(string propertyName, Domain *domain, Entity *entity)
   {
