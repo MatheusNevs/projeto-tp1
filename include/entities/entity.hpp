@@ -16,6 +16,13 @@ class Entity
 {
 private:
 public:
+  /** @brief Destrutor virtual
+   *
+   * Destrutor virtual para garantir que a destruição de objetos derivados
+   * seja tratada corretamente.
+   */
+  virtual ~Entity() = default;
+
   /**
    * @brief Define um valor para uma propriedade da entidade.
    *

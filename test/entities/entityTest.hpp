@@ -11,9 +11,10 @@
 class EntityUnitTest : public UnitTest
 {
 private:
-  Entity *entity;      ///< Ponteiro para entidade a ser testada
-  Domain *domainTest;  //< Ponteiro para dominio a ser associado à entidade para teste
-  string propertyName; //< Nome da propriedade a qual domínio está associado
+  Entity *entity;                ///< Ponteiro para entidade a ser testada
+  Domain *domainTest;            //< Ponteiro para dominio a ser associado à entidade para teste
+  string propertyName;           //< Nome da propriedade a qual domínio está associado
+  void destroyEntityUnitTest();  //< Método para destruir unidade em teste
 
 public:
   /**
