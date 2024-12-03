@@ -1,10 +1,11 @@
-#ifndef LODGING_HPP
-#define LODGING_HPP
+#ifndef LODGING_ENTITY_INTERFACE_H
+#define LODGING_ENTITY_INTERFACE_H
 
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/money.hpp"
 #include "../domains/rating.hpp"
+#include "./entity.hpp"
 
 /**
  * @class Lodging
@@ -12,7 +13,7 @@
  *
  * A classe `Lodging` encapsula atributos relacionados a uma hospedagem.
  */
-class Lodging
+class Lodging : public Entity
 {
 private:
     Code code;       ///< Código da hospedagem.
@@ -33,19 +34,28 @@ public:
      */
     Lodging(const Code &code, const Name &name, const Money &dailyRate, const Rating &rating);
 
-    // Métodos getter e setter para cada atributo.
+    /**
+     * @brief Define um valor para uma propriedade da Hospedagem.
+     *
+     * A propriedade pode ser o código, nome, valor da diária ou avaliação.
+     *
+     * @param propertyName Nome da propriedade a qual dominínio será associado
+     * @param domain Dominio a ser atribuido a sua respectiva propriedade
+     * @throw invalid_argument Caso a propriedade não exista.
+     */
+    void set(const Domain &domain, string propertyName) override;
 
-    Code getCode() const;
-    void setCode(const Code &code);
-
-    Name getName() const;
-    void setName(const Name &name);
-
-    Money getDailyRate() const;
-    void setDailyRate(const Money &dailyRate);
-
-    Rating getRating() const;
-    void setRating(const Rating &rating);
+    /**
+     * @brief Retorna o valor de uma propriedade da hospedagem.
+     *
+     * A propriedade pode ser o código, nome, diária ou avaliação.
+     *
+     * @param propertyName Nome da propriedade a ser recuperada.
+     * @return const Domain&
+     * @return const Domain& Valor da propriedade.
+     * @throw invalid_argument Caso a propriedade não exista.
+     */
+    const Domain &get(const string propertyName) const override;
 };
 
-#endif
+#endif // LODGING_ENTITY_INTERFACE_H

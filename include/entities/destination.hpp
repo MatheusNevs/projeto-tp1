@@ -1,10 +1,11 @@
-#ifndef DESTINATION_HPP
-#define DESTINATION_HPP
+#ifndef DESTINATION_ENTITY_INTERFACE_H
+#define DESTINATION_ENTITY_INTERFACE_H
 
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
-#include "../domains/rating.hpp"
 #include "../domains/date.hpp"
+#include "../domains/rating.hpp"
+#include "./entity.hpp"
 
 /**
  * @class Destination
@@ -14,7 +15,7 @@
  * e partida, e uma avaliação do destino. Permite a manipulação e recuperação
  * dessas informações.
  */
-class Destination
+class Destination : public Entity
 {
 private:
     Code code;      ///< Código do destino.
@@ -37,22 +38,27 @@ public:
      */
     Destination(const Code &code, const Name &name, const Date &arrival, const Date &departure, const Rating &rating);
 
-    // Métodos getter e setter para cada atributo.
+    /**
+     * @brief Define um valor para uma propriedade do destino.
+     *
+     * A propriedade pode ser o código, nome, data de chegada, data de partida ou avaliação.
+     *
+     * @param propertyName Nome da propriedade a qual dominínio será associado
+     * @param domain Dominio a ser atribuido a sua respectiva propriedade
+     * @throw invalid_argument Caso a propriedade não exista.
+     */
+    void set(const Domain &domain, string propertyName) override;
 
-    void setCode(const Code &code);
-    Code getCode() const;
-
-    void setName(const Name &name);
-    Name getName() const;
-
-    void setArrival(const Date &arrival);
-    Date getArrival() const;
-
-    void setDeparture(const Date &departure);
-    Date getDeparture() const;
-
-    void setRating(const Rating &rating);
-    Rating getRating() const;
+    /**
+     * @brief Retorna o valor de uma propriedade do destino.
+     *
+     * A propriedade pode ser qualquer um dos atributos do destino.
+     *
+     * @param propertyName Nome da propriedade a ser recuperada.
+     * @return const string& Valor da propriedade.
+     * @throw invalid_argument Caso a propriedade não exista.
+     */
+    const Domain &get(const string propertyName);
 };
 
-#endif
+#endif // DESTINATION_ENTITY_INTERFACE_H

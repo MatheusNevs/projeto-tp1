@@ -1,23 +1,37 @@
 #include "../../include/entities/account.hpp"
 
-Account::Account(const Code &code, const Password &password) : code(code), password(password) {}
+Account::Account(const Code &code, const Password &password)
+    : code(code), password(password) {}
 
-void Account::setCode(Code &code)
+void Account::set(const Domain &domain, string propertyName)
 {
-  this->code = code;
+  // Verificação da propriedade para associação do domínio
+  if (propertyName == "code")
+  {
+    this->code = static_cast<const Code &>(domain);
+  }
+  else if (propertyName == "password")
+  {
+    this->password = static_cast<const Password &>(domain);
+  }
+  else
+  {
+    throw invalid_argument("Tipo desconhecido para o domínio fornecido");
+  }
 }
 
-Code Account::getCode()
+const Domain &Account::get(const string propertyName) const
 {
-  return this->code;
-}
-
-void Account::setPassword(Password &password)
-{
-  this->password = password;
-}
-
-Password Account::getPassword()
-{
-  return this->password;
+  if (propertyName == "code")
+  {
+    return this->code;
+  }
+  else if (propertyName == "password")
+  {
+    return this->password;
+  }
+  else
+  {
+    throw invalid_argument("Propriedade desconhecida");
+  }
 }
