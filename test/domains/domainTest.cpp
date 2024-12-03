@@ -32,6 +32,7 @@ void DomainUnitTest::test()
   {
     // Comportamento esperado para valor inválido
   }
+  destroyDomainUnitTest();
 }
 
 string DomainUnitTest::getDescription() const

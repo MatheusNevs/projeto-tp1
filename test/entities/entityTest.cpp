@@ -1,9 +1,5 @@
 #include "./entityTest.hpp"
 
-void EntityUnitTest::destroyEntityUnitTest() {
-  delete entity;
-}
-
 void EntityUnitTest::test()
 {
   try
@@ -22,7 +18,7 @@ void EntityUnitTest::test()
     cout << RED << "Falha: Valor válido " << domainTest->getValue() << " gerou erro.\n"
          << RESET;
   }
-  
+
   // Chama método que destroi teste atual
   destroyEntityUnitTest();
 }

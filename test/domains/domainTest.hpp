@@ -15,6 +15,17 @@ private:
   string validValue;   ///< Valor válido para teste do validate.
   string invalidValue; ///< Valor inválido para teste do validate.
 
+  /**
+   * Método para destrução do domínio criado no teste de unidade
+   *
+   * @brief Destrutor do domínio do teste de unidade
+   *
+   */
+  void destroyDomainUnitTest()
+  {
+    delete domain;
+  }
+
 public:
   /**
    * Construtor da classe DomainUnitTest.
