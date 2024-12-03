@@ -51,11 +51,8 @@ $(TEST_ENTITY_EXE): $(ENTITY_TEST_OBJECTS)
 	$(CXX) $(CXXFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 # Regra para executar 1
-run: $(TEST_DOMAIN_EXE)
+run: $(TEST_DOMAIN_EXE) $(TEST_ENTITY_EXE)
 	./$(TEST_DOMAIN_EXE)
-
-# Regra para executar 2
-run: $(TEST_ENTITY_EXE)
 	./$(TEST_ENTITY_EXE)
 
 # Limpeza dos objetos e executável

@@ -46,6 +46,4 @@ inline Date::Date(string value)
   this->setValue(value);
 }
 
-const std::vector<int> Date::monthDays = {31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
 #endif // DATE_DOMAIN_INTERFACE_H
