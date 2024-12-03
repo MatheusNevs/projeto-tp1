@@ -6,7 +6,7 @@ vector<string> Utils::split(const string &str, const char *delimiter)
   string token;
   for (char ch : str)
   {
-    if (&ch == delimiter)
+    if (ch == *delimiter)
     {
       if (!token.empty())
       {
