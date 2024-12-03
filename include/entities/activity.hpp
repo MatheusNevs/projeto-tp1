@@ -8,6 +8,7 @@
 #include "../domains/money.hpp"
 #include "../domains/rating.hpp"
 #include "./entity.hpp"
+#include "../domains/time.hpp"
 
 /**
  * @class Activity
@@ -23,7 +24,7 @@ private:
     Code code;         ///< Código da atividade.
     Name name;         ///< Nome da atividade.
     Date date;         ///< Data da atividade.
-    Duration time;     ///< Hora de início da atividade.
+    Time time;         ///< Hora de início da atividade.
     Duration duration; ///< Duração da atividade.
     Money price;       ///< Preço da atividade.
     Rating rating;     ///< Avaliação da atividade.
@@ -42,7 +43,7 @@ public:
      * @param price Preço da atividade.
      * @param rating Avaliação da atividade.
      */
-    Activity(const Code &code, const Name &name, const Date &date, const Duration &time, const Duration &duration, const Money &price, const Rating &rating);
+    Activity(const Code &code, const Name &name, const Date &date, const Time &time, const Duration &duration, const Money &price, const Rating &rating);
 
     /**
      * @brief Define um valor para uma propriedade da atividade.
