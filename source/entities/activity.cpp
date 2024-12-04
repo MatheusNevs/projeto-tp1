@@ -1,3 +1,5 @@
+// Classe implementada pelo aluno com matrícula 231013672
+
 #include "../../include/entities/activity.hpp"
 
 Activity::Activity(const Code &code, const Name &name, const Date &date, const Time &time, const Duration &duration, const Money &price, const Rating &rating)

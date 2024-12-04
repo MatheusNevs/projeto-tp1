@@ -1,3 +1,5 @@
+// Classe implementada pelo aluno com matrícula 231034190
+
 #include "../../include/entities/account.hpp"
 
 Account::Account(const Code &code, const Password &password)

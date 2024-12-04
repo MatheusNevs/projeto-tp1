@@ -1,3 +1,5 @@
+// Classe implementada pelo aluno com matrícula 231025181
+
 #include "../../include/entities/travel.hpp"
 
 Travel::Travel(const Code &code, const Name &name, const Date &startDate, const Date &endDate, const Money &totalCost, const Rating &rating)

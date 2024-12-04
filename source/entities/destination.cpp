@@ -1,3 +1,5 @@
+// Classe implementada pela aluna com matrícula 231013547
+
 #include "../../include/entities/destination.hpp"
 
 Destination::Destination(const Code &code, const Name &name, const Date &arrival, const Date &departure, const Rating &rating)

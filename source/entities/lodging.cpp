@@ -1,3 +1,5 @@
+// Classe implementada pelo aluno com matrícula 231025207
+
 #include "../../include/entities/lodging.hpp"
 
 Lodging::Lodging(const Code &code, const Name &name, const Money &dailyRate, const Rating &rating)

@@ -1,3 +1,5 @@
+// Classe implementada pelo aluno com matrícula 231013672
+
 #ifndef ENTITY_INTERFACE_H
 #define ENTITY_INTERFACE_H
 

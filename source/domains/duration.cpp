@@ -1,3 +1,5 @@
+// Classe implementada pela aluna com matrícula 231013547
+
 #include "../../include/domains/duration.hpp"
 
 void Duration::validate(string value)

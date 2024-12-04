@@ -1,3 +1,5 @@
+// Classe implementada pelo aluno com matrícula 231025216
+
 #include "../../include/domains/rating.hpp"
 
 void Rating::validate(string value)

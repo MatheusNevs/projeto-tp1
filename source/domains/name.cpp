@@ -1,3 +1,5 @@
+// Classe implementada pelo aluno com matrícula 231025207
+
 #include "../../include/domains/name.hpp"
 
 void Name::validate(string name)
