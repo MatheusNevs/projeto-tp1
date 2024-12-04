@@ -31,7 +31,7 @@ void Destination::set(const Domain &domain, string propertyName)
     }
 }
 
-const Domain &Destination::get(const string propertyName)
+const Domain &Destination::get(const string propertyName) const
 {
     if (propertyName == "code")
     {
