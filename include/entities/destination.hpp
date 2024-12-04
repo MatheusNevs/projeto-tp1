@@ -58,7 +58,7 @@ public:
      * @return const string& Valor da propriedade.
      * @throw invalid_argument Caso a propriedade não exista.
      */
-    const Domain &get(const string propertyName);
+    const Domain &get(const string propertyName) const override;
 };
 
 #endif // DESTINATION_ENTITY_INTERFACE_H

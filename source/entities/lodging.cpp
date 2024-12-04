@@ -13,7 +13,7 @@ void Lodging::set(const Domain &domain, string propertyName)
     {
         this->name = static_cast<const Name &>(domain);
     }
-    else if (propertyName == "money")
+    else if (propertyName == "dailyRate")
     {
         this->dailyRate = static_cast<const Money &>(domain);
     }

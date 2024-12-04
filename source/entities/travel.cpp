@@ -19,7 +19,7 @@ void Travel::set(const Domain &domain, string propertyName)
     }
     else if (propertyName == "endDate")
     {
-        this->startDate = static_cast<const Date &>(domain);
+        this->endDate = static_cast<const Date &>(domain);
     }
     else if (propertyName == "totalCost")
     {
