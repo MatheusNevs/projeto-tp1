@@ -10,10 +10,12 @@
 
 /**
  * @class Travel
- * @brief Representa uma viagem, incluindo informações de destino, data de início, data de término e custo.
+ * @brief Representa uma entidade `Travel` composta por código,
+ * nome, horário de começo, horário de fim, custo total e avaliação.
  *
  * A classe `Travel` encapsula atributos relacionados a uma viagem, incluindo código,
- * nome, data de início, data de término e custo total da viagem.
+ * nome, data de início, data de término e custo total da viagem. Permite a manipulação
+ * e retorno dessas informações através dos métodos `get` e `set`.
  */
 class Travel : public Entity
 {
@@ -29,7 +31,8 @@ public:
     /**
      * @brief Construtor da classe `Travel`.
      *
-     * Inicializa a viagem com os atributos fornecidos.
+     * Inicializa a viagem com um código, nome, data de início,
+     * data de fim, custo total e avaliação.
      *
      * @param code Código da viagem.
      * @param name Nome da viagem.
@@ -41,7 +44,7 @@ public:
     Travel(const Code &code, const Name &name, const Date &startDate, const Date &endDate, const Money &totalCost, const Rating &rating);
 
     /**
-     * @brief Define um valor para uma propriedade da viagem.
+     * @brief Define um domínio para uma determinada propriedade da viagem  .
      *
      * A propriedade pode ser o código, nome, data de início, data de término, custo total ou avaliação.
      *
@@ -52,12 +55,12 @@ public:
     void set(const Domain &domain, string propertyName) override;
 
     /**
-     * @brief Retorna o valor de uma propriedade da viagem.
+     * @brief Retorna o domínio de uma propriedade da viagem.
      *
-     * A propriedade pode ser qualquer um dos atributos da viagem.
+     * A propriedade pode ser o código, nome, data de início, data de término, custo total ou avaliação.
      *
-     * @param propertyName Nome da propriedade a ser recuperada.
-     * @return const Domain& Valor da propriedade.
+     * @param propertyName Nome da propriedade a ser retornada.
+     * @return const Domain& Referência à propriedade retornada.
      * @throw invalid_argument Caso a propriedade não exista.
      */
     const Domain &get(const string propertyName) const override;

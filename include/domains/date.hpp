@@ -4,7 +4,7 @@
 
 /**
  * @class Date
- * @brief Representa uma data validada.
+ * @brief Representa um domínio `Date` de data.
  *
  * A classe `Date` herda de `Domain` e implementa validação específica para
  * datas no formato válido, considerando anos bissextos e dias de cada mês.
@@ -21,7 +21,7 @@ private:
   /**
    * @brief Valida a data fornecida.
    *
-   * Verifica se a data segue o formato correto e se os valores são válidos para
+   * Verifica se a data segue o formato correto (DD-MM-AA) e se os valores são válidos para
    * o calendário.
    *
    * @param value Data a ser validada.
@@ -33,7 +33,7 @@ public:
   /**
    * @brief Construtor da classe `Date`.
    *
-   * Inicializa a instância validando e definindo o valor da data.
+   * Inicializa uma data com o valor fornecido caso válido.
    *
    * @param value Data inicial.
    * @throw invalid_argument Se a data for inválida.

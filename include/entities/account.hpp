@@ -9,9 +9,9 @@
  * @class Account
  * @brief Representa uma entidade `Account` composta por um código e uma senha.
  *
- * A classe `Account` gerencia as operações de manipulação de código e senha
- * utilizando os domínios `Code` e `Password` através de um método `get` e um
- * método `set`.
+ * A classe `Account` encapsula informações sobre uma conta, como código,
+ * e senha. Permite a manipulação e retorno dessas informações através dos
+ * métodos `get` e `set`.
  */
 class Account : public Entity
 {
@@ -31,7 +31,7 @@ public:
     Account(const Code &code, const Password &password);
 
     /**
-     * @brief Define um domínio para uma determinada propriedade da classe.
+     * @brief Define um domínio para uma determinada propriedade da Conta.
      *
      * A propriedade pode ser o código ou a senha.
      *
@@ -42,12 +42,12 @@ public:
     void set(const Domain &domain, string propertyName) override;
 
     /**
-     * @brief Retorna o valor de uma propriedade da conta.
+     * @brief Retorna o domínio de uma propriedade da conta.
      *
      * A propriedade pode ser o código ou a senha.
      *
      * @param propertyName` Nome da propriedade a ser retornada.
-     * @return const Domain& referência à propriedade retornada.
+     * @return const Domain& Referência à propriedade retornada.
      * @throw invalid_argument Caso a propriedade não exista.
      */
     const Domain &get(const string propertyName) const override;
