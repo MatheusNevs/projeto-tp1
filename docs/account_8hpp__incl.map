@@ -1,0 +1,17 @@
+<map id="include/entities/account.hpp" name="include/entities/account.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="173,5,378,31"/>
+<area shape="rect" id="Node000002" href="$code_8hpp.html" title=" " alt="" coords="5,79,159,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,33,127,76,125,71,243,28"/>
+<area shape="rect" id="Node000006" href="$password_8hpp.html" title=" " alt="" coords="183,79,367,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="278,31,278,65,273,65,273,31"/>
+<area shape="rect" id="Node000007" href="$entity_8hpp.html" title=" " alt="" coords="392,79,487,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="303,28,401,71,399,76,301,33"/>
+<area shape="rect" id="Node000003" href="$domain_8hpp.html" title=" " alt="" coords="222,152,329,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,102,232,145,230,150,112,107"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="159,225,269,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="267,179,235,217,231,213,263,176"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="293,225,380,251"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="287,176,320,213,316,217,283,179"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="278,104,278,138,273,138,273,104"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="414,106,316,149,313,144,412,102"/>
+</map>
