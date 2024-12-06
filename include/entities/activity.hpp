@@ -12,11 +12,12 @@
 
 /**
  * @class Activity
- * @brief Representa uma atividade com atributos específicos.
+ * @brief Representa uma entidade `Activity` composta por um código,
+ * nome, data, horário, duração, preço e avaliação.
  *
- * A classe `Activity` encapsula informações sobre uma atividade, como código,
- * nome, data, hora de início, duração, preço e avaliação. Permite a manipulação e recuperação
- * dessas informações.
+ * A classe `Activity` encapsula informações sobre uma Atividade, como código,
+ * nome, data, horário, duração, preço e avaliação. Permite a manipulação e retorno
+ * dessas informações através dos métodos `get` e `set`.
  */
 class Activity : public Entity
 {
@@ -33,7 +34,8 @@ public:
     /**
      * @brief Construtor da classe `Activity`.
      *
-     * Inicializa uma atividade com os atributos fornecidos.
+     * Inicializa uma atividade com os atributos código,
+     * nome, data, horário, duração, preço e avaliação.
      *
      * @param code Código da atividade.
      * @param name Nome da atividade.
@@ -46,23 +48,23 @@ public:
     Activity(const Code &code, const Name &name, const Date &date, const Time &time, const Duration &duration, const Money &price, const Rating &rating);
 
     /**
-     * @brief Define um valor para uma propriedade da atividade.
+     * @brief Define um domínio para uma determinada propriedade da atividade.
      *
      * A propriedade pode ser um código, nome, data, horário, duração, preço ou avaliação.
      *
-     * @param propertyName Nome da propriedade a qual dominínio será associado
      * @param domain Dominio a ser atribuido a sua respectiva propriedade
+     * @param propertyName Nome da propriedade a qual dominínio será associado
      * @throw invalid_argument Caso a propriedade não exista.
      */
     void set(const Domain &domain, string propertyName) override;
 
     /**
-     * @brief Retorna o valor de uma propriedade da atividade.
+     * @brief Retorna o domínio de uma propriedade da atividade.
      *
-     * A propriedade pode ser qualquer um dos atributos da atividade.
+     * A propriedade pode ser um código, nome, data, horário, duração, preço ou avaliação.
      *
-     * @param propertyName Nome da propriedade a ser recuperada.
-     * @return const Domain& Valor da propriedade.
+     * @param propertyName Nome da propriedade a ser retornada.
+     * @return const Domain& referência à propriedade retornada.
      * @throw invalid_argument Caso a propriedade não exista.
      */
     const Domain &get(const string propertyName) const override;

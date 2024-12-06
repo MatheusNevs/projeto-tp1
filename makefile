@@ -59,3 +59,9 @@ run: $(TEST_DOMAIN_EXE) $(TEST_ENTITY_EXE)
 clean:
 	rm -f $(TEST_DOMAIN_EXE) $(DOMAIN_TEST_OBJECTS)
 	rm -f $(TEST_ENTITY_EXE) $(ENTITY_TEST_OBJECTS)
+	rm -rf docs
+
+#Criação da documentação HTML
+doxygen: Doxyfile
+	rm -rf doxygenpages
+	doxygen

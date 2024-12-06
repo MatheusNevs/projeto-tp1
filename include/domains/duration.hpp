@@ -4,7 +4,7 @@
 
 /**
  * @class Duration
- * @brief Representa uma duração de tempo validada.
+ * @brief Representa um domínio `Duration` de duração de tempo.
  *
  * A classe `Duration` herda de `Domain` e implementa validação específica para
  * durações no intervalo permitido.
@@ -18,7 +18,7 @@ private:
     /**
      * @brief Valida a duração fornecida.
      *
-     * Verifica se a duração está dentro do intervalo permitido.
+     * Verifica se a duração está dentro do intervalo permitido de 0 a 360.
      *
      * @param value Duração a ser validada.
      * @throw invalid_argument Se a duração for inválida.
@@ -29,7 +29,7 @@ public:
     /**
      * @brief Construtor da classe `Duration`.
      *
-     * Inicializa a instância validando e definindo o valor da duração.
+     * Inicializa uma duração com o valor fornecido caso válido.
      *
      * @param value Duração inicial.
      * @throw invalid_argument Se a duração for inválida.

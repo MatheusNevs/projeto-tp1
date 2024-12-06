@@ -4,7 +4,7 @@
 
 /**
  * @class Money
- * @brief Representa um valor monetário validado.
+ * @brief Representa um domínio `Money` de unidade de dinheiro.
  *
  * A classe `Money` herda de `Domain` e implementa validação específica para valores
  * monetários dentro de um intervalo definido.
@@ -18,7 +18,7 @@ private:
     /**
      * @brief Valida o valor monetário fornecido.
      *
-     * Verifica se o valor está dentro do intervalo permitido e no formato correto.
+     * Verifica se o valor está dentro do intervalo permitido de 0 a 200.000 (DUZENTOS MIL).
      *
      * @param value Valor monetário a ser validado.
      * @throw invalid_argument Se o valor for inválido.
@@ -29,7 +29,7 @@ public:
     /**
      * @brief Construtor da classe `Money`.
      *
-     * Inicializa a instância validando e definindo o valor monetário.
+     * Inicializa um dinheiro com o valor fornecido caso válido.
      *
      * @param value Valor inicial.
      * @throw invalid_argument Se o valor for inválido.

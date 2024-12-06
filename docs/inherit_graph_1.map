@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classEntity.html" title="Representa uma classe entidade abstrata Entity para as entidades se construirem sobre." alt="" coords="5,104,65,129"/>
+<area shape="rect" id="Node000001" href="$classAccount.html" title="Representa uma entidade Account composta por um código e uma senha." alt="" coords="125,5,199,31"/>
+<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="55,92,81,66,112,40,130,29,133,33,115,44,84,70,59,96"/>
+<area shape="rect" id="Node000002" href="$classActivity.html" title="Representa uma entidade Activity composta por um código, nome, data, horário, duração,..." alt="" coords="126,55,198,80"/>
+<area shape="poly" id="edge10_Node000000_Node000002" title=" " alt="" coords="77,98,128,78,130,83,79,103"/>
+<area shape="rect" id="Node000003" href="$classDestination.html" title="Representa uma entidade Destination composta por um código, nome, data de chegada,..." alt="" coords="113,104,211,129"/>
+<area shape="poly" id="edge11_Node000000_Node000003" title=" " alt="" coords="79,114,113,114,113,119,79,119"/>
+<area shape="rect" id="Node000004" href="$classLodging.html" title="Representa uma entidade Lodging composta por um código, nome, diária e avaliação." alt="" coords="125,153,199,179"/>
+<area shape="poly" id="edge12_Node000000_Node000004" title=" " alt="" coords="79,131,130,151,128,156,77,136"/>
+<area shape="rect" id="Node000005" href="$classTravel.html" title="Representa uma entidade Travel composta por código, nome, horário de começo, horário de fim,..." alt="" coords="131,203,193,228"/>
+<area shape="poly" id="edge13_Node000000_Node000005" title=" " alt="" coords="59,138,85,163,115,188,135,200,132,205,112,192,81,167,55,141"/>
+</map>

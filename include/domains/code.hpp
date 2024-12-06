@@ -4,7 +4,7 @@
 
 /**
  * @class Code
- * @brief Representa um código alfanumérico validado.
+ * @brief Representa um domínio `Code` de código alfanumérico.
  *
  * A classe `Code` herda de `Domain` e implementa validação específica para
  * códigos alfanuméricos de tamanho fixo.
@@ -18,7 +18,7 @@ private:
    * @brief Valida o código fornecido.
    *
    * Verifica se o código possui o tamanho especificado e atende aos requisitos
-   * de formato.
+   * de formato. Tendo o formato de 6 caracteres alfanuméricos.
    *
    * @param value Código a ser validado.
    * @throw invalid_argument Se o código for inválido.
@@ -29,7 +29,7 @@ public:
   /**
    * @brief Construtor da classe `Code`.
    *
-   * Inicializa a instância validando e definindo o valor do código.
+   * Inicializa um código com o valor fornecido caso válido.
    *
    * @param value Código inicial.
    * @throw invalid_argument Se o código for inválido.

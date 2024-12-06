@@ -27,5 +27,5 @@ void EntityUnitTest::test()
 
 string EntityUnitTest::getDescription() const
 {
-  return "Testando entidade com valor válido '" + this->domainTest->getValue() + "'.\n";
+  return "Testando entidade com a propriedade '" + this->propertyName + "' com valor '" + this->domainTest->getValue() + "'.\n";
 }

@@ -11,7 +11,7 @@ using namespace std;
 
 /**
  * @class UnitTest
- * @brief Representa uma classe abstrata para criação de testes de unidade.
+ * @brief Representa uma classe de testes de unidades abstrata para criação de testes de unidade.
  *
  * A classe `UnitTest` representa uma classe abstrata de testes de unidade tanto para
  * criação para domínios quanto para entidades.

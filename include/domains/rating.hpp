@@ -4,7 +4,7 @@
 
 /**
  * @class Rating
- * @brief Representa uma avaliação validada.
+ * @brief Representa um domínio `Rating` de avaliações.
  *
  * A classe `Rating` herda de `Domain` e implementa validação específica para
  * valores de avaliação, como notas ou classificações.
@@ -15,7 +15,8 @@ private:
     /**
      * @brief Valida a avaliação fornecida.
      *
-     * Verifica se o valor da avaliação atende aos requisitos do domínio.
+     * Verifica se o valor da avaliação atende aos requisitos do domínio
+     * (um dígito inteiro com valor de 0 a 5).
      *
      * @param value Avaliação a ser validada.
      * @throw invalid_argument Se a avaliação for inválida.
@@ -26,7 +27,7 @@ public:
     /**
      * @brief Construtor da classe `Rating`.
      *
-     * Inicializa a instância validando e definindo o valor da avaliação.
+     * Inicializa a avaliação com o valor fornecido caso válido.
      *
      * @param value Avaliação inicial.
      * @throw invalid_argument Se a avaliação for inválida.

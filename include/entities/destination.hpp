@@ -9,11 +9,12 @@
 
 /**
  * @class Destination
- * @brief Representa um destino com informações detalhadas.
+ * @brief Representa uma entidade `Destination` composta por um código,
+ * nome, data de chegada, data de partida e avaliação.
  *
  * A classe `Destination` encapsula atributos como código, nome, datas de chegada
  * e partida, e uma avaliação do destino. Permite a manipulação e recuperação
- * dessas informações.
+ * dessas informações através dos métodos `get` e `set`.
  */
 class Destination : public Entity
 {
@@ -28,7 +29,8 @@ public:
     /**
      * @brief Construtor da classe `Destination`.
      *
-     * Inicializa um destino com os atributos fornecidos.
+     * Inicializa um destino com um código, nome,
+     * data de chegada, data de partida e avaliação.
      *
      * @param code Código do destino.
      * @param name Nome do destino.
@@ -39,22 +41,23 @@ public:
     Destination(const Code &code, const Name &name, const Date &arrival, const Date &departure, const Rating &rating);
 
     /**
-     * @brief Define um valor para uma propriedade do destino.
+     * @brief Define um domínio para uma determinada propriedade do destino.
      *
      * A propriedade pode ser o código, nome, data de chegada, data de partida ou avaliação.
      *
-     * @param propertyName Nome da propriedade a qual dominínio será associado
      * @param domain Dominio a ser atribuido a sua respectiva propriedade
+     * @param propertyName Nome da propriedade a qual dominínio será associado
      * @throw invalid_argument Caso a propriedade não exista.
      */
     void set(const Domain &domain, string propertyName) override;
 
     /**
-     * @brief Retorna o valor de uma propriedade do destino.
+     * @brief Retorna o domínio de uma propriedade do destino.
      *
-     * A propriedade pode ser qualquer um dos atributos do destino.
+     * A propriedade pode ser código, nome, data de chegada, data
+     * de saída ou avaliação.
      *
-     * @param propertyName Nome da propriedade a ser recuperada.
+     * @param propertyName Nome da propriedade a ser retornada.
      * @return const string& Valor da propriedade.
      * @throw invalid_argument Caso a propriedade não exista.
      */

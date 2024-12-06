@@ -6,14 +6,15 @@
  * @brief Representa uma classe de unidade de teste específico para entidades.
  *
  * A classe `EntityUnitTest` herda diretamente de `UnitTest` usando sua interface
- * e implementado propriedades e formas de test próprios.
+ * e implementado propriedades e uma forma de test próprio, através do recebimento
+ * de um dado domínio e o nome da propriedade associada para testar a entidade.
  */
 class EntityUnitTest : public UnitTest
 {
 private:
   Entity *entity;      ///< Ponteiro para entidade a ser testada
-  Domain *domainTest;  //< Ponteiro para dominio a ser associado à entidade para teste
-  string propertyName; //< Nome da propriedade a qual domínio está associado
+  Domain *domainTest;  ///< Ponteiro para dominio a ser associado à entidade para teste
+  string propertyName; ///< Nome da propriedade a qual domínio está associado
 
   /**
    * Método para destrução da entidade criada no teste de unidade
@@ -46,12 +47,14 @@ public:
   };
 
   /**
-   * Executa o teste de unidade, testando o setValue e getValue com os valores válidos e inválidos.
+   * Executa o teste de unidade, testando o `set` e o `get` da entidade pelo domínio e
+   * nome da propriedade recebidos no construtor.
    */
   void test() override;
 
   /**
-   * Retorna uma descrição do teste, incluindo o nome do domínio e os valores testados.
+   * Retorna uma descrição do teste, incluindo o nome da propriedade e seu novo valor que foram
+   * testadas na entidade.
    *
    * @return Descrição do teste.
    */

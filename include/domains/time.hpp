@@ -5,7 +5,7 @@
 
 /**
  * @class Time
- * @brief Representa um horário validado.
+ * @brief Representa um domínio `Time` de horários.
  *
  * A classe `Time` herda de `Domain` e implementa validação específica para
  * horários no formato de horas e minutos.
@@ -19,7 +19,8 @@ private:
   /**
    * @brief Valida o horário fornecido.
    *
-   * Verifica se o horário está no formato correto e dentro dos valores permitidos.
+   * Verifica se o horário está no formato correto (HH:MM) e dentro dos valores permitidos
+   * (00 a 23 para horas, 00 a 59 para minutos).
    *
    * @param value Horário a ser validado.
    * @throw invalid_argument Se o horário for inválido.
@@ -30,7 +31,7 @@ public:
   /**
    * @brief Construtor da classe `Time`.
    *
-   * Inicializa a instância validando e definindo o horário.
+   * Inicializa o horário com o valor fornecido caso válido.
    *
    * @param value Horário inicial.
    * @throw invalid_argument Se o horário for inválido.

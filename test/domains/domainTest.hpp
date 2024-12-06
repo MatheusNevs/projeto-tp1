@@ -3,10 +3,11 @@
 
 /**
  * @class DomainUnitTest
- * @brief Representa uma classe de unidade de teste específico para domínios.
+ * @brief Representa uma classe de unidade de teste `DomainUnitTest` específico para teste de domínios.
  *
  * A classe `DomainUnitTest` herda diretamente de `UnitTest` usando sua interface
- * e implementado propriedades e formas de test próprios.
+ * e implementado propriedades e uma forma de test próprio, através de um valor valído
+ * e um valor inválido referente ao domínio específico.
  */
 class DomainUnitTest : public UnitTest
 {
@@ -28,7 +29,7 @@ private:
 
 public:
   /**
-   * Construtor da classe DomainUnitTest.
+   * Construtor da classe `DomainUnitTest`.
    *
    * @param validValue Valor válido para testar o domínio.
    * @param invalidValue Valor inválido para testar o domínio.
