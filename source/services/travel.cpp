@@ -5,7 +5,8 @@ void TravelModel::create(Code userCode, Travel newTravel)
   string accountCode = userCode.getValue();
   string travelCode = newTravel.get("code").getValue();
   string travelName = newTravel.get("name").getValue();
-  sqlCommand = "INSERT INTO travel (code, name, accountCode) VALUES ('" + accountCode + "', '" + travelName + "', '" + accountCode + "');";
+  string travelRating = newTravel.get("rating").getValue();
+  sqlCommand = "INSERT INTO travel (code, name, rating, accountCode) VALUES ('" + travelCode + "', '" + travelName + "', '" + travelRating + "', '" + accountCode + "');";
   results.clear();
   this->execute();
 }
@@ -83,7 +84,7 @@ int TravelModel::consultCost(Code userCode, Code travelCode)
 
   if (results.empty() || results[0]["SUM(money)"].empty())
   {
-    return;
+    return 0;
   }
 
   return stoi(results[0]["SUM(money)"]);
@@ -98,7 +99,7 @@ vector<Destination> TravelModel::listDestinations(Code userCode, Code travelCode
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
     status = SQLITE_AUTH;
-    return;
+    return {};
   }
 
   sqlCommand = "SELECT * FROM destination WHERE travelCode = '" + travelCode.getValue() + "';";
@@ -128,7 +129,7 @@ Destination TravelModel::consultDestination(Code userCode, Code destinationCode)
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
     status = SQLITE_AUTH;
-    return;
+    return Destination(Code("123456"), Name("Joao"), Date("01-01-01"), Date("01-01-01"), Rating("0"));
   }
 
   sqlCommand = "SELECT * FROM destination WHERE code = '" + destinationCode.getValue() + "';";
@@ -137,7 +138,7 @@ Destination TravelModel::consultDestination(Code userCode, Code destinationCode)
 
   if (results.empty())
   {
-    return;
+    return Destination(Code("123456"), Name("Joao"), Date("01-01-01"), Date("01-01-01"), Rating("0"));
   }
 
   Code code = Code(results[0]["code"]);
@@ -159,7 +160,7 @@ vector<Lodging> TravelModel::listLodgings(Code userCode, Code destinationCode)
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
     status = SQLITE_AUTH;
-    return;
+    return {};
   }
 
   sqlCommand = "SELECT * FROM lodging WHERE destinationCode = '" + destinationCode.getValue() + "';";
