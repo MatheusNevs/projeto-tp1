@@ -1,18 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
-
-# Nome do projeto
 project(ProjetoTP1)
 
-# Definição do padrão C++
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Adiciona os diretórios de inclusão
-include_directories(include)
-include_directories(lib)
+find_package(SQLite3 REQUIRED)
 
-# Adiciona os arquivos de origem
-file(GLOB_RECURSE SOURCES "source/*.cpp" "lib/utils/*.cpp" "lib/db/sqlite3.cpp")
+include_directories(include lib)
 
-# Cria o executável
+file(GLOB SOURCES "source/main.cpp" "source/**/*.cpp" "lib/**/*.cpp")
+
 add_executable(ProjetoTP1 ${SOURCES})
+
+target_link_libraries(ProjetoTP1 PRIVATE SQLite::SQLite3)
