@@ -1,8 +1,19 @@
 #include "../../include/services/model.hpp"
+#include <sys/stat.h>
+#include <sys/types.h>
+
+vector<map<string, string>> Model::results;
 
 Model::Model()
 {
   int error = 0;
+
+  struct stat info;
+  if (stat("./db", &info) != 0 || !(info.st_mode & S_IFDIR))
+  {
+    mkdir("./db", 0777);
+  }
+
   error = sqlite3_open("./db/dev.db", &db);
 
   if (error)

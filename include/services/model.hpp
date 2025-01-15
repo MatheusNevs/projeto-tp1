@@ -1,7 +1,7 @@
 #ifndef MODEL_INTERFACE_H
 #define MODEL_INTERFACE_H
 
-#include "../../lib/db/sqlite3.h"
+#include <sqlite3.h>
 #include <bits/stdc++.h>
 using namespace std;
 
