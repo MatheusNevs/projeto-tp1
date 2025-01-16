@@ -8,14 +8,18 @@ class TravelView : PresentationInterface
 {
 private:
   TravelServiceInterface *travelService;
-  Code userCode;
+  void consultCost(Code travelCode);
+  void listDestinations(Code travelCode);
+  void consultDestination();
+  void listLodgings(Code destinationCode);
+  void listActivities(Code destinationCode);
 
 public:
   void setTravelService(TravelServiceInterface *travelService)
   {
     this->travelService = travelService;
   }
-  void execute(Code userCode) override;
+  void execute(Code &userCode) override;
 
   void create();
   void update();
