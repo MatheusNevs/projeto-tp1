@@ -9,6 +9,10 @@ void TravelModel::create(Code userCode, Travel newTravel)
   sqlCommand = "INSERT INTO travel (code, name, rating, accountCode) VALUES ('" + travelCode + "', '" + travelName + "', '" + travelRating + "', '" + accountCode + "');";
   results.clear();
   this->execute();
+  if (status != SQLITE_OK)
+  {
+    throw invalid_argument("Erro na criação da viagem");
+  }
 }
 
 void TravelModel::update(Code userCode, Code travelCode, Travel updatedTravel)
@@ -28,6 +32,10 @@ void TravelModel::update(Code userCode, Code travelCode, Travel updatedTravel)
   sqlCommand = "UPDATE travel SET name = '" + travelName + "', rating = '" + travelRating + "' WHERE code = '" + travelCode.getValue() + "';";
   results.clear();
   this->execute();
+  if (status != SQLITE_OK)
+  {
+    throw invalid_argument("Erro na atualização da viagem");
+  }
 }
 
 void TravelModel::remove(Code userCode, Code travelCode)
@@ -38,13 +46,16 @@ void TravelModel::remove(Code userCode, Code travelCode)
 
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
-    status = SQLITE_AUTH;
-    return;
+    throw invalid_argument("Viagem inexistente ou pertencente a outra conta");
   }
 
   sqlCommand = "DELETE FROM travel WHERE code = '" + travelCode.getValue() + "';";
   results.clear();
   this->execute();
+  if (status != SQLITE_OK)
+  {
+    throw invalid_argument("Erro na remoção da viagem");
+  }
 }
 
 vector<Travel> TravelModel::readAll(Code userCode)
@@ -52,6 +63,11 @@ vector<Travel> TravelModel::readAll(Code userCode)
   sqlCommand = "SELECT * FROM travel WHERE accountCode = '" + userCode.getValue() + "';";
   results.clear();
   this->execute();
+
+  if (status != SQLITE_OK)
+  {
+    throw invalid_argument("Erro na leitura das viagens");
+  }
 
   vector<Travel> travels;
   for (size_t i = 0; i < results.size(); i++)
@@ -73,13 +89,17 @@ int TravelModel::consultCost(Code userCode, Code travelCode)
 
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
-    status = SQLITE_AUTH;
-    return 0;
+    throw invalid_argument("Viagem inexistente ou pertencente a outra conta");
   }
 
   sqlCommand = "SELECT SUM(money) FROM (SELECT money FROM activity WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "') UNION ALL SELECT money FROM lodging WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "'));";
   results.clear();
   this->execute();
+
+  if (status != SQLITE_OK)
+  {
+    throw invalid_argument("Erro na consulta de custo da viagem");
+  }
 
   if (results.empty() || results[0]["SUM(money)"].empty())
   {
@@ -97,13 +117,17 @@ vector<Destination> TravelModel::listDestinations(Code userCode, Code travelCode
 
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
-    status = SQLITE_AUTH;
-    return {};
+    throw invalid_argument("Viagem inexistente ou pertencente a outra conta");
   }
 
   sqlCommand = "SELECT * FROM destination WHERE travelCode = '" + travelCode.getValue() + "';";
   results.clear();
   this->execute();
+
+  if (status != SQLITE_OK)
+  {
+    throw invalid_argument("Erro na listagem de destinos");
+  }
 
   vector<Destination> destinations;
   for (size_t i = 0; i < results.size(); i++)
@@ -127,8 +151,7 @@ Destination TravelModel::consultDestination(Code userCode, Code destinationCode)
 
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
-    status = SQLITE_AUTH;
-    return Destination(Code("123456"), Name("Joao"), Date("01-01-01"), Date("01-01-01"), Rating("0"));
+    throw invalid_argument("Viagem inexistente ou pertencente a outra conta");
   }
 
   sqlCommand = "SELECT * FROM destination WHERE code = '" + destinationCode.getValue() + "';";
@@ -137,7 +160,7 @@ Destination TravelModel::consultDestination(Code userCode, Code destinationCode)
 
   if (results.empty())
   {
-    return Destination(Code("123456"), Name("Joao"), Date("01-01-01"), Date("01-01-01"), Rating("0"));
+    throw invalid_argument("Destino não encontrado");
   }
 
   Code code = Code(results[0]["code"]);
@@ -152,19 +175,27 @@ Destination TravelModel::consultDestination(Code userCode, Code destinationCode)
 
 vector<Lodging> TravelModel::listLodgings(Code userCode, Code destinationCode)
 {
-  sqlCommand = "SELECT accountCode FROM destination WHERE code = '" + destinationCode.getValue() + "';";
+  sqlCommand = "SELECT travelCode FROM destination WHERE code = '" + destinationCode.getValue() + "';";
+  results.clear();
+  this->execute();
+
+  sqlCommand = "SELECT accountCode from travel WHERE code = '" + results[0]["travelCode"] + "';";
   results.clear();
   this->execute();
 
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
-    status = SQLITE_AUTH;
-    return {};
+    throw invalid_argument("Informações sobre viagem inexistente ou pertencente a outra conta");
   }
 
   sqlCommand = "SELECT * FROM lodging WHERE destinationCode = '" + destinationCode.getValue() + "';";
   results.clear();
   this->execute();
+
+  if (status != SQLITE_OK)
+  {
+    throw invalid_argument("Erro na leitura das hospedagens");
+  }
 
   vector<Lodging> lodgings;
   for (size_t i = 0; i < results.size(); i++)
@@ -187,13 +218,17 @@ vector<Activity> TravelModel::listActivities(Code userCode, Code destinationCode
 
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
-    status = SQLITE_AUTH;
-    return {};
+    throw invalid_argument("Informações sobre viagem inexistente ou pertencente a outra conta");
   }
 
   sqlCommand = "SELECT * FROM activity WHERE destinationCode = '" + destinationCode.getValue() + "';";
   results.clear();
   this->execute();
+
+  if (status != SQLITE_OK)
+  {
+    throw invalid_argument("Erro na leitura das atividades");
+  }
 
   vector<Activity> activities;
   for (size_t i = 0; i < results.size(); i++)

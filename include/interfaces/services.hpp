@@ -5,6 +5,7 @@
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/rating.hpp"
+#include "../domains/password.hpp"
 #include "../entities/travel.hpp"
 #include "../entities/destination.hpp"
 #include "../entities/lodging.hpp"
@@ -22,6 +23,13 @@ public:
   virtual Destination consultDestination(Code userCode, Code destinationCode) = 0;
   virtual vector<Lodging> listLodgings(Code userCode, Code destinationCode) = 0;
   virtual vector<Activity> listActivities(Code userCode, Code destinationCode) = 0;
+};
+
+class AuthServiceInterface
+{
+public:
+  virtual bool autenticate(Code userCode, Password userPassword) = 0;
+  virtual void create(Code userCode, Password userPassword) = 0;
 };
 
 #endif // SERVICES_INTERFACE_H
