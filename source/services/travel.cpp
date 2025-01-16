@@ -19,8 +19,7 @@ void TravelModel::update(Code userCode, Code travelCode, Travel updatedTravel)
 
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
-    status = SQLITE_AUTH;
-    return;
+    throw invalid_argument("Viagem inexistente ou pertencente a outra conta");
   }
 
   string travelName = updatedTravel.get("name").getValue();

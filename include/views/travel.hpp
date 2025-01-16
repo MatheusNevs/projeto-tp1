@@ -9,16 +9,17 @@ class TravelView : PresentationInterface
 private:
   TravelServiceInterface *travelService;
   Code userCode;
-  void create(Code travelCode, Name name);
-  void update(Code travelCode, Name name, Rating rating);
-  void remove(Code travelCode);
-  void listAll();
-  void consultTravel(Code travelCode);
 
 public:
   void setTravelService(TravelServiceInterface *travelService)
   {
-    travelService = travelService;
+    this->travelService = travelService;
   }
   void execute(Code userCode) override;
+
+  void create();
+  void update();
+  void remove();
+  void listAll();
+  void consultTravel();
 };
