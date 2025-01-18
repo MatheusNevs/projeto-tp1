@@ -1,6 +1,6 @@
 #include "../../include/services/travel.hpp"
 
-void TravelModel::create(Code userCode, Travel newTravel)
+void TravelModel::create(Code &userCode, Travel &newTravel)
 {
   string accountCode = userCode.getValue();
   string travelCode = newTravel.get("code").getValue();
@@ -15,7 +15,7 @@ void TravelModel::create(Code userCode, Travel newTravel)
   }
 }
 
-void TravelModel::update(Code userCode, Code travelCode, Travel updatedTravel)
+void TravelModel::update(Code &userCode, Code &travelCode, Travel &updatedTravel)
 {
   sqlCommand = "SELECT accountCode FROM travel WHERE code = '" + travelCode.getValue() + "';";
   results.clear();
@@ -38,7 +38,7 @@ void TravelModel::update(Code userCode, Code travelCode, Travel updatedTravel)
   }
 }
 
-void TravelModel::remove(Code userCode, Code travelCode)
+void TravelModel::remove(Code &userCode, Code &travelCode)
 {
   sqlCommand = "SELECT accountCode FROM travel WHERE code = '" + travelCode.getValue() + "';";
   results.clear();
@@ -58,7 +58,7 @@ void TravelModel::remove(Code userCode, Code travelCode)
   }
 }
 
-vector<Travel> TravelModel::readAll(Code userCode)
+vector<Travel> TravelModel::readAll(Code &userCode)
 {
   sqlCommand = "SELECT * FROM travel WHERE accountCode = '" + userCode.getValue() + "';";
   results.clear();
@@ -81,7 +81,7 @@ vector<Travel> TravelModel::readAll(Code userCode)
   return travels;
 }
 
-int TravelModel::consultCost(Code userCode, Code travelCode)
+int TravelModel::consultCost(Code &userCode, Code &travelCode)
 {
   sqlCommand = "SELECT accountCode FROM travel WHERE code = '" + travelCode.getValue() + "';";
   results.clear();
@@ -109,7 +109,7 @@ int TravelModel::consultCost(Code userCode, Code travelCode)
   return stoi(results[0]["SUM(money)"]);
 }
 
-vector<Destination> TravelModel::listDestinations(Code userCode, Code travelCode)
+vector<Destination> TravelModel::listDestinations(Code &userCode, Code &travelCode)
 {
   sqlCommand = "SELECT accountCode FROM travel WHERE code = '" + travelCode.getValue() + "';";
   results.clear();
@@ -143,7 +143,7 @@ vector<Destination> TravelModel::listDestinations(Code userCode, Code travelCode
   return destinations;
 }
 
-Destination TravelModel::consultDestination(Code userCode, Code destinationCode)
+Destination TravelModel::consultDestination(Code &userCode, Code &destinationCode)
 {
   sqlCommand = "SELECT accountCode FROM destination WHERE code = '" + destinationCode.getValue() + "';";
   results.clear();
@@ -173,7 +173,7 @@ Destination TravelModel::consultDestination(Code userCode, Code destinationCode)
   return destination;
 }
 
-vector<Lodging> TravelModel::listLodgings(Code userCode, Code destinationCode)
+vector<Lodging> TravelModel::listLodgings(Code &userCode, Code &destinationCode)
 {
   sqlCommand = "SELECT travelCode FROM destination WHERE code = '" + destinationCode.getValue() + "';";
   results.clear();
@@ -210,7 +210,7 @@ vector<Lodging> TravelModel::listLodgings(Code userCode, Code destinationCode)
   return lodgings;
 }
 
-vector<Activity> TravelModel::listActivities(Code userCode, Code destinationCode)
+vector<Activity> TravelModel::listActivities(Code &userCode, Code &destinationCode)
 {
   sqlCommand = "SELECT accountCode FROM destination WHERE code = '" + destinationCode.getValue() + "';";
   results.clear();

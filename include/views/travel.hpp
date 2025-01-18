@@ -1,10 +1,13 @@
+#ifndef TRAVEL_VIEW_INTERFACE_H
+#define TRAVEL_VIEW_INTERFACE_H
+
 #include "../interfaces/presentation.hpp"
 #include "../interfaces/services.hpp"
 #include "../domains/code.hpp"
 #include "../domains/name.hpp"
 #include "../domains/rating.hpp"
 
-class TravelView : PresentationInterface
+class TravelView : public PresentationInterface
 {
 private:
   TravelServiceInterface *travelService;
@@ -15,11 +18,12 @@ private:
   void listActivities(Code destinationCode);
 
 public:
+  TravelView(Code *&userCode) : PresentationInterface(userCode) {};
   void setTravelService(TravelServiceInterface *travelService)
   {
     this->travelService = travelService;
-  }
-  void execute(Code &userCode) override;
+  };
+  void execute(Code *&userCode) override;
 
   void create();
   void update();
@@ -27,3 +31,5 @@ public:
   void listAll();
   void consultTravel();
 };
+
+#endif // TRAVEL_VIEW_INTERFACE_H

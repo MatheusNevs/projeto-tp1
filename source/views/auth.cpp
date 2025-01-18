@@ -1,45 +1,16 @@
 #include "../../include/views/auth.hpp"
 
-void AuthView::execute(Code &userCode)
+void AuthView::execute(Code *&userCode)
 {
-  this->userCode = &userCode;
+  this->userCode = userCode;
 
   while (true)
   {
     try
     {
-      // Limpa o terminal
       cout << "\033[2J\033[1;1H";
 
-      if (this->userCode == nullptr)
-      {
-
-        // Aparece as opções
-        cout << "=======================" << endl;
-        cout << "  Sistema de Autenticação" << endl;
-        cout << "=======================" << endl;
-        cout << "1. Autenticar" << endl;
-        cout << "2. Criar conta" << endl;
-        cout << "3. Sair" << endl;
-        cout << "Escolha uma opção: ";
-        int option;
-        cin >> option;
-
-        // Limpa o terminal
-        cout << "\033[2J\033[1;1H";
-
-        // Executa a opção escolhida
-        switch (option)
-        {
-        case 1:
-          autenticate(&userCode);
-        case 2:
-          create(&userCode);
-        default:
-          return;
-        }
-      }
-      else
+      if (this->userCode)
       {
         // Aparece as opções
         cout << "=======================" << endl;
@@ -55,11 +26,37 @@ void AuthView::execute(Code &userCode)
         cout << "\033[2J\033[1;1H";
 
         // Executa a opção escolhida
-        switch (option)
+        if (option == 1)
+          logout();
+        else
+          return;
+      }
+      else
+      {
+        cout << "=======================" << endl;
+        cout << "  Sistema de Autenticação" << endl;
+        cout << "=======================" << endl;
+        cout << "1. Autenticar" << endl;
+        cout << "2. Criar conta" << endl;
+        cout << "3. Sair" << endl;
+        cout << "Escolha uma opção: ";
+        int option;
+        cin >> option;
+
+        // Limpa o terminal
+        cout << "\033[2J\033[1;1H";
+
+        // Executa a opção escolhida
+        if (option == 1)
         {
-        case 1:
-          logout(&userCode);
-        default:
+          autenticate();
+        }
+        else if (option == 2)
+        {
+          create();
+        }
+        else
+        {
           return;
         }
       }
@@ -83,14 +80,14 @@ void AuthView::execute(Code &userCode)
   }
 }
 
-void AuthView::create(Code *userCode)
+void AuthView::create()
 {
   string password;
 
   cout << "=======================" << endl;
   cout << "      Criar conta" << endl;
   cout << "=======================" << endl;
-  cout << "Digite uma senha para sua conta: ";
+  cout << "Digite uma senha para sua conta: " << endl;
   cout << " - A senha deve possuir 5 digitos" << endl;
   cout << " - Não pode conter digitos duplicados" << endl;
   cout << " - Não pode estar em ordem crescente ou descrescente" << endl;
@@ -98,11 +95,12 @@ void AuthView::create(Code *userCode)
   Code userCodeDomain = Code();
   Password passwordDomain = Password(password);
   authService->create(userCodeDomain, passwordDomain);
-  *userCode = userCodeDomain;
-  cout << "Sua conta foi criada com o código " << userCodeDomain.getValue();
+  userCode = &userCodeDomain;
+  cout << "Sua conta foi criada com o código " << userCodeDomain.getValue() << endl;
+  return;
 }
 
-void AuthView::autenticate(Code *userCode)
+void AuthView::autenticate()
 {
   string password, code;
   cout << "=======================" << endl;
@@ -117,9 +115,15 @@ void AuthView::autenticate(Code *userCode)
 
   if (authService->autenticate(codeDomain, passwordDomain))
   {
-    *userCode = codeDomain;
+    userCode = &codeDomain;
     return;
   }
 
   throw invalid_argument("Falha na autenticação, senha ou código inválidos");
+}
+
+void AuthView::logout()
+{
+  userCode = nullptr;
+  return;
 }

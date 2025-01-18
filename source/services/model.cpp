@@ -26,7 +26,7 @@ void Model::createAccountTable()
 {
   sqlCommand = "CREATE TABLE IF NOT EXISTS account("
                "code VARCHAR(6) PRIMARY KEY,"
-               "password INTEGER(5) NOT NULL);";
+               "password VARCHAR(5) NOT NULL);";
   this->execute();
 }
 

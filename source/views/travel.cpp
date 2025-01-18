@@ -1,8 +1,8 @@
 #include "../../include/views/travel.hpp"
 
-void TravelView::execute(Code &userCode)
+void TravelView::execute(Code *&userCode)
 {
-  this->userCode = &userCode;
+  this->userCode = userCode;
 
   while (true)
   {
@@ -29,19 +29,28 @@ void TravelView::execute(Code &userCode)
       cout << "\033[2J\033[1;1H";
 
       // Executa a opção escolhida
-      switch (option)
+      if (option == 1)
       {
-      case 1:
         create();
-      case 2:
+      }
+      else if (option == 2)
+      {
         update();
-      case 3:
+      }
+      else if (option == 3)
+      {
         remove();
-      case 4:
+      }
+      else if (option == 4)
+      {
         listAll();
-      case 5:
+      }
+      else if (option == 5)
+      {
         consultTravel();
-      default:
+      }
+      else
+      {
         return;
       }
 
@@ -227,13 +236,16 @@ void TravelView::consultDestination()
 
     cout << "\033[2J\033[1;1H";
 
-    switch (option)
+    if (option == 1)
     {
-    case 1:
       listLodgings(destinationCodeDomain);
-    case 2:
+    }
+    else if (option == 2)
+    {
       listActivities(destinationCodeDomain);
-    default:
+    }
+    else
+    {
       return;
     }
 
@@ -269,15 +281,20 @@ void TravelView::consultTravel()
 
     cout << "\033[2J\033[1;1H";
 
-    switch (option)
+    if (option == 1)
     {
-    case 1:
       consultCost(travelCodeDomain);
-    case 2:
+    }
+    else if (option == 2)
+    {
       listDestinations(travelCodeDomain);
-    case 3:
+    }
+    else if (option == 3)
+    {
       consultDestination();
-    default:
+    }
+    else
+    {
       return;
     }
 
