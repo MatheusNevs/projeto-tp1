@@ -7,7 +7,7 @@ find_package(SQLite3 REQUIRED)
 
 include_directories(include lib)
 
-file(GLOB SOURCES "source/main.cpp" "source/**/*.cpp" "lib/**/*.cpp")
+file(GLOB SOURCES "source/*.cpp" "source/**/*.cpp" "lib/**/*.cpp")
 
 add_executable(ProjetoTP1 ${SOURCES})
 

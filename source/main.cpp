@@ -1,17 +1,23 @@
 #include "../include/services/model.hpp"
+#include "../include/builder.hpp"
+#include "../include/controller.hpp"
+
 #include "../include/services/travel.hpp"
 #include "../include/views/travel.hpp"
+
+#include "../include/services/auth.hpp"
+#include "../include/views/auth.hpp"
 
 int main()
 {
   Model model = Model();
   model.createTables();
 
-  Code userCode = Code("123456");
+  Builder builder;
+  Controller controller;
 
-  TravelModel *travelModel = new TravelModel();
-  TravelView travelView;
-  travelView.setTravelService(travelModel);
-  travelView.execute(userCode);
+  builder.build(&controller);
+  controller.execute();
+
   return 0;
 }
