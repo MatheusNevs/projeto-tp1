@@ -23,6 +23,7 @@ public:
   virtual Destination consultDestination(Code &userCode, Code &destinationCode) = 0;
   virtual vector<Lodging> listLodgings(Code &userCode, Code &destinationCode) = 0;
   virtual vector<Activity> listActivities(Code &userCode, Code &destinationCode) = 0;
+  virtual ~TravelServiceInterface() {};
 };
 
 class AuthServiceInterface
@@ -30,6 +31,7 @@ class AuthServiceInterface
 public:
   virtual bool autenticate(Code &userCode, Password &userPassword) = 0;
   virtual void create(Code &userCode, Password &userPassword) = 0;
+  virtual ~AuthServiceInterface() {};
 };
 
 #endif // SERVICES_INTERFACE_H

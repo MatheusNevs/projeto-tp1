@@ -1,31 +1,22 @@
 #include "../include/controller.hpp"
 
-void Controller::setAuthView(PresentationInterface *authView)
+Controller::~Controller()
+{
+  delete authView;
+  delete travelView;
+}
+
+void Controller::setAuthView(AuthView *&authView)
 {
   this->authView = authView;
 }
-void Controller::setTravelView(PresentationInterface *travelView)
+void Controller::setTravelView(TravelView *&travelView)
 {
   this->travelView = travelView;
-}
-void Controller::setDestinationView(PresentationInterface *destinationView)
-{
-  this->destinationView = destinationView;
-}
-void Controller::setLodgingView(PresentationInterface *lodgingView)
-{
-  this->lodgingView = lodgingView;
-}
-void Controller::setActivityView(PresentationInterface *activityView)
-{
-  this->activityView = activityView;
 }
 
 void Controller::execute()
 {
-  Code *userCode = nullptr;
-  this->userCode = userCode;
-
   while (true)
   {
     try
@@ -37,9 +28,8 @@ void Controller::execute()
       cout << "=======================" << endl;
       cout << "1. Sistema de Autenticação" << endl;
 
-      if (this->userCode)
+      if (this->userCode.getValue() != "000000")
       {
-        // Aparece as opções
         cout << "2. Sistema de Viagens" << endl;
         cout << "3. Sistema de Destinos" << endl;
         cout << "4. Sistema de Hospedagens" << endl;
@@ -49,10 +39,8 @@ void Controller::execute()
         int option;
         cin >> option;
 
-        // Limpa o terminal
         cout << "\033[2J\033[1;1H";
 
-        // Executa a opção escolhida
         if (option == 1)
           this->authView->execute(this->userCode);
         else if (option == 2)
@@ -64,7 +52,7 @@ void Controller::execute()
         // else if (option == 5)
         //   this->activityView->execute(this->userCode);
         else
-          return;
+          break;
       }
       else
       {
@@ -73,10 +61,8 @@ void Controller::execute()
         int option;
         cin >> option;
 
-        // Limpa o terminal
         cout << "\033[2J\033[1;1H";
 
-        // Executa a opção escolhida
         if (option == 1)
           this->authView->execute(this->userCode);
         else

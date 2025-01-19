@@ -16,6 +16,7 @@ public:
   Destination consultDestination(Code &userCode, Code &destinationCode) override;
   vector<Lodging> listLodgings(Code &userCode, Code &destinationCode) override;
   vector<Activity> listActivities(Code &userCode, Code &destinationCode) override;
+  ~TravelModel() override {};
 };
 
 #endif // TRAVEL_MODEL_INTERFACE_H

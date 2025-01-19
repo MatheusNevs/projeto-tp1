@@ -9,6 +9,7 @@ class AuthModel : public AuthServiceInterface, public Model
 public:
   bool autenticate(Code &userCode, Password &userPassword);
   void create(Code &userCode, Password &userPassword);
+  ~AuthModel() override {};
 };
 
 #endif // AUTH_MODEL_INTERFACE_H

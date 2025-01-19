@@ -11,7 +11,7 @@ private:
   AuthModel *authService;
 
 public:
-  AuthView(Code *&userCode) : PresentationInterface(userCode) {};
+  AuthView(Code &userCode) : PresentationInterface(userCode) {};
   void setAuthService(AuthModel *authService)
   {
     this->authService = authService;
@@ -19,7 +19,11 @@ public:
   void autenticate();
   void create();
   void logout();
-  void execute(Code *&userCode);
+  void execute(Code &userCode);
+  ~AuthView() override
+  {
+    delete authService;
+  };
 };
 
 #endif // AUTH_VIEW_INTERFACE_H

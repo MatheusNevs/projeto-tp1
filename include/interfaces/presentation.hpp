@@ -6,13 +6,12 @@
 class PresentationInterface
 {
 protected:
-  Code *&userCode;
+  Code &userCode;
 
 public:
-  PresentationInterface(Code *&userCode) : userCode(userCode)
-  {
-  }
-  virtual void execute(Code *&userCode) = 0;
+  PresentationInterface(Code &userCode) : userCode(userCode) {}
+  virtual void execute(Code &userCode) = 0;
+  virtual ~PresentationInterface() {};
 };
 
 #endif // PRESENTATION_INTERFACE_H

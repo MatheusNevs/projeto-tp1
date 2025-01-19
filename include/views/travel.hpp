@@ -18,18 +18,22 @@ private:
   void listActivities(Code destinationCode);
 
 public:
-  TravelView(Code *&userCode) : PresentationInterface(userCode) {};
+  TravelView(Code &userCode) : PresentationInterface(userCode) {};
   void setTravelService(TravelServiceInterface *travelService)
   {
     this->travelService = travelService;
   };
-  void execute(Code *&userCode) override;
+  void execute(Code &userCode) override;
 
   void create();
   void update();
   void remove();
   void listAll();
   void consultTravel();
+  ~TravelView() override
+  {
+    delete travelService;
+  };
 };
 
 #endif // TRAVEL_VIEW_INTERFACE_H
