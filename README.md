@@ -1,49 +1,115 @@
 # Projeto TP1
 
-O projeto usa um **Makefile** para automatizar o processo de compilação e execução.
+O projeto utiliza **CMake** para automatizar o processo de compilação e execução, além de facilitar o gerenciamento de dependências e configurações de build.
 
 ---
 
 ## Estrutura de Diretórios
 
-- include/    -> Contém arquivos de cabeçalho (.hpp)
+- **include/** -> Contém arquivos de cabeçalho (.hpp).
 
-- source/     -> Contém arquivos fonte (.cpp) principais
+- **source/** -> Contém arquivos fonte (.cpp) principais.
 
-- lib/utils/  -> Contém funções úteis para a implementação do projeto
+- **lib/** -> Contém bibliotecas e funções auxiliares.
 
-- test/       -> Contém arquivos de teste
+- **test/** -> Contém arquivos de teste.
 
-## Comandos do Makefile
+---
 
-### Compilar tudo
+## Configuração e Compilação
 
-```bash
-make
-```
+### Pré-requisitos
 
-Este comando compila todos os arquivos .cpp em suas respectivas pastas e gera os executáveis principais (test_domain e test_entity).
+Certifique-se de ter as seguintes ferramentas instaladas:
 
-### Executar o programa
+- **CMake** (versão mínima 3.10).
+- **Compilador C++** compatível com o padrão C++17.
+- **SQLite3** (biblioteca necessária para o projeto).
 
-```bash
-make run
-```
+### Passos para Compilar
 
-Este comando executa o programa após a compilação, mostrando o resultado de todos os testes.
+1. Crie uma pasta para os arquivos de build:
 
-### Gerar documentação externa
+   ```bash
+   mkdir build && cd build
+   ```
 
-```bash
-doxygen
-```
+2. Configure o projeto com o CMake:
 
-Este comando cria a pasta docs, contendo a documentação em HTML gerada pelo doxygen.
+   - Para build de **Debug**:
 
-### Limpar os arquivos gerados
+     ```bash
+     cmake -DCMAKE_BUILD_TYPE=Debug ..
+     ```
+
+   - Para build de **Release**:
+     ```bash
+     cmake -DCMAKE_BUILD_TYPE=Release ..
+     ```
+
+3. Compile o projeto:
+
+   ```bash
+   make
+   ```
+
+4. Execute o programa:
+
+   ```bash
+   ./ProjetoTP1
+   ```
+
+---
+
+## Comandos Úteis
+
+### Compilação Limpa
+
+Para limpar os arquivos gerados pela compilação:
 
 ```bash
 make clean
 ```
 
-Este comando remove os executáveis (test_domain e test_entity), todos os arquivos objeto (.o) e a pasta "docs" gerada pelo doxygen, garantindo que o projeto esteja "limpo" para uma nova compilação.
+### Gerar Documentação com Doxygen
+
+Se a ferramenta Doxygen estiver instalada, você pode gerar a documentação do projeto:
+
+```bash
+doxygen
+```
+
+Os arquivos gerados estarão disponíveis na pasta `docs/`.
+
+---
+
+## Configurações Especiais de Memória
+
+Este projeto utiliza configurações otimizadas para o uso de memória:
+
+- **Tamanho da Pilha**: Configurado para 16 MB.
+- **Otimizações para a Arquitetura Local**: O programa é compilado com o flag `-march=native` para aproveitar as instruções específicas do processador.
+- **Debug**: Inclui suporte ao AddressSanitizer para identificar vazamentos de memória e outros problemas.
+
+### Alternar Configurações
+
+- Para **Debug**:
+  - Adiciona ferramentas de diagnóstico como `AddressSanitizer`.
+- Para **Release**:
+  - Habilita otimizações agressivas com `-O2` e desativa assertivas.
+
+---
+
+## Dependências
+
+O projeto depende da biblioteca SQLite3. Certifique-se de que ela esteja instalada no sistema antes de compilar. No Ubuntu, você pode instalá-la com:
+
+```bash
+sudo apt install libsqlite3-dev
+```
+
+---
+
+## Sobre o Projeto
+
+O Projeto TP1 é um trabalho acadêmico que explora conceitos de desenvolvimento modular em C++, utilizando boas práticas de organização de código e ferramentas modernas como CMake para gerenciar o processo de build.
