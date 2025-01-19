@@ -1,9 +1,13 @@
 #ifndef BUILDER_INTERFACE_H
 #define BUILDER_INTERFACE_H
 
-#include "./views/auth.hpp"
-#include "./views/travel.hpp"
 #include "./controller.hpp"
+
+#include "../include/services/auth.hpp"
+#include "../include/views/auth.hpp"
+
+#include "../include/services/travel.hpp"
+#include "../include/views/travel.hpp"
 
 class Builder
 {
