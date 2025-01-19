@@ -1,6 +1,6 @@
 #include "../../include/views/travel.hpp"
 
-void TravelView::execute(Code *&userCode)
+void TravelView::execute(Code &userCode)
 {
   this->userCode = userCode;
 
@@ -20,7 +20,7 @@ void TravelView::execute(Code *&userCode)
       cout << "3. Deletar viagem" << endl;
       cout << "4. Listar viagens" << endl;
       cout << "5. Consultar viagem" << endl;
-      cout << "6. Sair" << endl;
+      cout << "6. Retornar" << endl;
       cout << "Escolha uma opção: ";
       int option;
       cin >> option;
@@ -86,7 +86,7 @@ void TravelView::create()
   Name nameDomain = Name(name);
 
   Travel travel = Travel(code, nameDomain, rating);
-  travelService->create(*userCode, travel);
+  travelService->create(userCode, travel);
 }
 
 void TravelView::update()
@@ -111,7 +111,7 @@ void TravelView::update()
   Rating ratingDomain = Rating(rating);
 
   Travel travel = Travel(code, nameDomain, ratingDomain);
-  travelService->update(*userCode, code, travel);
+  travelService->update(userCode, code, travel);
 }
 
 void TravelView::remove()
@@ -125,7 +125,7 @@ void TravelView::remove()
   cin >> codeStr;
   code = Code(codeStr);
 
-  travelService->remove(*userCode, code);
+  travelService->remove(userCode, code);
 }
 
 void TravelView::listAll()
@@ -134,7 +134,11 @@ void TravelView::listAll()
   cout << "    Listar viagens" << endl;
   cout << "=======================" << endl;
 
-  vector<Travel> travels = travelService->readAll(*userCode);
+  vector<Travel> travels = travelService->readAll(userCode);
+
+  if (travels.size() == 0)
+    cout << "Você não possui nenhuma viagem atrelada a esta conta" << endl;
+
   for (const auto &travel : travels)
   {
     cout << "Código: " << travel.get("code").getValue() << endl;
@@ -149,7 +153,7 @@ void TravelView::consultCost(Code travelCode)
   cout << "=======================" << endl;
   cout << "Consultar custo da viagem" << endl;
   cout << "=======================" << endl;
-  cout << "Custo da viagem: " << travelService->consultCost(*userCode, travelCode) << endl;
+  cout << "Custo da viagem: " << travelService->consultCost(userCode, travelCode) << endl;
   cout << "=======================" << endl;
 }
 
@@ -159,7 +163,10 @@ void TravelView::listDestinations(Code travelCode)
   cout << "   Listar destinos" << endl;
   cout << "=======================" << endl;
 
-  vector<Destination> destinations = travelService->listDestinations(*userCode, travelCode);
+  vector<Destination> destinations = travelService->listDestinations(userCode, travelCode);
+
+  if (destinations.size() == 0)
+    cout << "Você não possui nenhum destino atrelado a esta viagem" << endl;
 
   for (int i = 0; i < destinations.size(); i++)
   {
@@ -174,11 +181,15 @@ void TravelView::listDestinations(Code travelCode)
 
 void TravelView::listActivities(Code destinationCode)
 {
-  vector<Activity> activities = travelService->listActivities(*userCode, destinationCode);
-
   cout << "=======================" << endl;
   cout << "   Listar atividades" << endl;
   cout << "=======================" << endl;
+
+  vector<Activity> activities = travelService->listActivities(userCode, destinationCode);
+
+  if (activities.size() == 0)
+    cout << "Você não possui nenhuma atividade atrelada a este destino" << endl;
+
   for (int i = 0; i < activities.size(); i++)
   {
     cout << "Código: " << activities[i].get("codigo").getValue() << endl;
@@ -193,11 +204,15 @@ void TravelView::listActivities(Code destinationCode)
 
 void TravelView::listLodgings(Code destinationCode)
 {
-  vector<Lodging> lodgings = travelService->listLodgings(*userCode, destinationCode);
-
   cout << "=======================" << endl;
   cout << "   Listar destinos" << endl;
   cout << "=======================" << endl;
+
+  vector<Lodging> lodgings = travelService->listLodgings(userCode, destinationCode);
+
+  if (lodgings.size() == 0)
+    cout << "Você não possui nenhuma hospedagem atrelada a este destino" << endl;
+
   for (int i = 0; i < lodgings.size(); i++)
   {
     cout << "Código: " << lodgings[i].get("codigo").getValue() << endl;
@@ -213,43 +228,62 @@ void TravelView::consultDestination()
   Code destinationCodeDomain;
   while (true)
   {
-
-    cout << "=======================" << endl;
-    cout << "   Consultar destino" << endl;
-    cout << "=======================" << endl;
-
-    cout << "Digite o código do destino: ";
-    if (destinationCode == "")
+    try
     {
-      cin >> destinationCode;
-      destinationCodeDomain.setValue(destinationCode);
+      cout << "\033[2J\033[1;1H";
+
+      cout << "=======================" << endl;
+      cout << "   Consultar destino" << endl;
+      cout << "=======================" << endl;
+
+      cout << "Digite o código do destino: ";
+      if (destinationCode == "")
+      {
+        cin >> destinationCode;
+        destinationCodeDomain.setValue(destinationCode);
+      }
+      else
+        cout << destinationCode << endl;
+      cout << "=======================" << endl;
+      cout << "1. Listar hospedagens" << endl;
+      cout << "2. Listar atividades" << endl;
+      cout << "3. Retornar" << endl;
+
+      int option;
+      cin >> option;
+
+      cout << "\033[2J\033[1;1H";
+
+      if (option == 1)
+      {
+        listLodgings(destinationCodeDomain);
+      }
+      else if (option == 2)
+      {
+        listActivities(destinationCodeDomain);
+      }
+      else
+      {
+        return;
+      }
+
+      cout << endl
+           << "======= SUCESSO ======= " << endl
+           << endl;
     }
-    else
-      cout << destinationCode << endl;
-    cout << "=======================" << endl;
-    cout << "1. Listar hospedagens" << endl;
-    cout << "2. Listar atividades" << endl;
-    cout << "3. Sair" << endl;
 
-    int option;
-    cin >> option;
-
-    cout << "\033[2J\033[1;1H";
-
-    if (option == 1)
+    catch (const std::exception &e)
     {
-      listLodgings(destinationCodeDomain);
-    }
-    else if (option == 2)
-    {
-      listActivities(destinationCodeDomain);
-    }
-    else
-    {
-      return;
+      cout << endl
+           << "======== ERROR ========" << endl;
+      cout << e.what() << endl;
+      cout << "======== ERROR ========" << endl
+           << endl;
     }
 
-    cout << "\033[2J\033[1;1H";
+    cout << "Pressione Enter para continuar...";
+    cin.ignore();
+    cin.get();
   }
 }
 
@@ -259,45 +293,63 @@ void TravelView::consultTravel()
   string travelCode = "";
   while (true)
   {
-    cout << "=======================" << endl;
-    cout << "   Consultar viagem" << endl;
-    cout << "=======================" << endl;
-    cout << "Digite o código da viagem: ";
-    if (travelCode == "")
+    try
     {
-      cin >> travelCode;
-      travelCodeDomain.setValue(travelCode);
-    }
-    else
-      cout << travelCode << endl;
-    cout << "=======================" << endl;
-    cout << "1. Consultar custo da viagem" << endl;
-    cout << "2. Listar destinos associados" << endl;
-    cout << "3. Consultar destino" << endl;
-    cout << "4. Sair" << endl;
+      cout << "\033[2J\033[1;1H";
+      cout << "=======================" << endl;
+      cout << "   Consultar viagem" << endl;
+      cout << "=======================" << endl;
+      cout << "Digite o código da viagem: ";
+      if (travelCode == "")
+      {
+        cin >> travelCode;
+        travelCodeDomain.setValue(travelCode);
+      }
+      else
+        cout << travelCode << endl;
+      cout << "=======================" << endl;
+      cout << "1. Consultar custo da viagem" << endl;
+      cout << "2. Listar destinos associados" << endl;
+      cout << "3. Consultar destino" << endl;
+      cout << "4. Retornar" << endl;
 
-    int option;
-    cin >> option;
+      int option;
+      cin >> option;
 
-    cout << "\033[2J\033[1;1H";
+      cout << "\033[2J\033[1;1H";
 
-    if (option == 1)
-    {
-      consultCost(travelCodeDomain);
+      if (option == 1)
+      {
+        consultCost(travelCodeDomain);
+      }
+      else if (option == 2)
+      {
+        listDestinations(travelCodeDomain);
+      }
+      else if (option == 3)
+      {
+        consultDestination();
+      }
+      else
+      {
+        break;
+      }
+
+      cout << endl
+           << "======= SUCESSO ======= " << endl
+           << endl;
     }
-    else if (option == 2)
+    catch (const std::exception &e)
     {
-      listDestinations(travelCodeDomain);
-    }
-    else if (option == 3)
-    {
-      consultDestination();
-    }
-    else
-    {
-      return;
+      cout << endl
+           << "======== ERROR ========" << endl;
+      cout << e.what() << endl;
+      cout << "======== ERROR ========" << endl
+           << endl;
     }
 
-    cout << "\033[2J\033[1;1H";
+    cout << "Pressione Enter para continuar...";
+    cin.ignore();
+    cin.get();
   }
 }
