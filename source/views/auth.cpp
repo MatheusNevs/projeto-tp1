@@ -1,6 +1,6 @@
 #include "../../include/views/auth.hpp"
 
-void AuthView::execute(Code *&userCode)
+void AuthView::execute(Code &userCode)
 {
   this->userCode = userCode;
 
@@ -10,7 +10,7 @@ void AuthView::execute(Code *&userCode)
     {
       cout << "\033[2J\033[1;1H";
 
-      if (this->userCode)
+      if (this->userCode.getValue() != "000000")
       {
         // Aparece as opções
         cout << "=======================" << endl;
@@ -95,7 +95,7 @@ void AuthView::create()
   Code userCodeDomain = Code();
   Password passwordDomain = Password(password);
   authService->create(userCodeDomain, passwordDomain);
-  userCode = &userCodeDomain;
+  userCode.setValue(userCodeDomain.getValue());
   cout << "Sua conta foi criada com o código " << userCodeDomain.getValue() << endl;
   return;
 }
@@ -115,7 +115,7 @@ void AuthView::autenticate()
 
   if (authService->autenticate(codeDomain, passwordDomain))
   {
-    userCode = &codeDomain;
+    userCode.setValue(codeDomain.getValue());
     return;
   }
 
@@ -124,6 +124,6 @@ void AuthView::autenticate()
 
 void AuthView::logout()
 {
-  userCode = nullptr;
+  userCode.setValue("123456");
   return;
 }

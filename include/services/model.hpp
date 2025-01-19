@@ -9,7 +9,6 @@ class Model
 {
 private:
     sqlite3 *db;
-    char *mensagem;
 
     void createAccountTable();
     void createTravelTable();

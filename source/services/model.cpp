@@ -98,7 +98,7 @@ Model::~Model()
 
 void Model::execute()
 {
-  status = sqlite3_exec(db, sqlCommand.c_str(), callback, nullptr, &mensagem);
+  status = sqlite3_exec(db, sqlCommand.c_str(), callback, nullptr, nullptr);
 }
 
 int Model::callback(void *data, int argc, char **argv, char **azColName)
