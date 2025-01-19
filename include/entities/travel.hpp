@@ -11,7 +11,7 @@
 /**
  * @class Travel
  * @brief Representa uma entidade `Travel` composta por código,
- * nome, horário de começo, horário de fim, custo total e avaliação.
+ * nome e avaliação.
  *
  * A classe `Travel` encapsula atributos relacionados a uma viagem, incluindo código,
  * nome, data de início, data de término e custo total da viagem. Permite a manipulação
@@ -20,12 +20,9 @@
 class Travel : public Entity
 {
 private:
-    Code code;       ///< Código da viagem.
-    Name name;       ///< Nome da viagem.
-    Date startDate;  ///< Data de início da viagem.
-    Date endDate;    ///< Data de término da viagem.
-    Money totalCost; ///< Custo total da viagem.
-    Rating rating;   ///< Avaliação da viagem.
+    Code code;     ///< Código da viagem.
+    Name name;     ///< Nome da viagem.
+    Rating rating; ///< Avaliação da viagem.
 
 public:
     /**
@@ -36,12 +33,9 @@ public:
      *
      * @param code Código da viagem.
      * @param name Nome da viagem.
-     * @param startDate Data de início da viagem.
-     * @param endDate Data de término da viagem.
-     * @param totalCost Custo total da viagem.
      * @param rating Avaliação da viagem.
      */
-    Travel(const Code &code, const Name &name, const Date &startDate, const Date &endDate, const Money &totalCost, const Rating &rating);
+    Travel(const Code &code, const Name &name, const Rating &rating);
 
     /**
      * @brief Define um domínio para uma determinada propriedade da viagem  .

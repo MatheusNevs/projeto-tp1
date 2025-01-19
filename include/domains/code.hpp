@@ -34,7 +34,9 @@ public:
    * @param value Código inicial.
    * @throw invalid_argument Se o código for inválido.
    */
+  Code();
   Code(string value);
+  static string generateRandomCode();
 };
 
 inline Code::Code(string value)

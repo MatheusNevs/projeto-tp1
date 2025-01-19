@@ -131,22 +131,22 @@ int main()
   try
   {
     // Cria testes individuais para a entidade Travel, 1 para cada atributo
-    Travel *testActivity1 = new Travel(Code("123abc"), Name("Joao"), Date("01-01-01"), Date("02-01-01"), Money("50.00"), Rating("1"));
+    Travel *testActivity1 = new Travel(Code("123abc"), Name("Joao"), Rating("1"));
     EntityUnitTest *test1 = new EntityUnitTest("code", new Code("789CBA"), testActivity1);
 
-    Travel *testActivity2 = new Travel(Code("123abc"), Name("Joao"), Date("01-01-01"), Date("02-01-01"), Money("50.00"), Rating("1"));
+    Travel *testActivity2 = new Travel(Code("123abc"), Name("Joao"), Rating("1"));
     EntityUnitTest *test2 = new EntityUnitTest("name", new Name("Carlos"), testActivity2);
 
-    Travel *testActivity3 = new Travel(Code("123abc"), Name("Joao"), Date("01-01-01"), Date("02-01-01"), Money("50.00"), Rating("1"));
+    Travel *testActivity3 = new Travel(Code("123abc"), Name("Joao"), Rating("1"));
     EntityUnitTest *test3 = new EntityUnitTest("startDate", new Date("01-02-03"), testActivity3);
 
-    Travel *testActivity4 = new Travel(Code("123abc"), Name("Joao"), Date("01-01-01"), Date("02-01-01"), Money("50.00"), Rating("1"));
+    Travel *testActivity4 = new Travel(Code("123abc"), Name("Joao"), Rating("1"));
     EntityUnitTest *test4 = new EntityUnitTest("endDate", new Date("05-06-12"), testActivity4);
 
-    Travel *testActivity5 = new Travel(Code("123abc"), Name("Joao"), Date("01-01-01"), Date("02-01-01"), Money("50.00"), Rating("1"));
+    Travel *testActivity5 = new Travel(Code("123abc"), Name("Joao"), Rating("1"));
     EntityUnitTest *test5 = new EntityUnitTest("totalCost", new Money("2.000,00"), testActivity5);
 
-    Travel *testActivity6 = new Travel(Code("123abc"), Name("Joao"), Date("01-01-01"), Date("02-01-01"), Money("50.00"), Rating("1"));
+    Travel *testActivity6 = new Travel(Code("123abc"), Name("Joao"), Rating("1"));
     EntityUnitTest *test6 = new EntityUnitTest("rating", new Rating("5"), testActivity6);
 
     // Cria um grupo de testes com os testes vinculados diretamente
