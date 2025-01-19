@@ -92,7 +92,7 @@ int TravelModel::consultCost(Code &userCode, Code &travelCode)
     throw invalid_argument("Viagem inexistente ou pertencente a outra conta");
   }
 
-  sqlCommand = "SELECT SUM(money) FROM (SELECT money FROM activity WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "') UNION ALL SELECT money FROM lodging WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "'));";
+  sqlCommand = "SELECT SUM(money) FROM (SELECT price AS money FROM activity WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "') UNION ALL SELECT dailyRate AS money FROM lodging WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "'));";
   results.clear();
   this->execute();
 
@@ -101,7 +101,7 @@ int TravelModel::consultCost(Code &userCode, Code &travelCode)
     throw invalid_argument("Erro na consulta de custo da viagem");
   }
 
-  if (results.empty() || results[0]["SUM(money)"].empty())
+  if (results.empty() || results[0]["SUM(money)"] == "NULL")
   {
     return 0;
   }
