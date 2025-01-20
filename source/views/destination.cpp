@@ -14,11 +14,10 @@ void DestinationView::execute(Code &userCode)
       cout << "  Sistema de Destinos" << endl;
       cout << "=======================" << endl;
       cout << "1. Criar destino" << endl;
-      cout << "2. Atualizar destino" << endl;
-      cout << "3. Deletar destino" << endl;
-      cout << "4. Listar destinos" << endl;
-      cout << "5. Consultar destino" << endl;
-      cout << "6. Retornar" << endl;
+      cout << "2. Listar destinos" << endl;
+      cout << "3. Atualizar destino" << endl;
+      cout << "4. Deletar destino" << endl;
+      cout << "5. Retornar" << endl;
       cout << "Escolha uma opção: ";
       int option;
       cin >> option;
@@ -31,7 +30,7 @@ void DestinationView::execute(Code &userCode)
       }
       else if (option == 2)
       {
-        remove();
+        read();
       }
       else if (option == 3)
       {
@@ -69,26 +68,29 @@ void DestinationView::create()
 {
   Code code = Code();
   Rating rating = Rating("0");
-  string name, startDate, endDate;
+  string name, arrival, departure, travelCode;
 
   cout << "=======================" << endl;
   cout << "    Criar destino" << endl;
   cout << "=======================" << endl;
   cout << "1. Digite o nome do destino: ";
   cin >> name;
+  Name nameDomain = Name(name);
 
   cout << "2. Digite a data de início (DD-MM-AA): ";
-  cin >> startDate;
+  cin >> arrival;
+  Date arrivalDomain = Date(arrival);
 
-  cout << "1. Digite a data de fim: (DD-MM-AA)";
-  cin >> endDate;
+  cout << "3. Digite a data de fim (DD-MM-AA): ";
+  cin >> departure;
+  Date departureDomain = Date(departure);
 
-  Name nameDomain = Name(name);
-  Date startDateDomain = Date(startDate);
-  Date endDateDomain = Date(endDate);
+  cout << "4. Digite o código da viagem a ser atrelada: ";
+  cin >> travelCode;
+  Code travelCodeDomain = Code(travelCode);
 
-  Destination destination = Destination(code, nameDomain, startDateDomain, endDateDomain, rating);
-  destinationService->create(userCode, destination);
+  Destination destination = Destination(code, nameDomain, arrivalDomain, departureDomain, rating);
+  destinationService->create(userCode, travelCodeDomain, destination);
 }
 
 void DestinationView::read()
@@ -106,8 +108,8 @@ void DestinationView::read()
   {
     cout << "Código: " << destination.get("code").getValue() << endl;
     cout << "Nome: " << destination.get("name").getValue() << endl;
-    cout << "Data de início: " << destination.get("startDate").getValue() << endl;
-    cout << "Data de fim: " << destination.get("endDate").getValue() << endl;
+    cout << "Data de início: " << destination.get("arrival").getValue() << endl;
+    cout << "Data de fim: " << destination.get("departure").getValue() << endl;
     cout << "Avaliação: " << destination.get("rating").getValue() << endl;
     cout << "=======================" << endl;
   }
@@ -121,28 +123,26 @@ void DestinationView::update()
   cout << "=======================" << endl;
   cout << "1. Digite o código do destino a ser atualizado: ";
   cin >> codeStr;
+  Code codeDomain = Code(codeStr);
 
-  string name, startDate, endDate, rating;
+  string name, arrival, departure, rating;
   cout << "2. Digite o novo nome do destino: ";
   cin >> name;
+  Name nameDomain = Name(name);
 
   cout << "3. Digite a nova data de início (DD-MM-AA): ";
-  cin >> startDate;
+  cin >> arrival;
+  Date arrivalDomain = Date(arrival);
 
   cout << "4. Digite a nova data de fim (DD-MM-AA): ";
-  cin >> endDate;
+  cin >> departure;
+  Date departureDomain = Date(departure);
 
   cout << "5. Digite a nova avaliação do destino: ";
   cin >> rating;
-
-  Code codeDomain = Code(codeStr);
-
-  Name nameDomain = Name(name);
-  Date startDateDomain = Date(startDate);
-  Date endDateDomain = Date(endDate);
   Rating ratingDomain = Rating(rating);
 
-  Destination destination = Destination(codeDomain, nameDomain, startDateDomain, endDateDomain, ratingDomain);
+  Destination destination = Destination(codeDomain, nameDomain, arrivalDomain, departureDomain, ratingDomain);
   destinationService->update(userCode, codeDomain, destination);
 }
 

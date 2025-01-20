@@ -17,7 +17,7 @@ void AuthView::execute(Code &userCode)
         cout << "  Sistema de Autenticação" << endl;
         cout << "=======================" << endl;
         cout << "1. Logout" << endl;
-        cout << "2. Sair" << endl;
+        cout << "2. Retornar" << endl;
         cout << "Escolha uma opção: ";
         int option;
         cin >> option;
@@ -124,6 +124,6 @@ void AuthView::autenticate()
 
 void AuthView::logout()
 {
-  userCode.setValue("123456");
+  userCode.setValue("000000");
   return;
 }

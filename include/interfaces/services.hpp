@@ -37,7 +37,7 @@ public:
 class DestinationServiceInterface
 {
 public:
-  virtual void create(Code &userCode, Destination &destination) = 0;
+  virtual void create(Code &userCode, Code &destinationTravelCode, Destination &destination) = 0;
   virtual vector<Destination> read(Code &userCode) = 0;
   virtual void update(Code &userCode, Code &destinationCode, Destination &updatedDestination) = 0;
   virtual void remove(Code &userCode, Code &destinationCode) = 0;

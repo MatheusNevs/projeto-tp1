@@ -7,7 +7,7 @@
 class DestinationModel : public DestinationServiceInterface, public Model
 {
 public:
-  void create(Code &userCode, Destination &newDestination) override;
+  void create(Code &userCode, Code &destinationTravelCode, Destination &newDestination) override;
   void update(Code &userCode, Code &destinationCode, Destination &updatedDestination) override;
   void remove(Code &userCode, Code &destinationCode) override;
   vector<Destination> read(Code &userCode) override;
