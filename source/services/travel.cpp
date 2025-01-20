@@ -134,10 +134,10 @@ vector<Destination> TravelModel::listDestinations(Code &userCode, Code &travelCo
   {
     Code code = Code(results[i]["code"]);
     Name name = Name(results[i]["name"]);
-    Date startDate = Date(results[i]["startDate"]);
-    Date endDate = Date(results[i]["endDate"]);
+    Date arrival = Date(results[i]["arrival"]);
+    Date departure = Date(results[i]["departure"]);
     Rating rating = Rating(results[i]["rating"]);
-    Destination destination = Destination(code, name, startDate, endDate, rating);
+    Destination destination = Destination(code, name, arrival, departure, rating);
     destinations.push_back(destination);
   }
   return destinations;
@@ -165,10 +165,10 @@ Destination TravelModel::consultDestination(Code &userCode, Code &destinationCod
 
   Code code = Code(results[0]["code"]);
   Name name = Name(results[0]["name"]);
-  Date startDate = Date(results[0]["startDate"]);
-  Date endDate = Date(results[0]["endDate"]);
+  Date arrival = Date(results[0]["arrival"]);
+  Date departure = Date(results[0]["departure"]);
   Rating rating = Rating(results[0]["rating"]);
-  Destination destination = Destination(code, name, startDate, endDate, rating);
+  Destination destination = Destination(code, name, arrival, departure, rating);
 
   return destination;
 }
@@ -212,7 +212,11 @@ vector<Lodging> TravelModel::listLodgings(Code &userCode, Code &destinationCode)
 
 vector<Activity> TravelModel::listActivities(Code &userCode, Code &destinationCode)
 {
-  sqlCommand = "SELECT accountCode FROM destination WHERE code = '" + destinationCode.getValue() + "';";
+  sqlCommand = "SELECT travelCode FROM destination WHERE code = '" + destinationCode.getValue() + "';";
+  results.clear();
+  this->execute();
+
+  sqlCommand = "SELECT accountCode from travel WHERE code = '" + results[0]["travelCode"] + "';";
   results.clear();
   this->execute();
 

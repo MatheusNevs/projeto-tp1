@@ -46,8 +46,8 @@ void Model::createDestinationTable()
   sqlCommand = "CREATE TABLE IF NOT EXISTS destination("
                "code VARCHAR(6) PRIMARY KEY,"
                "name VARCHAR(30) NOT NULL,"
-               "startDate VARCHAR(8) NOT NULL,"
-               "endDate VARCHAR(8) NOT NULL,"
+               "arrival VARCHAR(8) NOT NULL,"
+               "departure VARCHAR(8) NOT NULL,"
                "rating INTEGER(1) CHECK(rating >= 0 AND rating <= 5),"
                "travelCode VARCHAR(6),"
                "FOREIGN KEY(travelCode) REFERENCES travel(code));";

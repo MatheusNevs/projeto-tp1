@@ -172,8 +172,8 @@ void TravelView::listDestinations(Code travelCode)
   {
     cout << "Código: " << destinations[i].get("code").getValue() << endl;
     cout << "Nome: " << destinations[i].get("name").getValue() << endl;
-    cout << "Data de Início: " << destinations[i].get("startDate").getValue() << endl;
-    cout << "Data de Fim: " << destinations[i].get("endDate").getValue() << endl;
+    cout << "Data de Início: " << destinations[i].get("arrival").getValue() << endl;
+    cout << "Data de Fim: " << destinations[i].get("departure").getValue() << endl;
     cout << "Avaliação: " << destinations[i].get("rating").getValue() << endl;
     cout << "=======================" << endl;
   }
@@ -244,6 +244,14 @@ void TravelView::consultDestination()
       }
       else
         cout << destinationCode << endl;
+
+      while (destinationCodeDomain.getValue() != destinationCode)
+      {
+        cout << "Digite o código da viagem: ";
+        cin >> destinationCode;
+        destinationCodeDomain.setValue(destinationCode);
+      }
+
       cout << "=======================" << endl;
       cout << "1. Listar hospedagens" << endl;
       cout << "2. Listar atividades" << endl;
@@ -307,6 +315,13 @@ void TravelView::consultTravel()
       }
       else
         cout << travelCode << endl;
+
+      while (travelCodeDomain.getValue() != travelCode)
+      {
+        cout << "Digite o código da viagem: ";
+        cin >> travelCode;
+        travelCodeDomain.setValue(travelCode);
+      }
       cout << "=======================" << endl;
       cout << "1. Consultar custo da viagem" << endl;
       cout << "2. Listar destinos associados" << endl;
