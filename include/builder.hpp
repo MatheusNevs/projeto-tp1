@@ -9,6 +9,9 @@
 #include "../include/services/travel.hpp"
 #include "../include/views/travel.hpp"
 
+#include "../include/services/destination.hpp"
+#include "../include/views/destination.hpp"
+
 class Builder
 {
 public:

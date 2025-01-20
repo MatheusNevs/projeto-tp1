@@ -34,4 +34,14 @@ public:
   virtual ~AuthServiceInterface() {};
 };
 
+class DestinationServiceInterface
+{
+public:
+  virtual void create(Code &userCode, Destination &destination) = 0;
+  virtual vector<Destination> read(Code &userCode) = 0;
+  virtual void update(Code &userCode, Code &destinationCode, Destination &updatedDestination) = 0;
+  virtual void remove(Code &userCode, Code &destinationCode) = 0;
+  virtual ~DestinationServiceInterface() {};
+};
+
 #endif // SERVICES_INTERFACE_H

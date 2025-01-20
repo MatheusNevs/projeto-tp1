@@ -10,9 +10,15 @@ void Controller::setAuthView(AuthView *&authView)
 {
   this->authView = authView;
 }
+
 void Controller::setTravelView(TravelView *&travelView)
 {
   this->travelView = travelView;
+}
+
+void Controller::setDestinationView(DestinationView *&destinationView)
+{
+  this->destinationView = destinationView;
 }
 
 void Controller::execute()
@@ -45,8 +51,8 @@ void Controller::execute()
           this->authView->execute(this->userCode);
         else if (option == 2)
           this->travelView->execute(this->userCode);
-        // else if (option == 3)
-        //   this->destinationView->execute(this->userCode);
+        else if (option == 3)
+          this->destinationView->execute(this->userCode);
         // else if (option == 4)
         //   this->lodgingView->execute(this->userCode);
         // else if (option == 5)
