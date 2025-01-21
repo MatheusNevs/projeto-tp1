@@ -29,7 +29,7 @@ void Controller::setLodgingView(LodgingView *&lodgingView)
   this->lodgingView = lodgingView;
 }
 
-void Controller::setActivityView(ActivityView *&lodgingView)
+void Controller::setActivityView(ActivityView *&activityView)
 {
   this->activityView = activityView;
 }
@@ -55,20 +55,20 @@ void Controller::execute()
         cout << "5. Sistema de Atividades" << endl;
         cout << "6. Sair" << endl;
         cout << "Escolha uma opção: ";
-        int option;
+        string option;
         cin >> option;
 
         cout << "\033[2J\033[1;1H";
 
-        if (option == 1)
+        if (option == "1")
           this->authView->execute(this->userCode);
-        else if (option == 2)
+        else if (option == "2")
           this->travelView->execute(this->userCode);
-        else if (option == 3)
+        else if (option == "3")
           this->destinationView->execute(this->userCode);
-        else if (option == 4)
+        else if (option == "4")
           this->lodgingView->execute(this->userCode);
-        else if (option == 5)
+        else if (option == "5")
           this->activityView->execute(this->userCode);
         else
           break;
