@@ -21,6 +21,16 @@ void Controller::setDestinationView(DestinationView *&destinationView)
   this->destinationView = destinationView;
 }
 
+void Controller::setLodgingView(LodgingView *&lodgingView)
+{
+  this->lodgingView = lodgingView;
+}
+
+// void Controller::setActivityView(ActivityView *&lodgingView)
+// {
+//   this->activityView = activityView;
+// }
+
 void Controller::execute()
 {
   while (true)
