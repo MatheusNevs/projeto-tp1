@@ -5,6 +5,7 @@
 #include "./views/travel.hpp"
 #include "./views/destination.hpp"
 #include "./views/lodging.hpp"
+#include "./views/activity.hpp"
 
 class Controller
 {
@@ -13,7 +14,7 @@ private:
   TravelView *travelView;
   DestinationView *destinationView;
   LodgingView *lodgingView;
-  // ActivityView *ActivityView;
+  ActivityView *activityView;
 
 public:
   Code userCode = Code("000000");
@@ -22,7 +23,7 @@ public:
   void setTravelView(TravelView *&travelView);
   void setDestinationView(DestinationView *&destinationView);
   void setLodgingView(LodgingView *&lodgingView);
-  // void setActivityView(activityView*&activityView);
+  void setActivityView(ActivityView *&activityView);
 
   void execute();
 };

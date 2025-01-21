@@ -16,7 +16,7 @@ void LodgingView::execute(Code &userCode)
       cout << "  Sistema de Hospedagem" << endl;
       cout << "=======================" << endl;
       cout << "1. Criar hospedagem" << endl;
-      cout << "2. Lista hospedagens" << endl;
+      cout << "2. Listar hospedagens" << endl;
       cout << "3. Atualizar hospedagem" << endl;
       cout << "4. Deletar hospedagem" << endl;
       cout << "5. Retornar" << endl;
@@ -95,7 +95,7 @@ void LodgingView::create()
 
 void LodgingView::update()
 {
-  string codeStr;
+  string codeStr, name, dailyRate, rating;
   cout << "=======================" << endl;
   cout << "    Atualizar hospedagem" << endl;
   cout << "=======================" << endl;
@@ -103,7 +103,6 @@ void LodgingView::update()
   cin >> codeStr;
   Code codeDomain = Code(codeStr);
 
-  string name, dailyRate, rating;
   cout << "2. Digite o novo nome da hospedagem: ";
   cin >> name;
   Name nameDomain = Name(name);

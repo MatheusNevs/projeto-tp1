@@ -54,4 +54,14 @@ public:
   virtual ~LodgingServiceInterface() {};
 };
 
+class ActivityServiceInterface
+{
+public:
+  virtual void create(Code &userCode, Code &activityDestinationCode, Activity &newActivity) = 0;
+  virtual vector<Activity> read(Code &userCode) = 0;
+  virtual void update(Code &userCode, Code &activityCode, Activity &updatedActivity) = 0;
+  virtual void remove(Code &userCode, Code &activityCode) = 0;
+  virtual ~ActivityServiceInterface() {};
+};
+
 #endif // SERVICES_INTERFACE_H

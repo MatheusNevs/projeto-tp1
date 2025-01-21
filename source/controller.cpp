@@ -4,6 +4,9 @@ Controller::~Controller()
 {
   delete authView;
   delete travelView;
+  delete destinationView;
+  delete lodgingView;
+  delete activityView;
 }
 
 void Controller::setAuthView(AuthView *&authView)
@@ -26,10 +29,10 @@ void Controller::setLodgingView(LodgingView *&lodgingView)
   this->lodgingView = lodgingView;
 }
 
-// void Controller::setActivityView(ActivityView *&lodgingView)
-// {
-//   this->activityView = activityView;
-// }
+void Controller::setActivityView(ActivityView *&lodgingView)
+{
+  this->activityView = activityView;
+}
 
 void Controller::execute()
 {
@@ -63,10 +66,10 @@ void Controller::execute()
           this->travelView->execute(this->userCode);
         else if (option == 3)
           this->destinationView->execute(this->userCode);
-        // else if (option == 4)
-        //   this->lodgingView->execute(this->userCode);
-        // else if (option == 5)
-        //   this->activityView->execute(this->userCode);
+        else if (option == 4)
+          this->lodgingView->execute(this->userCode);
+        else if (option == 5)
+          this->activityView->execute(this->userCode);
         else
           break;
       }
