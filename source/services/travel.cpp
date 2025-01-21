@@ -202,7 +202,7 @@ vector<Lodging> TravelModel::listLodgings(Code &userCode, Code &destinationCode)
   {
     Code code = Code(results[i]["code"]);
     Name name = Name(results[i]["name"]);
-    Money dailyRate = Money(results[i]["money"]);
+    Money dailyRate = Money(results[i]["dailyRate"]);
     Rating rating = Rating(results[i]["rating"]);
     Lodging lodging = Lodging(code, name, dailyRate, rating);
     lodgings.push_back(lodging);

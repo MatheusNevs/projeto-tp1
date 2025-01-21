@@ -40,18 +40,18 @@ void AuthView::execute(Code &userCode)
         cout << "2. Criar conta" << endl;
         cout << "3. Sair" << endl;
         cout << "Escolha uma opção: ";
-        int option;
+        string option;
         cin >> option;
 
         // Limpa o terminal
         cout << "\033[2J\033[1;1H";
 
         // Executa a opção escolhida
-        if (option == 1)
+        if (option == "1")
         {
           autenticate();
         }
-        else if (option == 2)
+        else if (option == "2")
         {
           create();
         }

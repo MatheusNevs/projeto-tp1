@@ -21,26 +21,26 @@ void ActivityView::execute(Code &userCode)
       cout << "4. Deletar atividade" << endl;
       cout << "5. Retornar" << endl;
       cout << "Escolha uma opção: ";
-      int option;
+      string option;
       cin >> option;
 
       // Limpa o terminal
       cout << "\033[2J\033[1;1H";
 
       // Executa a opção escolhida
-      if (option == 1)
+      if (option == "1")
       {
         create();
       }
-      else if (option == 2)
+      else if (option == "2")
       {
         read();
       }
-      else if (option == 3)
+      else if (option == "3")
       {
         update();
       }
-      else if (option == 4)
+      else if (option == "4")
       {
         remove();
       }
@@ -89,7 +89,7 @@ void ActivityView::create()
   cin >> time;
   Time timeDomain = Time(time);
 
-  cout << "4. Digite a duração da atividade (HH:MM): ";
+  cout << "4. Digite a duração da atividade (0 a 360 min): ";
   cin >> duration;
   Duration durationDomain = Duration(duration);
 

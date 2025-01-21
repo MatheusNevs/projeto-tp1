@@ -22,30 +22,30 @@ void TravelView::execute(Code &userCode)
       cout << "5. Consultar viagem" << endl;
       cout << "6. Retornar" << endl;
       cout << "Escolha uma opção: ";
-      int option;
+      string option;
       cin >> option;
 
       // Limpa o terminal
       cout << "\033[2J\033[1;1H";
 
       // Executa a opção escolhida
-      if (option == 1)
+      if (option == "1")
       {
         create();
       }
-      else if (option == 2)
+      else if (option == "2")
       {
         update();
       }
-      else if (option == 3)
+      else if (option == "3")
       {
         remove();
       }
-      else if (option == 4)
+      else if (option == "4")
       {
         listAll();
       }
-      else if (option == 5)
+      else if (option == "5")
       {
         consultTravel();
       }
@@ -192,7 +192,7 @@ void TravelView::listActivities(Code destinationCode)
 
   for (int i = 0; i < activities.size(); i++)
   {
-    cout << "Código: " << activities[i].get("codigo").getValue() << endl;
+    cout << "Código: " << activities[i].get("code").getValue() << endl;
     cout << "Nome: " << activities[i].get("name").getValue() << endl;
     cout << "Data: " << activities[i].get("date").getValue() << endl;
     cout << "Horário: " << activities[i].get("time").getValue() << endl;
@@ -215,16 +215,16 @@ void TravelView::listLodgings(Code destinationCode)
 
   for (int i = 0; i < lodgings.size(); i++)
   {
-    cout << "Código: " << lodgings[i].get("codigo").getValue() << endl;
+    cout << "Código: " << lodgings[i].get("code").getValue() << endl;
     cout << "Nome: " << lodgings[i].get("name").getValue() << endl;
-    cout << "Diário: " << lodgings[i].get("dailyRate").getValue() << endl;
+    cout << "Diária: " << lodgings[i].get("dailyRate").getValue() << endl;
     cout << "Avaliação: " << lodgings[i].get("rating").getValue() << endl;
   }
 }
 
 void TravelView::consultDestination()
 {
-  string destinationCode;
+  string destinationCode = "";
   Code destinationCodeDomain;
   while (true)
   {
@@ -257,16 +257,16 @@ void TravelView::consultDestination()
       cout << "2. Listar atividades" << endl;
       cout << "3. Retornar" << endl;
 
-      int option;
+      string option;
       cin >> option;
 
       cout << "\033[2J\033[1;1H";
 
-      if (option == 1)
+      if (option == "1")
       {
         listLodgings(destinationCodeDomain);
       }
-      else if (option == 2)
+      else if (option == "2")
       {
         listActivities(destinationCodeDomain);
       }
@@ -328,20 +328,20 @@ void TravelView::consultTravel()
       cout << "3. Consultar destino" << endl;
       cout << "4. Retornar" << endl;
 
-      int option;
+      string option;
       cin >> option;
 
       cout << "\033[2J\033[1;1H";
 
-      if (option == 1)
+      if (option == "1")
       {
         consultCost(travelCodeDomain);
       }
-      else if (option == 2)
+      else if (option == "2")
       {
         listDestinations(travelCodeDomain);
       }
-      else if (option == 3)
+      else if (option == "3")
       {
         consultDestination();
       }

@@ -19,24 +19,24 @@ void DestinationView::execute(Code &userCode)
       cout << "4. Deletar destino" << endl;
       cout << "5. Retornar" << endl;
       cout << "Escolha uma opção: ";
-      int option;
+      string option;
       cin >> option;
 
       cout << "\033[2J\033[1;1H";
 
-      if (option == 1)
+      if (option == "1")
       {
         create();
       }
-      else if (option == 2)
+      else if (option == "2")
       {
         read();
       }
-      else if (option == 3)
+      else if (option == "3")
       {
         update();
       }
-      else if (option == 4)
+      else if (option == "4")
       {
         remove();
       }
