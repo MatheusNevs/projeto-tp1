@@ -85,6 +85,8 @@ void DestinationView::create()
   cin >> departure;
   Date departureDomain = Date(departure);
 
+  arrivalDomain.calculateDateRange(arrivalDomain.getValue(), departureDomain.getValue());
+
   cout << "4. Digite o código da viagem a ser atrelada: ";
   cin >> travelCode;
   Code travelCodeDomain = Code(travelCode);
@@ -137,6 +139,8 @@ void DestinationView::update()
   cout << "4. Digite a nova data de fim (DD-MM-AA): ";
   cin >> departure;
   Date departureDomain = Date(departure);
+
+  arrivalDomain.calculateDateRange(arrivalDomain.getValue(), departureDomain.getValue());
 
   cout << "5. Digite a nova avaliação do destino: ";
   cin >> rating;
