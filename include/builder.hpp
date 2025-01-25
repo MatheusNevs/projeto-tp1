@@ -18,9 +18,18 @@
 #include "../include/services/activity.hpp"
 #include "../include/views/activity.hpp"
 
+/**
+ * @class Builder
+ * @brief Classe responsável por construir e configurar o controlador.
+ */
 class Builder
 {
 public:
+  /**
+   * @brief Constrói e configura o controlador.
+   *
+   * @param controller Ponteiro para o controlador a ser configurado.
+   */
   void build(Controller *controller);
 };
 
