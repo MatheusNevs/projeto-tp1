@@ -26,7 +26,7 @@ void Date::validate(string value)
   // Se não houver exatamente 3 segmentos, inválido
   if (splitedValue.size() != 3)
   {
-    throw invalid_argument("Argumento invalidoooo: formato incorreto.");
+    throw invalid_argument("Argumento invalido.");
   };
 
   // Convertemos os componentes da data para inteiros
