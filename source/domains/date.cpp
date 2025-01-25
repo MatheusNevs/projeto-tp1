@@ -120,3 +120,50 @@ int Date::calculateDateRange(string initialDate, string finalDate)
 
   return totalDays;
 }
+
+bool Date::isWithinRange(string date, string initialDate, string finalDate)
+{
+  // Separando os valores DD, MM e YY
+  vector<string> splitedDate = split(date, "-");
+  vector<string> splitedInitialDate = split(initialDate, "-");
+  vector<string> splitedFinalDate = split(finalDate, "-");
+
+  // Convertemos os componentes da data para inteiros
+  int inputDays = stoi(splitedDate[0]);
+  int inputMonths = stoi(splitedDate[1]);
+  int inputYears = stoi(splitedDate[2]);
+
+  int initialDays = stoi(splitedInitialDate[0]);
+  int initialMonths = stoi(splitedInitialDate[1]);
+  int initialYears = stoi(splitedInitialDate[2]);
+
+  int finalDays = stoi(splitedFinalDate[0]);
+  int finalMonths = stoi(splitedFinalDate[1]);
+  int finalYears = stoi(splitedFinalDate[2]);
+
+  // Verifica se a data está dentro do intervalo
+  if (inputYears > initialYears && inputYears < finalYears)
+  {
+    return true;
+  }
+  else if (inputYears == initialYears && inputMonths > initialMonths)
+  {
+    return true;
+  }
+  else if (inputYears == finalYears && inputMonths < finalMonths)
+  {
+    return true;
+  }
+  else if (inputYears == initialYears && inputMonths == initialMonths && inputDays >= initialDays)
+  {
+    return true;
+  }
+  else if (inputYears == finalYears && inputMonths == finalMonths && inputDays <= finalDays)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
