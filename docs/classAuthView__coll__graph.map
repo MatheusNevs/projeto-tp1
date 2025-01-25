@@ -1,0 +1,9 @@
+<map id="AuthView" name="AuthView">
+<area shape="rect" id="node1" title="Classe responsável pela apresentação da autenticação." alt="" coords="119,260,203,287"/>
+<area shape="rect" id="node2" href="$classPresentationInterface.html" title="Interface abstrata para a apresentação de código." alt="" coords="5,171,168,197"/>
+<area shape="rect" id="node3" href="$classCode.html" title="Representa um domínio Code de código alfanumérico." alt="" coords="59,81,114,108"/>
+<area shape="rect" id="node4" href="$classDomain.html" title="Representa uma classe domínio abstrata Domain, na qual os respectivos domínios irão se construir sobr..." alt="" coords="50,5,123,32"/>
+<area shape="rect" id="node5" href="$classAuthModel.html" title="Classe responsável pela autenticação e criação de usuários." alt="" coords="193,171,285,197"/>
+<area shape="rect" id="node6" href="$classAuthServiceInterface.html" title="Interface para operações de serviço de autenticação." alt="" coords="149,81,307,108"/>
+<area shape="rect" id="node7" href="$classModel.html" title="Classe base para a interação com o banco de dados SQLite." alt="" coords="331,81,394,108"/>
+</map>

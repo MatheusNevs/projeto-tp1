@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['validvalue_0',['validValue',['../classDomainUnitTest.html#a8d4b6fd97901dcffedddf2455366936f',1,'DomainUnitTest']]],
-  ['value_1',['value',['../classDomain.html#a9d15a9f2c19c5863fe863a7d2f53a7cc',1,'Domain']]]
+  ['usercode_395',['userCode',['../classController.html#a768d25ea2599cf5245939395f371c320',1,'Controller::userCode()'],['../classPresentationInterface.html#a8ff36b7c40883dc998bd3143cd2f27af',1,'PresentationInterface::userCode()']]]
 ];

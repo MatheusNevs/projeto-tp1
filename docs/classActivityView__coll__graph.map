@@ -1,0 +1,9 @@
+<map id="ActivityView" name="ActivityView">
+<area shape="rect" id="node1" title="Classe responsável pela apresentação das atividades." alt="" coords="115,260,219,287"/>
+<area shape="rect" id="node2" href="$classPresentationInterface.html" title="Interface abstrata para a apresentação de código." alt="" coords="5,171,168,197"/>
+<area shape="rect" id="node3" href="$classCode.html" title="Representa um domínio Code de código alfanumérico." alt="" coords="59,81,114,108"/>
+<area shape="rect" id="node4" href="$classDomain.html" title="Representa uma classe domínio abstrata Domain, na qual os respectivos domínios irão se construir sobr..." alt="" coords="50,5,123,32"/>
+<area shape="rect" id="node5" href="$classActivityModel.html" title="Implementação do serviço relacionado a atividades." alt="" coords="192,171,304,197"/>
+<area shape="rect" id="node6" href="$classActivityServiceInterface.html" title="Interface para serviços relacionados a atividades." alt="" coords="148,81,327,108"/>
+<area shape="rect" id="node7" href="$classModel.html" title="Classe base para a interação com o banco de dados SQLite." alt="" coords="351,81,414,108"/>
+</map>

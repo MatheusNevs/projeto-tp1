@@ -24,13 +24,13 @@
 */
 var NAVTREE =
 [
-  [ "Projeto 1 - Técnicas de Programação 1", "index.html", [
+  [ "Projeto - Técnicas de Programação 1", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
@@ -48,7 +48,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"account_8hpp.html"
+"account_8hpp.html",
+"classTravelServiceInterface.html#a4e69e7e530ad6c67f9c4b595a8ad4208"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

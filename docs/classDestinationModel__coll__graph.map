@@ -1,0 +1,5 @@
+<map id="DestinationModel" name="DestinationModel">
+<area shape="rect" id="node1" title="Classe responsável pela gestão de destinos de viagem." alt="" coords="117,80,254,107"/>
+<area shape="rect" id="node2" href="$classDestinationServiceInterface.html" title="Interface para serviços relacionados a destinos." alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node3" href="$classModel.html" title="Classe base para a interação com o banco de dados SQLite." alt="" coords="233,5,295,32"/>
+</map>

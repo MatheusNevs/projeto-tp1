@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['name_0',['Name',['../className.html',1,'']]]
+  ['model_221',['Model',['../classModel.html',1,'']]],
+  ['money_222',['Money',['../classMoney.html',1,'']]]
 ];

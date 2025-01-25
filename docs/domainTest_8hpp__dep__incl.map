@@ -1,7 +1,5 @@
 <map id="test/domains/domainTest.hpp" name="test/domains/domainTest.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="113,5,327,31"/>
-<area shape="rect" id="Node000002" href="$domainTest_8cpp.html" title=" " alt="" coords="5,79,219,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,40,131,81,128,76,190,36"/>
-<area shape="rect" id="Node000003" href="$domains_2main_8cpp.html" title=" " alt="" coords="243,79,413,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,36,312,76,309,81,247,40"/>
+<area shape="rect" id="node1" title=" " alt="" coords="113,5,327,32"/>
+<area shape="rect" id="node2" href="$domainTest_8cpp.html" title=" " alt="" coords="5,80,219,107"/>
+<area shape="rect" id="node3" href="$domains_2main_8cpp.html" title=" " alt="" coords="243,80,413,107"/>
 </map>

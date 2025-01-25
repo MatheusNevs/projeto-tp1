@@ -1,0 +1,5 @@
+<map id="PresentationInterface" name="PresentationInterface">
+<area shape="rect" id="node1" title="Interface abstrata para a apresentação de código." alt="" coords="5,171,168,197"/>
+<area shape="rect" id="node2" href="$classCode.html" title="Representa um domínio Code de código alfanumérico." alt="" coords="59,81,114,108"/>
+<area shape="rect" id="node3" href="$classDomain.html" title="Representa uma classe domínio abstrata Domain, na qual os respectivos domínios irão se construir sobr..." alt="" coords="50,5,123,32"/>
+</map>

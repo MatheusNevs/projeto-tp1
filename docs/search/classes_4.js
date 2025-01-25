@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['grouptest_0',['GroupTest',['../classGroupTest.html',1,'']]]
+  ['entity_214',['Entity',['../classEntity.html',1,'']]],
+  ['entityunittest_215',['EntityUnitTest',['../classEntityUnitTest.html',1,'']]]
 ];

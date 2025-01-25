@@ -1,0 +1,20 @@
+<map id="Controller" name="Controller">
+<area shape="rect" id="node1" title="Classe responsável por gerenciar as views e executar a lógica principal do programa." alt="" coords="1083,231,1169,257"/>
+<area shape="rect" id="node2" href="$classAuthView.html" title="Classe responsável pela apresentação da autenticação." alt="" coords="819,99,903,125"/>
+<area shape="rect" id="node3" href="$classPresentationInterface.html" title="Interface abstrata para a apresentação de código." alt="" coords="440,228,603,255"/>
+<area shape="rect" id="node9" href="$classTravelView.html" title="Gerencia a lógica de apresentação para operações relacionadas a viagens." alt="" coords="814,155,907,181"/>
+<area shape="rect" id="node11" href="$classDestinationView.html" title="Classe responsável pela apresentação das operações de destino." alt="" coords="796,256,925,283"/>
+<area shape="rect" id="node13" href="$classActivityView.html" title="Classe responsável pela apresentação das atividades." alt="" coords="809,307,913,333"/>
+<area shape="rect" id="node16" href="$classLodgingView.html" title="Classe responsável pela apresentação das operações de hospedagem." alt="" coords="808,205,913,232"/>
+<area shape="rect" id="node4" href="$classCode.html" title="Representa um domínio Code de código alfanumérico." alt="" coords="190,405,245,432"/>
+<area shape="rect" id="node5" href="$classDomain.html" title="Representa uma classe domínio abstrata Domain, na qual os respectivos domínios irão se construir sobr..." alt="" coords="5,405,79,432"/>
+<area shape="rect" id="node6" href="$classAuthModel.html" title="Classe responsável pela autenticação e criação de usuários." alt="" coords="475,5,567,32"/>
+<area shape="rect" id="node7" href="$classAuthServiceInterface.html" title="Interface para operações de serviço de autenticação." alt="" coords="138,5,297,32"/>
+<area shape="rect" id="node8" href="$classModel.html" title="Classe base para a interação com o banco de dados SQLite." alt="" coords="186,117,249,144"/>
+<area shape="rect" id="node14" href="$classActivityModel.html" title="Implementação do serviço relacionado a atividades." alt="" coords="465,355,577,381"/>
+<area shape="rect" id="node17" href="$classLodgingModel.html" title="Classe responsável pela gestão de hospedagens." alt="" coords="465,133,578,160"/>
+<area shape="rect" id="node10" href="$classTravelServiceInterface.html" title="Interface para serviços relacionados a viagens." alt="" coords="438,56,605,83"/>
+<area shape="rect" id="node12" href="$classDestinationServiceInterface.html" title="Interface para serviços relacionados a destinos." alt="" coords="420,304,623,331"/>
+<area shape="rect" id="node15" href="$classActivityServiceInterface.html" title="Interface para serviços relacionados a atividades." alt="" coords="128,355,307,381"/>
+<area shape="rect" id="node18" href="$classLodgingServiceInterface.html" title="Interface para serviços relacionados a hospedagens." alt="" coords="128,184,307,211"/>
+</map>

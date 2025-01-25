@@ -1,0 +1,4 @@
+<map id="TravelView" name="TravelView">
+<area shape="rect" id="node1" title="Gerencia a lógica de apresentação para operações relacionadas a viagens." alt="" coords="40,80,133,107"/>
+<area shape="rect" id="node2" href="$classPresentationInterface.html" title="Interface abstrata para a apresentação de código." alt="" coords="5,5,168,32"/>
+</map>

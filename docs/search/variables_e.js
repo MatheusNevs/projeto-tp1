@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['yearmax_0',['yearMax',['../classDate.html#a1a375282b309998e7c5f5f5b79812be4',1,'Date']]]
+  ['validvalue_396',['validValue',['../classDomainUnitTest.html#a8d4b6fd97901dcffedddf2455366936f',1,'DomainUnitTest']]],
+  ['value_397',['value',['../classDomain.html#a9d15a9f2c19c5863fe863a7d2f53a7cc',1,'Domain']]]
 ];

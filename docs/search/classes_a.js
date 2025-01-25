@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['time_0',['Time',['../classTime.html',1,'']]],
-  ['travel_1',['Travel',['../classTravel.html',1,'']]]
+  ['rating_226',['Rating',['../classRating.html',1,'']]]
 ];

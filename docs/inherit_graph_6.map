@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classPresentationInterface.html" title="Interface abstrata para a apresentação de código." alt="" coords="5,107,168,133"/>
+<area shape="rect" id="node2" href="$classActivityView.html" title="Classe responsável pela apresentação das atividades." alt="" coords="229,5,333,32"/>
+<area shape="rect" id="node3" href="$classAuthView.html" title="Classe responsável pela apresentação da autenticação." alt="" coords="239,56,323,83"/>
+<area shape="rect" id="node4" href="$classDestinationView.html" title="Classe responsável pela apresentação das operações de destino." alt="" coords="216,107,345,133"/>
+<area shape="rect" id="node5" href="$classLodgingView.html" title="Classe responsável pela apresentação das operações de hospedagem." alt="" coords="228,157,333,184"/>
+<area shape="rect" id="node6" href="$classTravelView.html" title="Gerencia a lógica de apresentação para operações relacionadas a viagens." alt="" coords="234,208,327,235"/>
+</map>

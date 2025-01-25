@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['invalidvalue_0',['invalidValue',['../classDomainUnitTest.html#ade47188e8e846574aad0c529335436ba',1,'DomainUnitTest']]]
+  ['hourmax_83',['hourMax',['../classTime.html#a151a3d63c442f386ece8d83daf26a789',1,'Time']]]
 ];

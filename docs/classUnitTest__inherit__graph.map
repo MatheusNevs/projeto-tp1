@@ -1,7 +1,5 @@
 <map id="UnitTest" name="UnitTest">
-<area shape="rect" id="Node000001" title="Representa uma classe de testes de unidades abstrata para criação de testes de unidade." alt="" coords="103,5,178,31"/>
-<area shape="rect" id="Node000002" href="$classDomainUnitTest.html" title="Representa uma classe de unidade de teste DomainUnitTest específico para teste de domínios." alt="" coords="5,79,132,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,43,82,80,78,77,117,39"/>
-<area shape="rect" id="Node000003" href="$classEntityUnitTest.html" title="Representa uma classe de unidade de teste específico para entidades." alt="" coords="156,79,269,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,39,203,77,199,80,161,43"/>
+<area shape="rect" id="node1" title="Representa uma classe de testes de unidades abstrata para criação de testes de unidade." alt="" coords="103,5,178,32"/>
+<area shape="rect" id="node2" href="$classDomainUnitTest.html" title="Representa uma classe de unidade de teste DomainUnitTest específico para teste de domínios." alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node3" href="$classEntityUnitTest.html" title="Representa uma classe de unidade de teste específico para entidades." alt="" coords="156,80,269,107"/>
 </map>

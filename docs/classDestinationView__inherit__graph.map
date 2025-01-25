@@ -1,0 +1,4 @@
+<map id="DestinationView" name="DestinationView">
+<area shape="rect" id="node1" title="Classe responsável pela apresentação das operações de destino." alt="" coords="22,80,151,107"/>
+<area shape="rect" id="node2" href="$classPresentationInterface.html" title="Interface abstrata para a apresentação de código." alt="" coords="5,5,168,32"/>
+</map>

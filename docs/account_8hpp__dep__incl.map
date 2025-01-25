@@ -1,5 +1,4 @@
 <map id="include/entities/account.hpp" name="include/entities/account.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,211,31"/>
-<area shape="rect" id="Node000002" href="$entities_2main_8cpp.html" title=" " alt="" coords="26,79,190,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,44,111,79,105,79,105,44"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,211,32"/>
+<area shape="rect" id="node2" href="$entities_2main_8cpp.html" title=" " alt="" coords="26,80,190,107"/>
 </map>

@@ -1,9 +1,6 @@
 <map id="include/domains/duration.hpp" name="include/domains/duration.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="15,5,229,31"/>
-<area shape="rect" id="Node000002" href="$domain_8hpp.html" title=" " alt="" coords="69,79,175,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,31,125,65,119,65,119,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,116,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,106,82,143,78,140,110,103"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="140,152,227,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="134,103,166,140,162,143,130,106"/>
+<area shape="rect" id="node1" title=" " alt="" coords="15,5,229,32"/>
+<area shape="rect" id="node2" href="$domain_8hpp.html" title=" " alt="" coords="69,80,175,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,155,116,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="140,155,227,181"/>
 </map>
