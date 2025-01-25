@@ -15,6 +15,15 @@ void ActivityModel::create(Code &userCode, Code &activityDestinationCode, Activi
     throw invalid_argument("Destino inexistente ou pertencente a outra conta");
   }
 
+  sqlCommand = "SELECT arrival, departure FROM destination WHERE code = '" + activityDestinationCode.getValue() + "';";
+  results.clear();
+  this->execute();
+
+  if (!Date::isWithinRange(newActivity.get("date").getValue(), results[0]["arrival"], results[0]["departure"]))
+  {
+    throw invalid_argument("Data da atividade fora do intervalo do destino");
+  }
+
   string activityCode = newActivity.get("code").getValue();
   string activityName = newActivity.get("name").getValue();
   string activityDate = newActivity.get("date").getValue();
@@ -50,6 +59,19 @@ void ActivityModel::update(Code &userCode, Code &activityCode, Activity &updated
   if (results.empty() || results[0]["accountCode"] != userCode.getValue())
   {
     throw invalid_argument("Atividade inexistente ou pertencente a outra conta");
+  }
+
+  sqlCommand = "SELECT destinationCode FROM activity WHERE code = '" + activityCode.getValue() + "';";
+  results.clear();
+  this->execute();
+
+  sqlCommand = "SELECT arrival, departure FROM destination WHERE code = '" + results[0]["destinationCode"] + "';";
+  results.clear();
+  this->execute();
+
+  if (!Date::isWithinRange(updatedActivity.get("date").getValue(), results[0]["arrival"], results[0]["departure"]))
+  {
+    throw invalid_argument("Data da atividade fora do intervalo do destino");
   }
 
   string activityName = updatedActivity.get("name").getValue();
