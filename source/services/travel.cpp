@@ -92,21 +92,34 @@ int TravelModel::consultCost(Code &userCode, Code &travelCode)
     throw invalid_argument("Viagem inexistente ou pertencente a outra conta");
   }
 
-  sqlCommand = "SELECT SUM(money) FROM (SELECT price AS money FROM activity WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "') UNION ALL SELECT dailyRate AS money FROM lodging WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "'));";
+  sqlCommand = "SELECT SUM(price) AS totalActivityCost FROM activity WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "');";
   results.clear();
   this->execute();
 
-  if (status != SQLITE_OK)
+  int totalActivityCost = 0;
+  if (status == SQLITE_OK && !results.empty() && results[0]["totalActivityCost"] != "NULL")
   {
-    throw invalid_argument("Erro na consulta de custo da viagem");
+    totalActivityCost = stoi(results[0]["totalActivityCost"]);
   }
 
-  if (results.empty() || results[0]["SUM(money)"] == "NULL")
+  sqlCommand = "SELECT dailyRate, arrival, departure FROM lodging INNER JOIN destination ON lodging.destinationCode = destination.code WHERE destination.travelCode = '" + travelCode.getValue() + "';";
+  results.clear();
+  this->execute();
+
+  int totalLodgingCost = 0;
+  if (status == SQLITE_OK && !results.empty())
   {
-    return 0;
+    for (size_t i = 0; i < results.size(); i++)
+    {
+      int dailyRate = stoi(results[i]["dailyRate"]);
+      Date arrival = Date(results[i]["arrival"]);
+      Date departure = Date(results[i]["departure"]);
+      int days = Date::calculateDateRange(arrival.getValue(), departure.getValue());
+      totalLodgingCost += dailyRate * days;
+    }
   }
 
-  return stoi(results[0]["SUM(money)"]);
+  return totalActivityCost + totalLodgingCost;
 }
 
 vector<Destination> TravelModel::listDestinations(Code &userCode, Code &travelCode)
