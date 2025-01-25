@@ -39,6 +39,17 @@ public:
    * @throw invalid_argument Se a data for inválida.
    */
   Date(string value);
+
+  /**
+   * @brief Calcula o intervalo de datas.
+   *
+   * Calcula a diferença entre duas datas fornecidas.
+   *
+   * @param initialDate Data inicial.
+   * @param finalDate Data final.
+   * @throw invalid_argument Se a data inicial for posterior à data final.
+   */
+  static int calculateDateRange(string initialDate, string finalDate);
 };
 
 inline Date::Date(string value)

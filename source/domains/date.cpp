@@ -9,7 +9,7 @@ const std::vector<int> Date::monthDays = {31, 0, 31, 30, 31, 30, 31, 31, 30, 31,
 void Date::validate(string value)
 {
   // Verificar se a data contém "/" e lançar erro caso contenha
-  if (value.find("/") != string::npos) 
+  if (value.find("/") != string::npos)
   {
     throw invalid_argument("Argumento invalido: formato inválido.");
   }
@@ -50,4 +50,73 @@ void Date::validate(string value)
   {
     throw invalid_argument("Argumento invalido.");
   }
+}
+
+int Date::calculateDateRange(string initialDate, string finalDate)
+{
+  // Separando os valores DD, MM e YY
+  vector<string> splitedInitialDate = split(initialDate, "-");
+  vector<string> splitedFinalDate = split(finalDate, "-");
+
+  // Convertemos os componentes da data para inteiros
+  int initialDays = stoi(splitedInitialDate[0]);
+  int initialMonths = stoi(splitedInitialDate[1]);
+  int initialYears = stoi(splitedInitialDate[2]);
+
+  int finalDays = stoi(splitedFinalDate[0]);
+  int finalMonths = stoi(splitedFinalDate[1]);
+  int finalYears = stoi(splitedFinalDate[2]);
+
+  // Verifica se a data inicial é posterior à data final
+  if (initialYears > finalYears ||
+      (initialYears == finalYears && initialMonths > finalMonths) ||
+      (initialYears == finalYears && initialMonths == finalMonths && initialDays > finalDays))
+  {
+    throw invalid_argument("Argumento invalido: data inicial posterior à data final.");
+  }
+
+  // Calculando a diferença entre as datas
+  int days = finalDays - initialDays;
+  int months = finalMonths - initialMonths;
+  int years = finalYears - initialYears;
+
+  // Verificando se a diferença de dias é negativa
+  if (days < 0)
+  {
+    // Verificando se o mês anterior é fevereiro
+    if (initialMonths == 2)
+    {
+      // Verificando se o ano é bissexto
+      if (initialYears % 4 == 0)
+      {
+        days += leapFebruaryDays;
+      }
+      else
+      {
+        days += notLeapFebruaryDays;
+      }
+    }
+    else
+    {
+      days += monthDays[initialMonths - 1];
+    }
+
+    // Decrementando o mês
+    months--;
+  }
+
+  // Verificando se a diferença de meses é negativa
+  if (months < 0)
+  {
+    months += monthMax;
+    years--;
+  }
+
+  // Calculando a diferença total em dias
+  int totalDays = years * 365 + months * 30 + days;
+
+  // Ajustando para anos bissextos
+  totalDays += years / 4;
+
+  return totalDays;
 }
