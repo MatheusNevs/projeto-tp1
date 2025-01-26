@@ -2,8 +2,8 @@
 #define AUTH_VIEW_INTERFACE_H
 
 #include "../interfaces/presentation.hpp"
+#include "../interfaces/services.hpp"
 #include "../domains/password.hpp"
-#include "../services/auth.hpp"
 
 /**
  * @class AuthView
@@ -14,7 +14,7 @@
 class AuthView : public PresentationInterface
 {
 private:
-  AuthModel *authService; ///< Serviço de autenticação utilizado pela visualização.
+  AuthServiceInterface *authService; ///< Serviço de autenticação utilizado pela visualização.
 
 public:
   /**
@@ -29,7 +29,7 @@ public:
    *
    * @param authService Ponteiro para o serviço de autenticação.
    */
-  void setAuthService(AuthModel *authService)
+  void setAuthService(AuthServiceInterface *authService)
   {
     this->authService = authService;
   };

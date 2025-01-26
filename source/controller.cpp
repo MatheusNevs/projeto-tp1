@@ -9,27 +9,27 @@ Controller::~Controller()
   delete activityView;
 }
 
-void Controller::setAuthView(AuthView *&authView)
+void Controller::setAuthView(PresentationInterface *authView)
 {
   this->authView = authView;
 }
 
-void Controller::setTravelView(TravelView *&travelView)
+void Controller::setTravelView(PresentationInterface *travelView)
 {
   this->travelView = travelView;
 }
 
-void Controller::setDestinationView(DestinationView *&destinationView)
+void Controller::setDestinationView(PresentationInterface *destinationView)
 {
   this->destinationView = destinationView;
 }
 
-void Controller::setLodgingView(LodgingView *&lodgingView)
+void Controller::setLodgingView(PresentationInterface *lodgingView)
 {
   this->lodgingView = lodgingView;
 }
 
-void Controller::setActivityView(ActivityView *&activityView)
+void Controller::setActivityView(PresentationInterface *activityView)
 {
   this->activityView = activityView;
 }

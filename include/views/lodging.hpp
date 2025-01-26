@@ -2,7 +2,7 @@
 #define LODGING_VIEW_HPP
 
 #include "../interfaces/presentation.hpp"
-#include "../services/lodging.hpp"
+#include "../interfaces/services.hpp"
 
 /**
  * @class LodgingView
@@ -11,7 +11,7 @@
 class LodgingView : public PresentationInterface
 {
 private:
-  LodgingModel *lodgingService; ///< Serviço de hospedagem
+  LodgingServiceInterface *lodgingService; ///< Serviço de hospedagem
 
 public:
   /**
@@ -24,7 +24,7 @@ public:
    * @brief Define o serviço de hospedagem.
    * @param lodgingService Ponteiro para o serviço de hospedagem.
    */
-  void setLodgingService(LodgingModel *lodgingService)
+  void setLodgingService(LodgingServiceInterface *lodgingService)
   {
     this->lodgingService = lodgingService;
   };

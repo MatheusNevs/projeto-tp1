@@ -2,7 +2,7 @@
 #define ACTIVITY_VIEW_HPP
 
 #include "../interfaces/presentation.hpp"
-#include "../services/activity.hpp"
+#include "../interfaces/services.hpp"
 
 /**
  * @class ActivityView
@@ -13,7 +13,7 @@
 class ActivityView : public PresentationInterface
 {
 private:
-  ActivityModel *activityService;
+  ActivityServiceInterface *activityService;
 
 public:
   /**
@@ -28,7 +28,7 @@ public:
    *
    * @param activityService Ponteiro para o serviço de atividades.
    */
-  void setActivityService(ActivityModel *activityService)
+  void setActivityService(ActivityServiceInterface *activityService)
   {
     this->activityService = activityService;
   };
