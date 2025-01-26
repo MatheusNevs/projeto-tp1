@@ -1,6 +1,6 @@
 # Sistema de Cadastro de Viagens - Arquitetura de Software
 
-![](Diagrama.png)
+![](diagram.png)
 
 A arquitetura descrita no diagrama segue o padrão MVC (Model-View-Controller), com a adição de camadas intermediárias para desacoplar ainda mais a lógica do sistema. O sistema utiliza o SQLite como banco de dados e possui módulos bem definidos para diferentes funcionalidades, como autenticação, viagens, destinos, hospedagens e atividades. Abaixo, segue uma descrição detalhada de cada camada e seus componentes:
 
@@ -78,7 +78,3 @@ Responsável pela criação, leitura, atualização e deleção de dados de hosp
 ### Atividades (Activity)
 
 Responsável pela criação, leitura, atualização e deleção de dados de atividades do usuário logado.
-
-## Conclusão
-
-A arquitetura apresentada é robusta, organizada e escalável, adequada para aplicações que exigem gerenciamento modular e acesso local eficiente a dados. O uso de camadas bem definidas garante uma separação clara de responsabilidades, promovendo a manutenção e a evolução contínua do sistema.
