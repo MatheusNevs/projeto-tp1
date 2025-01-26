@@ -1,8 +1,0 @@
-<map id="Entity" name="Entity">
-<area shape="rect" id="node1" title="Representa uma classe entidade abstrata Entity para as entidades se construirem sobre." alt="" coords="219,5,279,32"/>
-<area shape="rect" id="node2" href="$classAccount.html" title="Representa uma entidade Account composta por um código e uma senha." alt="" coords="5,80,80,107"/>
-<area shape="rect" id="node3" href="$classActivity.html" title="Representa uma entidade Activity composta por um código, nome, data, horário, duração,..." alt="" coords="104,80,176,107"/>
-<area shape="rect" id="node4" href="$classDestination.html" title="Representa uma entidade Destination composta por um código, nome, data de chegada,..." alt="" coords="201,80,298,107"/>
-<area shape="rect" id="node5" href="$classLodging.html" title="Representa uma entidade Lodging composta por um código, nome, diária e avaliação." alt="" coords="322,80,395,107"/>
-<area shape="rect" id="node6" href="$classTravel.html" title="Representa uma entidade Travel composta por código, nome e avaliação." alt="" coords="420,80,481,107"/>
-</map>

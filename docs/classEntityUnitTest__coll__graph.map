@@ -1,6 +1,0 @@
-<map id="EntityUnitTest" name="EntityUnitTest">
-<area shape="rect" id="node1" title="Representa uma classe de unidade de teste específico para entidades." alt="" coords="78,95,191,121"/>
-<area shape="rect" id="node2" href="$classUnitTest.html" title="Representa uma classe de testes de unidades abstrata para criação de testes de unidade." alt="" coords="5,5,80,32"/>
-<area shape="rect" id="node3" href="$classEntity.html" title="Representa uma classe entidade abstrata Entity para as entidades se construirem sobre." alt="" coords="105,5,165,32"/>
-<area shape="rect" id="node4" href="$classDomain.html" title="Representa uma classe domínio abstrata Domain, na qual os respectivos domínios irão se construir sobr..." alt="" coords="189,5,262,32"/>
-</map>

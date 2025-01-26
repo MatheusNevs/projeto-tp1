@@ -1,5 +1,0 @@
-<map id="ActivityModel" name="ActivityModel">
-<area shape="rect" id="node1" title="Implementação do serviço relacionado a atividades." alt="" coords="111,80,223,107"/>
-<area shape="rect" id="node2" href="$classActivityServiceInterface.html" title="Interface para serviços relacionados a atividades." alt="" coords="5,5,184,32"/>
-<area shape="rect" id="node3" href="$classModel.html" title="Classe base para a interação com o banco de dados SQLite." alt="" coords="209,5,271,32"/>
-</map>

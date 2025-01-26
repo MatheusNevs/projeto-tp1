@@ -1,7 +1,0 @@
-<map id="DestinationView" name="DestinationView">
-<area shape="rect" id="node1" title="Classe responsável pela apresentação das operações de destino." alt="" coords="177,260,306,287"/>
-<area shape="rect" id="node2" href="$classPresentationInterface.html" title="Interface abstrata para a apresentação de código." alt="" coords="5,171,168,197"/>
-<area shape="rect" id="node3" href="$classCode.html" title="Representa um domínio Code de código alfanumérico." alt="" coords="59,81,114,108"/>
-<area shape="rect" id="node4" href="$classDomain.html" title="Representa uma classe domínio abstrata Domain, na qual os respectivos domínios irão se construir sobr..." alt="" coords="50,5,123,32"/>
-<area shape="rect" id="node5" href="$classDestinationServiceInterface.html" title="Interface para serviços relacionados a destinos." alt="" coords="192,171,395,197"/>
-</map>

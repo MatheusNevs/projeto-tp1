@@ -1,7 +1,0 @@
-<map id="Account" name="Account">
-<area shape="rect" id="node1" title="Representa uma entidade Account composta por um código e uma senha." alt="" coords="90,171,165,197"/>
-<area shape="rect" id="node2" href="$classEntity.html" title="Representa uma classe entidade abstrata Entity para as entidades se construirem sobre." alt="" coords="5,81,65,108"/>
-<area shape="rect" id="node3" href="$classPassword.html" title="Representa um domínio Password de senhas." alt="" coords="90,81,173,108"/>
-<area shape="rect" id="node4" href="$classDomain.html" title="Representa uma classe domínio abstrata Domain, na qual os respectivos domínios irão se construir sobr..." alt="" coords="140,5,213,32"/>
-<area shape="rect" id="node5" href="$classCode.html" title="Representa um domínio Code de código alfanumérico." alt="" coords="197,81,252,108"/>
-</map>

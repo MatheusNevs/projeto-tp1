@@ -1,8 +1,0 @@
-<map id="Model" name="Model">
-<area shape="rect" id="node1" title="Classe base para a interação com o banco de dados SQLite." alt="" coords="295,5,358,32"/>
-<area shape="rect" id="node2" href="$classActivityModel.html" title="Implementação do serviço relacionado a atividades." alt="" coords="5,80,117,107"/>
-<area shape="rect" id="node3" href="$classAuthModel.html" title="Classe responsável pela autenticação e criação de usuários." alt="" coords="142,80,234,107"/>
-<area shape="rect" id="node4" href="$classDestinationModel.html" title="Classe responsável pela gestão de destinos de viagem." alt="" coords="258,80,395,107"/>
-<area shape="rect" id="node5" href="$classLodgingModel.html" title="Classe responsável pela gestão de hospedagens." alt="" coords="419,80,533,107"/>
-<area shape="rect" id="node6" href="$classTravelModel.html" title="Classe responsável pela gestão de viagens." alt="" coords="557,80,659,107"/>
-</map>

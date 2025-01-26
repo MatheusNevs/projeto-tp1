@@ -1,4 +1,0 @@
-<map id="Account" name="Account">
-<area shape="rect" id="node1" title="Representa uma entidade Account composta por um código e uma senha." alt="" coords="5,80,80,107"/>
-<area shape="rect" id="node2" href="$classEntity.html" title="Representa uma classe entidade abstrata Entity para as entidades se construirem sobre." alt="" coords="13,5,73,32"/>
-</map>

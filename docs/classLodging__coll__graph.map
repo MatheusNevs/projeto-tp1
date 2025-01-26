@@ -1,9 +1,0 @@
-<map id="Lodging" name="Lodging">
-<area shape="rect" id="node1" title="Representa uma entidade Lodging composta por um código, nome, diária e avaliação." alt="" coords="184,171,257,197"/>
-<area shape="rect" id="node2" href="$classEntity.html" title="Representa uma classe entidade abstrata Entity para as entidades se construirem sobre." alt="" coords="5,81,65,108"/>
-<area shape="rect" id="node3" href="$classMoney.html" title="Representa um domínio Money de unidade de dinheiro." alt="" coords="90,81,157,108"/>
-<area shape="rect" id="node4" href="$classDomain.html" title="Representa uma classe domínio abstrata Domain, na qual os respectivos domínios irão se construir sobr..." alt="" coords="215,5,288,32"/>
-<area shape="rect" id="node5" href="$className.html" title="Representa um domínio Name de nomes." alt="" coords="181,81,242,108"/>
-<area shape="rect" id="node6" href="$classCode.html" title="Representa um domínio Code de código alfanumérico." alt="" coords="267,81,321,108"/>
-<area shape="rect" id="node7" href="$classRating.html" title="Representa um domínio Rating de avaliações." alt="" coords="346,81,410,108"/>
-</map>

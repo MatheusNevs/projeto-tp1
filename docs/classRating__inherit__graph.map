@@ -1,4 +1,0 @@
-<map id="Rating" name="Rating">
-<area shape="rect" id="node1" title="Representa um domínio Rating de avaliações." alt="" coords="10,80,74,107"/>
-<area shape="rect" id="node2" href="$classDomain.html" title="Representa uma classe domínio abstrata Domain, na qual os respectivos domínios irão se construir sobr..." alt="" coords="5,5,79,32"/>
-</map>

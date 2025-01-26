@@ -1,5 +1,0 @@
-<map id="DomainUnitTest" name="DomainUnitTest">
-<area shape="rect" id="node1" title="Representa uma classe de unidade de teste DomainUnitTest específico para teste de domínios." alt="" coords="29,95,155,121"/>
-<area shape="rect" id="node2" href="$classUnitTest.html" title="Representa uma classe de testes de unidades abstrata para criação de testes de unidade." alt="" coords="5,5,80,32"/>
-<area shape="rect" id="node3" href="$classDomain.html" title="Representa uma classe domínio abstrata Domain, na qual os respectivos domínios irão se construir sobr..." alt="" coords="105,5,178,32"/>
-</map>
