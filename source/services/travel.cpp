@@ -92,21 +92,34 @@ int TravelModel::consultCost(Code &userCode, Code &travelCode)
     throw invalid_argument("Viagem inexistente ou pertencente a outra conta");
   }
 
-  sqlCommand = "SELECT SUM(money) FROM (SELECT price AS money FROM activity WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "') UNION ALL SELECT dailyRate AS money FROM lodging WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "'));";
+  sqlCommand = "SELECT SUM(price) AS totalActivityCost FROM activity WHERE destinationCode IN (SELECT code FROM destination WHERE travelCode = '" + travelCode.getValue() + "');";
   results.clear();
   this->execute();
 
-  if (status != SQLITE_OK)
+  int totalActivityCost = 0;
+  if (status == SQLITE_OK && !results.empty() && results[0]["totalActivityCost"] != "NULL")
   {
-    throw invalid_argument("Erro na consulta de custo da viagem");
+    totalActivityCost = stoi(results[0]["totalActivityCost"]);
   }
 
-  if (results.empty() || results[0]["SUM(money)"] == "NULL")
+  sqlCommand = "SELECT dailyRate, arrival, departure FROM lodging INNER JOIN destination ON lodging.destinationCode = destination.code WHERE destination.travelCode = '" + travelCode.getValue() + "';";
+  results.clear();
+  this->execute();
+
+  int totalLodgingCost = 0;
+  if (status == SQLITE_OK && !results.empty())
   {
-    return 0;
+    for (size_t i = 0; i < results.size(); i++)
+    {
+      int dailyRate = stoi(results[i]["dailyRate"]);
+      Date arrival = Date(results[i]["arrival"]);
+      Date departure = Date(results[i]["departure"]);
+      int days = Date::calculateDateRange(arrival.getValue(), departure.getValue());
+      totalLodgingCost += dailyRate * days;
+    }
   }
 
-  return stoi(results[0]["SUM(money)"]);
+  return totalActivityCost + totalLodgingCost;
 }
 
 vector<Destination> TravelModel::listDestinations(Code &userCode, Code &travelCode)
@@ -134,10 +147,10 @@ vector<Destination> TravelModel::listDestinations(Code &userCode, Code &travelCo
   {
     Code code = Code(results[i]["code"]);
     Name name = Name(results[i]["name"]);
-    Date startDate = Date(results[i]["startDate"]);
-    Date endDate = Date(results[i]["endDate"]);
+    Date arrival = Date(results[i]["arrival"]);
+    Date departure = Date(results[i]["departure"]);
     Rating rating = Rating(results[i]["rating"]);
-    Destination destination = Destination(code, name, startDate, endDate, rating);
+    Destination destination = Destination(code, name, arrival, departure, rating);
     destinations.push_back(destination);
   }
   return destinations;
@@ -165,10 +178,10 @@ Destination TravelModel::consultDestination(Code &userCode, Code &destinationCod
 
   Code code = Code(results[0]["code"]);
   Name name = Name(results[0]["name"]);
-  Date startDate = Date(results[0]["startDate"]);
-  Date endDate = Date(results[0]["endDate"]);
+  Date arrival = Date(results[0]["arrival"]);
+  Date departure = Date(results[0]["departure"]);
   Rating rating = Rating(results[0]["rating"]);
-  Destination destination = Destination(code, name, startDate, endDate, rating);
+  Destination destination = Destination(code, name, arrival, departure, rating);
 
   return destination;
 }
@@ -202,7 +215,7 @@ vector<Lodging> TravelModel::listLodgings(Code &userCode, Code &destinationCode)
   {
     Code code = Code(results[i]["code"]);
     Name name = Name(results[i]["name"]);
-    Money dailyRate = Money(results[i]["money"]);
+    Money dailyRate = Money(results[i]["dailyRate"]);
     Rating rating = Rating(results[i]["rating"]);
     Lodging lodging = Lodging(code, name, dailyRate, rating);
     lodgings.push_back(lodging);
@@ -212,7 +225,11 @@ vector<Lodging> TravelModel::listLodgings(Code &userCode, Code &destinationCode)
 
 vector<Activity> TravelModel::listActivities(Code &userCode, Code &destinationCode)
 {
-  sqlCommand = "SELECT accountCode FROM destination WHERE code = '" + destinationCode.getValue() + "';";
+  sqlCommand = "SELECT travelCode FROM destination WHERE code = '" + destinationCode.getValue() + "';";
+  results.clear();
+  this->execute();
+
+  sqlCommand = "SELECT accountCode from travel WHERE code = '" + results[0]["travelCode"] + "';";
   results.clear();
   this->execute();
 

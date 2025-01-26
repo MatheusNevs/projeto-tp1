@@ -83,29 +83,18 @@ Os arquivos gerados estarão disponíveis na pasta `docs/`.
 
 ---
 
-## Configurações Especiais de Memória
-
-Este projeto utiliza configurações otimizadas para o uso de memória:
-
-- **Tamanho da Pilha**: Configurado para 16 MB.
-- **Otimizações para a Arquitetura Local**: O programa é compilado com o flag `-march=native` para aproveitar as instruções específicas do processador.
-- **Debug**: Inclui suporte ao AddressSanitizer para identificar vazamentos de memória e outros problemas.
-
-### Alternar Configurações
-
-- Para **Debug**:
-  - Adiciona ferramentas de diagnóstico como `AddressSanitizer`.
-- Para **Release**:
-  - Habilita otimizações agressivas com `-O2` e desativa assertivas.
-
----
-
 ## Dependências
 
 O projeto depende da biblioteca SQLite3. Certifique-se de que ela esteja instalada no sistema antes de compilar. No Ubuntu, você pode instalá-la com:
 
 ```bash
 sudo apt install libsqlite3-dev
+```
+
+Para gerar os gráficos do doxygen também será preciso de uma biblioteca a mais:
+
+```bash
+sudo apt install graphviz
 ```
 
 ---

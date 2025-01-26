@@ -4,15 +4,34 @@ Controller::~Controller()
 {
   delete authView;
   delete travelView;
+  delete destinationView;
+  delete lodgingView;
+  delete activityView;
 }
 
-void Controller::setAuthView(AuthView *&authView)
+void Controller::setAuthView(PresentationInterface *authView)
 {
   this->authView = authView;
 }
-void Controller::setTravelView(TravelView *&travelView)
+
+void Controller::setTravelView(PresentationInterface *travelView)
 {
   this->travelView = travelView;
+}
+
+void Controller::setDestinationView(PresentationInterface *destinationView)
+{
+  this->destinationView = destinationView;
+}
+
+void Controller::setLodgingView(PresentationInterface *lodgingView)
+{
+  this->lodgingView = lodgingView;
+}
+
+void Controller::setActivityView(PresentationInterface *activityView)
+{
+  this->activityView = activityView;
 }
 
 void Controller::execute()
@@ -36,21 +55,21 @@ void Controller::execute()
         cout << "5. Sistema de Atividades" << endl;
         cout << "6. Sair" << endl;
         cout << "Escolha uma opção: ";
-        int option;
+        string option;
         cin >> option;
 
         cout << "\033[2J\033[1;1H";
 
-        if (option == 1)
+        if (option == "1")
           this->authView->execute(this->userCode);
-        else if (option == 2)
+        else if (option == "2")
           this->travelView->execute(this->userCode);
-        // else if (option == 3)
-        //   this->destinationView->execute(this->userCode);
-        // else if (option == 4)
-        //   this->lodgingView->execute(this->userCode);
-        // else if (option == 5)
-        //   this->activityView->execute(this->userCode);
+        else if (option == "3")
+          this->destinationView->execute(this->userCode);
+        else if (option == "4")
+          this->lodgingView->execute(this->userCode);
+        else if (option == "5")
+          this->activityView->execute(this->userCode);
         else
           break;
       }
