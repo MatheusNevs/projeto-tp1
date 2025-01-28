@@ -8,8 +8,10 @@
  * @class ActivityModel
  * @brief Implementação do serviço relacionado a atividades.
  *
- * Esta classe implementa a interface ActivityServiceInterface e fornece
- * a funcionalidade para criar, ler, atualizar e remover atividades.
+ * Esta classe herda da classe Model para se comunicar com o banco de dados e
+ * implementa a interface de serviço de atividade, ActivityServiceInterface,
+ * disponibilizando métodos para manipulação de informações de atividades
+ * em um banco de dados persistente.
  */
 class ActivityModel : public ActivityServiceInterface, public Model
 {
@@ -34,7 +36,7 @@ public:
   /**
    * @brief Atualiza uma atividade existente.
    *
-   * @param userCode O código do usuário que está atualizando a atividade.
+   * @param userCode O código do usuário que está atualizando a atividade para verificar se tem permissão sobre a mesma.
    * @param activityCode O código da atividade a ser atualizada.
    * @param updatedActivity O objeto de atividade atualizado.
    */
@@ -43,7 +45,7 @@ public:
   /**
    * @brief Remove uma atividade existente.
    *
-   * @param userCode O código do usuário que está removendo a atividade.
+   * @param userCode O código do usuário que está removendo a atividade para verificar se tem permissão sobre a mesma.
    * @param activityCode O código da atividade a ser removida.
    */
   void remove(Code &userCode, Code &activityCode) override;

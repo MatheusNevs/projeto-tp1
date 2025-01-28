@@ -6,9 +6,12 @@
 
 /**
  * @class TravelModel
- * @brief Classe responsável pela gestão de viagens.
+ * @brief Implementação do serviço relacionado a viagens.
  *
- * A classe TravelModel implementa a interface TravelServiceInterface e herda da classe Model.
+ * Esta classe herda da classe Model para se comunicar com o banco de dados e
+ * implementa a interface de serviço de viagem, TravelServiceInterface,
+ * disponibilizando métodos para manipulação de informações de viagens
+ * em um banco de dados persistente.
  */
 class TravelModel : public TravelServiceInterface, public Model
 {
@@ -24,7 +27,7 @@ public:
   /**
    * @brief Atualiza uma viagem existente.
    *
-   * @param userCode Código do usuário.
+   * @param userCode Código do usuário que está atualizando a viagem para verificar se tem permissão sobre a mesma.
    * @param travelCode Código da viagem a ser atualizada.
    * @param updatedTravel Viagem atualizada.
    */
@@ -33,7 +36,7 @@ public:
   /**
    * @brief Remove uma viagem.
    *
-   * @param userCode Código do usuário.
+   * @param userCode Código do usuário que está removendo a viagem para verificar se tem permissão sobre a mesma.
    * @param travelCode Código da viagem a ser removida.
    */
   void remove(Code &userCode, Code &travelCode) override;
@@ -49,7 +52,7 @@ public:
   /**
    * @brief Consulta o custo de uma viagem.
    *
-   * @param userCode Código do usuário.
+   * @param userCode Código do usuário que está consultando custo da viagem para verificar se tem permissão sobre a mesma.
    * @param travelCode Código da viagem.
    * @return Custo da viagem.
    */
@@ -58,7 +61,7 @@ public:
   /**
    * @brief Lista os destinos de uma viagem.
    *
-   * @param userCode Código do usuário.
+   * @param userCode Código do usuário que está consultando os destinos da viagem para verificar se tem permissão sobre a mesma.
    * @param travelCode Código da viagem.
    * @return Vetor de destinos da viagem.
    */
@@ -67,7 +70,7 @@ public:
   /**
    * @brief Consulta um destino específico de uma viagem.
    *
-   * @param userCode Código do usuário.
+   * @param userCode Código do usuário que está consultando destino de viagem para verificar se tem permissão sobre a mesma.
    * @param destinationCode Código do destino.
    * @return Destino consultado.
    */
@@ -76,7 +79,7 @@ public:
   /**
    * @brief Lista as hospedagens de um destino.
    *
-   * @param userCode Código do usuário.
+   * @param userCode Código do usuário que está listando hospedagens de destino para verificar se tem permissão sobre o mesmo.
    * @param destinationCode Código do destino.
    * @return Vetor de hospedagens do destino.
    */
@@ -85,7 +88,7 @@ public:
   /**
    * @brief Lista as atividades de um destino.
    *
-   * @param userCode Código do usuário.
+   * @param userCode Código do usuário que está listando atividades de destino para verificar se tem permissão sobre o mesmo.
    * @param destinationCode Código do destino.
    * @return Vetor de atividades do destino.
    */

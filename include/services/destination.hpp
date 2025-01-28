@@ -6,9 +6,12 @@
 
 /**
  * @class DestinationModel
- * @brief Classe responsável pela gestão de destinos de viagem.
+ * @brief Implementação do serviço relacionado a destinos.
  *
- * A classe DestinationModel implementa a interface DestinationServiceInterface e herda da classe Model.
+ * Esta classe herda da classe Model para se comunicar com o banco de dados e
+ * implementa a interface de serviço de destino, DestinationServiceInterface,
+ * disponibilizando métodos para manipulação de informações de destinos
+ * em um banco de dados persistente.
  */
 class DestinationModel : public DestinationServiceInterface, public Model
 {
@@ -25,7 +28,7 @@ public:
   /**
    * @brief Atualiza um destino de viagem existente.
    *
-   * @param userCode Código do usuário.
+   * @param userCode Código do usuário que está atualizando o destino para verificar se tem permissão sobre o mesmo.
    * @param destinationCode Código do destino a ser atualizado.
    * @param updatedDestination Destino atualizado.
    */
@@ -34,7 +37,7 @@ public:
   /**
    * @brief Remove um destino de viagem.
    *
-   * @param userCode Código do usuário.
+   * @param userCode Código do usuário que está removendo o destino para verificar se tem permissão sobre o mesmo.
    * @param destinationCode Código do destino a ser removido.
    */
   void remove(Code &userCode, Code &destinationCode) override;

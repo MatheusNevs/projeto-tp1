@@ -6,9 +6,12 @@
 
 /**
  * @class AuthModel
- * @brief Classe responsável pela autenticação e criação de usuários.
+ * @brief Implementação do serviço relacionado a autenticação.
  *
- * A classe AuthModel implementa a interface AuthServiceInterface e herda da classe Model.
+ * Esta classe herda da classe Model para se comunicar com o banco de dados e
+ * implementa a interface de serviço de autenticação, AuthServiceInterface,
+ * disponibilizando métodos para manipulação de informações de contas/autenticação
+ * em um banco de dados persistente.
  */
 class AuthModel : public AuthServiceInterface, public Model
 {

@@ -6,9 +6,12 @@
 
 /**
  * @class LodgingModel
- * @brief Classe responsável pela gestão de hospedagens.
+ * @brief Implementação do serviço relacionado a hospedagens.
  *
- * A classe LodgingModel implementa a interface LodgingServiceInterface e herda da classe Model.
+ * Esta classe herda da classe Model para se comunicar com o banco de dados e
+ * implementa a interface de serviço de hospedagem, LodgingServiceInterface,
+ * disponibilizando métodos para manipulação de informações de hospedagens
+ * em um banco de dados persistente.
  */
 class LodgingModel : public LodgingServiceInterface, public Model
 {
