@@ -20,7 +20,8 @@
 
 /**
  * @class Builder
- * @brief Classe responsável por construir e configurar o controlador.
+ * @brief Classe responsável por construir e configurar o controlador, ou seja, instanciar
+ * todas camadas de serviços e de apresentação e fazer a linkagem com uma determinada controladora.
  */
 class Builder
 {
