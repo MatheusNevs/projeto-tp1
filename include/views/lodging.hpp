@@ -30,28 +30,28 @@ public:
   };
 
   /**
-   * @brief Executa a operação de acordo com o código do usuário.
+   * @brief Executa a apresentação de interface visual para manipulação de informações relacionadas a hospedagens.
    * @param userCode Código do usuário.
    */
   void execute(Code &userCode);
 
   /**
-   * @brief Cria uma nova hospedagem.
+   * @brief Interação com usuário para criação de uma nova hospedagem.
    */
   void create();
 
   /**
-   * @brief Atualiza uma hospedagem existente.
+   * @brief Interação com usuário para atualização de uma hospedagem existente.
    */
   void update();
 
   /**
-   * @brief Remove uma hospedagem.
+   * @brief Interação com usuário para remoção de uma hospedagem.
    */
   void remove();
 
   /**
-   * @brief Lê os dados de uma hospedagem.
+   * @brief Interação com usuário para leitura de suas hospedagens.
    */
   void read();
 

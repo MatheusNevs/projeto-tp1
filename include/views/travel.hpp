@@ -17,30 +17,30 @@ private:
   TravelServiceInterface *travelService; ///< Ponteiro para a interface do serviço de viagens.
 
   /**
-   * @brief Consulta o custo de uma viagem.
+   * @brief Interação com usuário para consulta de custo de uma determinada viagem.
    * @param travelCode O código da viagem.
    */
   void consultCost(Code travelCode);
 
   /**
-   * @brief Lista destinos para uma determinada viagem.
+   * @brief Interação com usuário para leitura de destinos relacionados a uma determinada viagem.
    * @param travelCode O código da viagem.
    */
   void listDestinations(Code travelCode);
 
   /**
-   * @brief Consulta um destino específico.
+   * @brief Interação com usuário para consulta individual de destino relacionado a viagem.
    */
   void consultDestination();
 
   /**
-   * @brief Lista hospedagens para um determinado destino.
+   * @brief Interação com usuário para leitura de hospedagens de destino relacionado a viagem.
    * @param destinationCode O código do destino.
    */
   void listLodgings(Code destinationCode);
 
   /**
-   * @brief Lista atividades para um determinado destino.
+   * @brief Interação com usuário para leitura de atividades de destino relacionado a viagem.
    * @param destinationCode O código do destino.
    */
   void listActivities(Code destinationCode);
@@ -62,33 +62,33 @@ public:
   };
 
   /**
-   * @brief Executa as operações da visualização de viagens.
+   * @brief Executa a apresentação de interface visual para manipulação de informações relacionadas a viagens.
    * @param userCode O código do usuário.
    */
   void execute(Code &userCode) override;
 
   /**
-   * @brief Cria uma nova entrada de viagem.
+   * @brief Interação com usuário para criação de uma viagem.
    */
   void create();
 
   /**
-   * @brief Atualiza uma entrada de viagem existente.
+   * @brief Interação com usuário para atualização de uma viagem existente.
    */
   void update();
 
   /**
-   * @brief Remove uma entrada de viagem.
+   * @brief Interação com usuário para remoção de uma viagem.
    */
   void remove();
 
   /**
-   * @brief Lista todas as entradas de viagem.
+   * @brief Interação com usuário para leitura de suas viagens.
    */
   void listAll();
 
   /**
-   * @brief Consulta uma entrada de viagem específica.
+   * @brief Interação com usuário para consulta individual de viagem, apresentando opções de consulta da mesma.
    */
   void consultTravel();
 

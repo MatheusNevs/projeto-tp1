@@ -37,30 +37,28 @@ public:
   /**
    * @brief Autentica um usuário.
    *
-   * Este método solicita as credenciais do usuário e utiliza o serviço de autenticação para verificar a validade.
+   * Interação com usuário para solicitação e autenticação de conta existente no banco de dados.
    */
   void autenticate();
 
   /**
    * @brief Cria um novo usuário.
    *
-   * Este método solicita as informações necessárias e utiliza o serviço de autenticação para criar um novo usuário.
+   * Interação com usuário para criação de uma nova conta.
    */
   void create();
 
   /**
    * @brief Realiza o logout do usuário.
    *
-   * Este método encerra a sessão do usuário atual.
+   * Interação com usuário para encerramento da sessão de autenticação.
    */
   void logout();
 
   /**
-   * @brief Executa a visualização da autenticação para um usuário.
+   * @brief Executa a apresentação de interface visual para autenticação ou criação de conta.
    *
    * @param userCode Código do usuário.
-   *
-   * Este método inicia o processo de autenticação para o usuário fornecido.
    */
   void execute(Code &userCode);
 

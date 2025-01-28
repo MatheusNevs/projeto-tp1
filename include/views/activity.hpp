@@ -34,29 +34,29 @@ public:
   };
 
   /**
-   * @brief Executa a visualização das atividades para um usuário.
+   * @brief Executa a apresentação de interface visual para manipulação de informações relacionadas a atividades
    *
-   * @param userCode Código do usuário.
+   * @param userCode Código do usuário logado que será usado para manipular as informações relacionadas a atividades.
    */
   void execute(Code &userCode);
 
   /**
-   * @brief Cria uma nova atividade.
+   * @brief Interação com usuário para criação de nova atividade.
    */
   void create();
 
   /**
-   * @brief Atualiza uma atividade existente.
+   * @brief Interação com o usuário para atualização de uma atividade existente.
    */
   void update();
 
   /**
-   * @brief Remove uma atividade.
+   * @brief Interação com o usuário para remoção de uma atividade.
    */
   void remove();
 
   /**
-   * @brief Lê todas as atividades de um usuário.
+   * @brief Interação com o usuário para leitura de todas suas atividades.
    */
   void read();
 

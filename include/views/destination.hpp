@@ -30,28 +30,28 @@ public:
   };
 
   /**
-   * @brief Executa a operação de destino.
+   * @brief Executa a apresentação de interface visual para manipulação de informações relacionadas a destinos.
    * @param userCode Código do usuário.
    */
   void execute(Code &userCode) override;
 
   /**
-   * @brief Cria um novo destino.
+   * @brief Interação com usuário para criação de um novo destino.
    */
   void create();
 
   /**
-   * @brief Atualiza um destino existente.
+   * @brief Interação com usuário para atualização de um destino existente.
    */
   void update();
 
   /**
-   * @brief Lê um destino.
+   * @brief Interação com usuário para leitura de todos seus destinos.
    */
   void read();
 
   /**
-   * @brief Remove um destino.
+   * @brief Interação com usuário para remoção de um destino.
    */
   void remove();
 
