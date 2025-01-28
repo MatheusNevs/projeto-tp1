@@ -13,10 +13,20 @@
 class PresentationInterface
 {
 protected:
-  Code &userCode;
+  Code &userCode; //< Código do usuário logado
 
 public:
   PresentationInterface(Code &userCode) : userCode(userCode) {}
+
+  /** @brief Método Execute.
+   *
+   * Método abstrato responsável pela execução da camada de apresentação
+   * pela controladora, recebendo o código do usuário para mostrar informações
+   * referente ao mesmo.
+   *
+   * @param userCode código do usuário.
+   * @throw invalid_argument
+   */
   virtual void execute(Code &userCode) = 0;
   virtual ~PresentationInterface() {};
 };

@@ -13,7 +13,7 @@
 
 /**
  * @class TravelServiceInterface
- * @brief Interface para serviços relacionados a viagens.
+ * @brief Interface abstrata para serviços relacionados a viagens.
  *
  * Esta interface define as operações que podem ser realizadas em dados relacionados a viagens.
  */
@@ -31,7 +31,7 @@ public:
   /**
    * @brief Atualiza uma entrada de viagem existente.
    *
-   * @param userCode O código do usuário que está atualizando a viagem.
+   * @param userCode O código do usuário que está atualizando a viagem para verificar se tem permissão sobre a mesma.
    * @param travelCode O código da viagem a ser atualizada.
    * @param updatedTravel O objeto de viagem atualizado.
    */
@@ -40,7 +40,7 @@ public:
   /**
    * @brief Remove uma entrada de viagem existente.
    *
-   * @param userCode O código do usuário que está removendo a viagem.
+   * @param userCode O código do usuário que está removendo a viagem para verificar se tem permissão sobre a mesma.
    * @param travelCode O código da viagem a ser removida.
    */
   virtual void remove(Code &userCode, Code &travelCode) = 0;
@@ -56,16 +56,16 @@ public:
   /**
    * @brief Consulta o custo de uma viagem específica.
    *
-   * @param userCode O código do usuário que está consultando o custo.
+   * @param userCode O código do usuário que está consultando o custo para verificar se tem permissão sobre a viagem consultada.
    * @param travelCode O código da viagem cujo custo será consultado.
-   * @return O custo da viagem.
+   * @return Inteiro equivalente ao custo da viagem.
    */
   virtual int consultCost(Code &userCode, Code &travelCode) = 0;
 
   /**
    * @brief Lista todos os destinos de uma viagem específica.
    *
-   * @param userCode O código do usuário que está listando os destinos.
+   * @param userCode O código do usuário que está listando os destinos para verificar se tem permissão sobre os mesmos.
    * @param travelCode O código da viagem cujos destinos serão listados.
    * @return Um vetor de objetos de destino.
    */
@@ -74,7 +74,7 @@ public:
   /**
    * @brief Consulta um destino específico.
    *
-   * @param userCode O código do usuário que está consultando o destino.
+   * @param userCode O código do usuário que está consultando o destino para verificar se tem permissão sobre o mesmo.
    * @param destinationCode O código do destino a ser consultado.
    * @return O objeto de destino.
    */
@@ -83,7 +83,7 @@ public:
   /**
    * @brief Lista todas as hospedagens de um destino específico.
    *
-   * @param userCode O código do usuário que está listando as hospedagens.
+   * @param userCode O código do usuário que está listando as hospedagens para verificar se tem permissão sobre as mesmas.
    * @param destinationCode O código do destino cujas hospedagens serão listadas.
    * @return Um vetor de objetos de hospedagem.
    */
@@ -92,7 +92,7 @@ public:
   /**
    * @brief Lista todas as atividades de um destino específico.
    *
-   * @param userCode O código do usuário que está listando as atividades.
+   * @param userCode O código do usuário que está listando as atividades para verificar se tem permissão sobre as mesmas.
    * @param destinationCode O código do destino cujas atividades serão listadas.
    * @return Um vetor de objetos de atividade.
    */
@@ -105,7 +105,7 @@ public:
 };
 
 /**
- * @brief Interface para operações de serviço de autenticação
+ * @brief Interface abstrata para operações de serviço de autenticação
  *
  * Esta interface define o contrato para operações relacionadas à autenticação,
  * como autenticação e criação de usuário.
@@ -167,7 +167,7 @@ public:
   /**
    * @brief Atualiza um destino existente.
    *
-   * @param userCode O código do usuário que está atualizando o destino.
+   * @param userCode O código do usuário que está atualizando o destino para verificar se tem permissão sobre o mesmo.
    * @param destinationCode O código do destino a ser atualizado.
    * @param updatedDestination O objeto de destino atualizado.
    */
@@ -216,7 +216,7 @@ public:
   /**
    * @brief Atualiza uma hospedagem existente.
    *
-   * @param userCode O código do usuário que está atualizando a hospedagem.
+   * @param userCode O código do usuário que está atualizando a hospedagem para verificar se tem permissão sobre a mesma.
    * @param lodgingCode O código da hospedagem a ser atualizada.
    * @param updatedLodging O objeto de hospedagem atualizado.
    */
@@ -225,7 +225,7 @@ public:
   /**
    * @brief Remove uma hospedagem existente.
    *
-   * @param userCode O código do usuário que está removendo a hospedagem.
+   * @param userCode O código do usuário que está removendo a hospedagem para verificar se tem permissão sobre a mesma.
    * @param lodgingCode O código da hospedagem a ser removida.
    */
   virtual void remove(Code &userCode, Code &lodgingCode) = 0;
